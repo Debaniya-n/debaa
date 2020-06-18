@@ -1,0 +1,65 @@
+
+#wb_header { height: 101px; }
+#wb_header > .wb_cont_bg { background: transparent none repeat left top; background-size: auto auto; }
+#wb_main { height: 1219px; padding-bottom: 50px; }
+#wb_main > .wb_cont_bg { background: transparent none repeat left top; background-size: auto auto; }
+#wb_footer { height: 83px; }
+#wb_footer > .wb_cont_bg { background: transparent none repeat left top; background-size: auto auto; }
+body { background: #FFFFFF url("http://debaniya-n.github.io/404_files/Illustration.png") repeat scroll center top; background-size: cover; }
+.wb_sbg { background: transparent none repeat-x left top; }
+body, .wb_sbg { min-width: 1200px; min-height: 1403px; }
+.wb_cont_inner { width: 1200px; }
+.wb_cont_bg { width: 1200px; margin-left: -600px; }
+.root { height: 694px; overflow: visible; min-height: 1403px; }
+#wb_element_instance17 { top: 25px; left: 20px; min-width: 471px; width: 471px; min-height: 49px; height: 49px; display: block; z-index: 221; }
+#wb_element_instance18 { top: 20px; left: 600px; min-width: 599px; width: 599px; min-height: 60px; height: 60px; display: block; z-index: 424; }
+#wb_element_instance18 > ul { display: block; }
+#wb_element_instance18 ul { background: transparent none repeat left top; border: 0px none #000000; }
+#wb_element_instance18, #wb_element_instance18 ul { text-align: right; }
+#wb_element_instance18 ul ul { background: transparent none repeat left top; }
+#wb_element_instance18 li { margin: 10px 5px 10px 5px; }
+#wb_element_instance18 li a { text-transform: none; border: 0px none #000000; padding: 10px 2px 10px 10px; font: normal normal 18px Arial,Helvetica,sans-serif; text-decoration: none; color: #ffffff; line-height: 20px; background: transparent none repeat left top; }
+#wb_element_instance18 li.over > a, #wb_element_instance18 li:focus > a { border: 0px none #000000; font: normal normal 18px Arial,Helvetica,sans-serif; text-decoration: underline; color: #050505; line-height: 20px; background: transparent none repeat left top; }
+#wb_element_instance18 li.active > a { border: 0px none #000000; font: normal bold 18px Arial,Helvetica,sans-serif; text-decoration: none; color: #ffffff; line-height: 20px; background: transparent none repeat left top; }
+#wb_element_instance18:not(.collapse-expanded) .vmenu ul.open-left,#wb_element_instance18:not(.collapse-expanded) .hmenu ul.open-left { left: auto; right: 100%; }
+#wb_element_instance18:not(.collapse-expanded) .hmenu > li > ul.open-left { left: auto; right: 0; }
+#wb_element_instance19 { top: -1px; left: 0; right: 0; min-height: 102px; height: 102px; display: block; z-index: 39; }
+#wb_element_instance19 > .wb_shp { background: rgba(0, 0, 0, 0.46) none repeat scroll left top; background-size: auto auto; border: 5px none #c0c0c0; opacity: 0.95; border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; -webkit-border-radius: 0px 0px 0px 0px; width: 100%; height: 102px; }
+#wb_element_instance20 { top: 32px; left: 150px; min-width: 260px; width: 260px; min-height: 24px; height: 24px; display: block; z-index: 216; }
+#wb_element_instance21 i { width: 42px; height: 41px; font-size: 41px; }
+#wb_element_instance21 { top: 24px; left: 23px; min-width: 42px; width: 42px; min-height: 41px; height: 41px; display: block; z-index: 249; }
+#wb_element_instance22 i { width: 42px; height: 41px; font-size: 41px; }
+#wb_element_instance22 { top: 24px; left: 83px; min-width: 42px; width: 42px; min-height: 41px; height: 41px; display: block; z-index: 248; }
+#wb_element_instance23 { top: 0px; left: -80px; min-width: 1370px; width: 1370px; min-height: 90px; height: 90px; display: block; z-index: 208; }
+#wb_element_instance23 > .wb_shp { background: #000000 none repeat scroll left top; background-size: auto auto; border: 1px solid #383838; opacity: 1; border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; -webkit-border-radius: 0px 0px 0px 0px; width: 1370px; height: 90px; }
+#wb_element_instance24 { top: 100px; left: 0px; min-width: 611px; width: 611px; min-height: 260px; height: 260px; display: block; z-index: 8; }
+#wb_element_instance24 > .wb_shp { background: rgba(0, 0, 0, 0.48) none repeat scroll left top; background-size: auto auto; border: 0px solid #c0c0c0; opacity: 0.95; border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; -webkit-border-radius: 0px 0px 0px 0px; width: 611px; height: 260px; }
+#wb_element_instance25 { top: 120px; left: 20px; min-width: 570px; width: 570px; min-height: 150px; height: 150px; display: block; z-index: 9; }
+#wb_element_instance26 { top: 280px; left: 23px; min-width: 195px; width: 195px; min-height: 54px; height: 54px; display: block; z-index: 10; }
+#wb_element_instance26 .wb_button { width: 195px; height: 54px; font-family: Helvetica,Arial,sans-serif; font-size: 14px; text-align: center; border: 1px solid #cccccc; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background: #4fb013 none repeat left top; }
+#wb_element_instance26 .wb_button > span { color: #ffffff; font-style: normal; font-weight: normal; text-decoration: none; }
+#wb_element_instance26 .wb_button:hover > span { color: #333333; font-style: normal; font-weight: normal; text-decoration: none; }
+#wb_element_instance26 .wb_button:hover { background: #e6e6e6 none repeat left top; }
+#wb_element_instance26 .wb_button:active > span { color: #333333; font-style: normal; font-weight: normal; text-decoration: none; }
+#wb_element_instance26 .wb_button:active { background: #e6e6e6 none repeat left top; }
+#wb_element_instance27 { top: 260px; left: 660px; min-width: 200px; width: 200px; min-height: 200px; height: 200px; display: block; z-index: 11; }
+#wb_element_instance27 > .wb_shp { background: #ffffff none repeat scroll left top; background-size: auto auto; border: 5px solid #c0c0c0; opacity: 0; border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; width: 200px; height: 200px; }
+#wb_element_instance28 { top: 480px; left: 0px; display: block; z-index: 9000; }
+#wb_element_instance29 { top: 110px; left: 0px; display: block; z-index: 9999; }
+
+
+#wb_element_instance17 p:last-child { margin-bottom: 0; }
+#wb_element_instance20 p:last-child { margin-bottom: 0; }
+#wb_element_instance21 i { position: absolute; left: 0px; top: 0px; text-align: center; }
+#wb_element_instance22 i { position: absolute; left: 0px; top: 0px; text-align: center; }
+#wb_element_instance25 p:last-child { margin-bottom: 0; }
+
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (max-width: 767px) {
+}
