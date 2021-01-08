@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Debaa's Commission Prices:</p>
+
+Size:<br>
+ 
+<input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="1">
+<label for="size1">Bust Up</label><br>
+
+<input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="2" checked>
+<label for="size2">Half Body</label><br>
+ 
+<input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="3">
+<label for="size3">Full Body</label><br><br>
+
+Type:<br>
+
+<input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="1">
+<label for="size1">Lineart</label><br>
+
+<input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="2">
+<label for="size2">Flat Color</label><br>
+ 
+<input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="3" checked>
+<label for="size3">Full Color</label><br><br>
+
+Figure:<br>
+<input type="number" onclick="meow(this.value)" id="quantity" name="quantity" min="1" max="5" value="1">
+<label for="quantity">Figures/Characters</label>
+<br><br>
+
+Price:<br>
+USD <input type="number" id="price" value=35 disabled>
+<br><br>
+
+<div hidden>
+<input type="text" id="v1" value="2" disabled><br>
+<input type="text" id="v2" value="3" disabled><br>
+<input type="text" id="switchy" value="23" disabled><br>
+<input type="number" id="pirace" value=35 disabled>
+</div>
+
+<script>
+function sizev(sv){
+	document.getElementById("v1").value = sv;
+}
+
+function typev(tv){
+	document.getElementById("v2").value = tv;
+}
+
+function pree(){
+	var one = document.getElementById("v1").value;
+    var two = document.getElementById("v2").value;
+    var three = one + two;
+    document.getElementById("switchy").value = three;
+}
+
+function aa(){
+	var uwu;
+    var owo = document.getElementById("switchy").value;
+    switch(owo) {
+    	case "11":
+        	uwu = 10;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "12":
+        	uwu = 20;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "13":
+        	uwu = 30;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "21":
+        	uwu = 15;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "22":
+        	uwu = 25;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "23":
+        	uwu = 35;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "31":
+        	uwu = 25;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "32":
+        	uwu = 35;
+            document.getElementById("pirace").value = uwu;
+            break;
+        case "33":
+        	uwu = 50;
+            document.getElementById("pirace").value = uwu;
+            break;
+        default:
+        	uwu = 0;
+            document.getElementById("pirace").value = uwu;
+            break;
+        }
+}
+
+function meow(){
+	var tyme 
+	var usada = document.getElementById("pirace").value;
+    switch(tyme){
+    	case 1:
+        	document.getElementById("price").value = usada;
+            break;
+        default:
+        	for(tyme = document.getElementById("quantity").value; tyme > 1; tyme--){
+            	usada = usada / 2 * 3;
+            	}
+            document.getElementById("price").value = usada;
+            break;
+        }
+        
+}
+
+</script>
+
+
+</body>
+</html>
