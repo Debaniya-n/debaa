@@ -1,128 +1,202 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>We are moving! - Macchako Lounge</title>
+        <link rel="stylesheet" href="css/Styles.css">
+        <link rel="icon" href="images/Logo x0.5.png" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <div style='background-color:rgb(200, 200, 200);text-align: center;margin-bottom: 0;'>
+          <div style='display: inline-block;background-size:100px;background-image: url(images/tile.png);width:80%'>
+            <div style="height:550px;color:white;text-align:left;background-color:#518159;padding:5%; width: 20%;float:left;">
+              <h1>Debaa's Commission Prices:</h1>
+    
+              Size:<br>
+    
+              <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="1">
+              <label for="size1">Bust Up</label><br>
+    
+              <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="2">
+              <label for="size2">Half Body</label><br>
+    
+              <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="3" checked>
+              <label for="size3">Full Body</label><br><br>
+    
+              Type:<br>
+    
+              <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="1">
+              <label for="size1">Lineart</label><br>
+    
+              <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="2">
+              <label for="size2">Flat Color</label><br>
+    
+              <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="3" checked>
+              <label for="size3">Full Color</label><br><br>
+    
+              Figure:<br>
+              <input type="number" onclick="meow(this.value)" id="quantity" name="quantity" min="1" max="5" value="1">
+              <label for="quantity">Figures/Characters</label>
+              <br><br>
+    
+              Price:<br>
+              USD <input type="number" id="price" value=50 disabled>
+              <br><br>
+    
+              <div hidden>
+                <input type="text" id="v1" value="3" disabled><br>
+                <input type="text" id="v2" value="3" disabled><br>
+                <input type="text" id="switchy" value="33" disabled><br>
+                <input type="number" id="pirace" value=50 disabled>
+              </div>
+    
+              <script>
+                function sizev(sv) {
+                  document.getElementById("v1").value = sv;
+                }
+    
+                function typev(tv) {
+                  document.getElementById("v2").value = tv;
+                }
+    
+                function pree() {
+                  var one = document.getElementById("v1").value;
+                  var two = document.getElementById("v2").value;
+                  var three = one + two;
+                  document.getElementById("switchy").value = three;
+                }
+    
+                function aa() {
+                  var uwu;
+                  var owo = document.getElementById("switchy").value;
+                  switch (owo) {
+                    case "11":
+                      uwu = 10;
+                      $('#flatc').css('opacity', 0);
+                      $('#fullc').css('opacity', 0);
+                      $('#cropper').css('margin-top', 0);
+                      $('#cropper').css('opacity', 1);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "12":
+                      uwu = 20;
+                      $('#flatc').css('opacity', 1);
+                      $('#fullc').css('opacity', 0);
+                      $('#cropper').css('margin-top', 0);
+                      $('#cropper').css('opacity', 1);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "13":
+                      uwu = 30;
+                      $('#flatc').css('opacity', 0);
+                      $('#fullc').css('opacity', 1);
+                      $('#cropper').css('margin-top', 0);
+                      $('#cropper').css('opacity', 1);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "21":
+                      uwu = 15;
+                      $('#flatc').css('opacity', 0);
+                      $('#fullc').css('opacity', 0);
+                      $('#cropper').css('margin-top', 170);
+                      $('#cropper').css('opacity', 1);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "22":
+                      uwu = 25;
+                      $('#flatc').css('opacity', 1);
+                      $('#fullc').css('opacity', 0);
+                      $('#cropper').css('margin-top', 170);
+                      $('#cropper').css('opacity', 1);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "23":
+                      uwu = 35;
+                      $('#flatc').css('opacity', 0);
+                      $('#fullc').css('opacity', 1);
+                      $('#cropper').css('margin-top', 170);
+                      $('#cropper').css('opacity', 1);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "31":
+                      uwu = 25;
+                      $('#flatc').css('opacity', 0);
+                      $('#fullc').css('opacity', 0);
+                      $('#cropper').css('margin-top', 400);
+                      $('#cropper').css('opacity', 0);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "32":
+                      uwu = 35;
+                      $('#flatc').css('opacity', 1);
+                      $('#fullc').css('opacity', 0);
+                      $('#cropper').css('margin-top', 400);
+                      $('#cropper').css('opacity', 0);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    case "33":
+                      uwu = 50;
+                      $('#flatc').css('opacity', 0);
+                      $('#fullc').css('opacity', 1);
+                      $('#cropper').css('margin-top', 400);
+                      $('#cropper').css('opacity', 0);
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                    default:
+                      uwu = 0;
+                      document.getElementById("pirace").value = uwu;
+                      break;
+                  }
+                }
+    
+                function meow(nya) {
+                  var tyme
+                  var eep
+                  eep = nya
+                  var usada = document.getElementById("pirace").value;
+                  switch (tyme) {
+                    case 1:
+                        document.getElementById("price").value = usada;
+                        break;
 
-<p>Debaa's Commission Prices:</p>
-
-Size:<br>
- 
-<input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="1">
-<label for="size1">Bust Up</label><br>
-
-<input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="2" checked>
-<label for="size2">Half Body</label><br>
- 
-<input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="3">
-<label for="size3">Full Body</label><br><br>
-
-Type:<br>
-
-<input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="1">
-<label for="size1">Lineart</label><br>
-
-<input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="2">
-<label for="size2">Flat Color</label><br>
- 
-<input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="3" checked>
-<label for="size3">Full Color</label><br><br>
-
-Figure:<br>
-<input type="number" onclick="meow(this.value)" id="quantity" name="quantity" min="1" max="5" value="1">
-<label for="quantity">Figures/Characters</label>
-<br><br>
-
-Price:<br>
-USD <input type="number" id="price" value=35 disabled>
-<br><br>
-
-<div hidden>
-<input type="text" id="v1" value="2" disabled><br>
-<input type="text" id="v2" value="3" disabled><br>
-<input type="text" id="switchy" value="23" disabled><br>
-<input type="number" id="pirace" value=35 disabled>
-</div>
-
-<script>
-function sizev(sv){
-	document.getElementById("v1").value = sv;
-}
-
-function typev(tv){
-	document.getElementById("v2").value = tv;
-}
-
-function pree(){
-	var one = document.getElementById("v1").value;
-    var two = document.getElementById("v2").value;
-    var three = one + two;
-    document.getElementById("switchy").value = three;
-}
-
-function aa(){
-	var uwu;
-    var owo = document.getElementById("switchy").value;
-    switch(owo) {
-    	case "11":
-        	uwu = 10;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "12":
-        	uwu = 20;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "13":
-        	uwu = 30;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "21":
-        	uwu = 15;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "22":
-        	uwu = 25;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "23":
-        	uwu = 35;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "31":
-        	uwu = 25;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "32":
-        	uwu = 35;
-            document.getElementById("pirace").value = uwu;
-            break;
-        case "33":
-        	uwu = 50;
-            document.getElementById("pirace").value = uwu;
-            break;
-        default:
-        	uwu = 0;
-            document.getElementById("pirace").value = uwu;
-            break;
-        }
-}
-
-function meow(){
-	var tyme 
-	var usada = document.getElementById("pirace").value;
-    switch(tyme){
-    	case 1:
-        	document.getElementById("price").value = usada;
-            break;
-        default:
-        	for(tyme = document.getElementById("quantity").value; tyme > 1; tyme--){
-            	usada = usada / 2 * 3;
-            	}
-            document.getElementById("price").value = usada;
-            break;
-        }
-        
-}
-
-</script>
+                    default:
+                        for (tyme = document.getElementById("quantity").value; tyme > 1; tyme--) {
+                        usada = usada / 2 * 3;
+                        }
+                        document.getElementById("price").value = usada;
+                        switch(eep){
+                            case "1":
+                                $('#shadow1').css('opacity', 1);
+                                $('#shadow2').css('opacity', 1);
+                                break;
+                            case "2":
+                                $('#shadow1').css('opacity', 0);
+                                $('#shadow2').css('opacity', 1);
+                                break;
+                            case "3":
+                                $('#shadow1').css('opacity', 0);
+                                $('#shadow2').css('opacity', 0);
+                                break;
+                        }
+                        break;
+                  }
+    
+                }
+    
+              </script>
+    
+            </div>
+            <div style="height:100%; width: 300px;float:left;">
+                <div id="lineart" class="comm" style="content:url(https://debaa.macchako.moe/commissions/images/Lineart.png);"></div>
+                <div id="flatc" class="comm" style="content:url(https://debaa.macchako.moe/commissions/images/Flat.png);"></div>
+                <div id="fullc" class="comm" style="content:url(https://debaa.macchako.moe/commissions/images/Full.png);"></div>
+                <div id="shadow1" class="comm" style="content:url(https://debaa.macchako.moe/commissions/images/shade1.png);"></div>
+                <div id="shadow2" class="comm" style="content:url(https://debaa.macchako.moe/commissions/images/shade2.png);"></div>
+                <div id="cropper" class="comm" style="content:url(https://debaa.macchako.moe/commissions/images/Crop.png);"></div>
+            </div>
+          </div>
+        </div>
 
 
 </body>
