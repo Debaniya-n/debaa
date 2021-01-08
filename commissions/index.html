@@ -1,60 +1,166 @@
 <!DOCTYPE html>
 <html>
-    <head>
-            <title>We are moving! - Macchako Lounge</title>
-            <link rel="stylesheet" href="css/Styles.css">
-            <link rel="icon" href="images/Logo x0.5.png" type="image/x-icon">
-    </head>
-    <body>
-            <div class="header">
-                    <h4>Macchako Lounge</h4>
-                    <h5>まっちゃこ・ラウンジ</h5>
-                    <!--ayayayayayayayayayyayayayayayayayayayayayayayayayayayayayayayayay-->
-                    
-            </div>
-            <div style='height: 5px;background-color:#8ce967;'>
-            </div>
-                
-                <!--<div id="container">
-                        <div id="navi"></div>
-                        <div id="infoi">
-                            <a href="index"><img src="images/Logo x0.5.png"></a>
-                        </div>
-                    </div>-->
-                <!--<div class="logo">
-                    <a href="debaniya-n.github.io"><img src="images/Logo x0.5.png"></a>
-                </div>-->
-                <!--<div class="spotlight" style='background-size: 100px;background-repeat: repeat;background-image: url(images/tile.png)'>
-            
-                <div class="menu" style="height: 60px;">-->
-                    <!--<ul>
-                        <li><a href="about">About</a></li>
-                        <li><a href="members">Members</a></li>
-                        <li><a href="event">Events</a></li>
-                        <li><a href="products">Products</a></li>
-                        <li><a href="extras">Extras</a></li>
-                    </ul>
-            </div>-->
-                
-    <div style='background-color:rgb(200, 200, 200);text-align: center;margin-bottom: 0;'>
-        <div style='text-align:center;display: inline-block;background-size:100px;background-image: url(images/tile.png);width:80%'>
-            <img src="images/move.png" style='width:50%;height: 50%;; display: inline-block;margin-top: 50px; margin-bottom: 50px;'>
-            <div style='background-color: rgba(0, 0, 0, 0.5); text-align: center;color:white;line-height: 20px;padding-top: 15px;padding-bottom: 15px;margin-bottom: 50px;'>
-                <h1 style="font-size: 320% ;color:#8ce967;text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-                -webkit-text-fill-color: #8ce967;
-                -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: white;"><b>We are moving!</b></h1>
-                <h5>Access to our site will be temporarily unavailable until further notice.</h5>
-            </div>
-        </div>
+
+  <head>
+    <title>We are moving! - Macchako Lounge</title>
+    <link rel="stylesheet" href="css/Styles.css">
+    <link rel="icon" href="images/Logo x0.5.png" type="image/x-icon">
+  </head>
+
+  <body>
+    <div class="header">
+      <h4>Macchako Lounge</h4>
+      <h5>まっちゃこ・ラウンジ</h5>
+      <!--ayayayayayayayayayyayayayayayayayayayayayayayayayayayayayayayayay-->
+
+    </div>
+    <div style='height: 5px;background-color:#8ce967;'>
     </div>
 
-   
-<div style="background-color: #8ce967; height: 5px;margin-top:-5px"></div>
+
+    <div style='background-color:rgb(200, 200, 200);text-align: center;margin-bottom: 0;'>
+      <div style='display: inline-block;background-size:100px;background-image: url(images/tile.png);width:80%'>
+        <div style="height:550px;color:white;text-align:left;background-color:#518159;padding:5%; width: 20%;float:left;">
+          <h1>Debaa's Commission Prices:</h1>
+
+          Size:<br>
+
+          <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="1">
+          <label for="size1">Bust Up</label><br>
+
+          <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="2" checked>
+          <label for="size2">Half Body</label><br>
+
+          <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="3">
+          <label for="size3">Full Body</label><br><br>
+
+          Type:<br>
+
+          <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="1">
+          <label for="size1">Lineart</label><br>
+
+          <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="2">
+          <label for="size2">Flat Color</label><br>
+
+          <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="3" checked>
+          <label for="size3">Full Color</label><br><br>
+
+          Figure:<br>
+          <input type="number" onclick="meow(this.value)" id="quantity" name="quantity" min="1" max="5" value="1">
+          <label for="quantity">Figures/Characters</label>
+          <br><br>
+
+          Price:<br>
+          USD <input type="number" id="price" value=35 disabled>
+          <br><br>
+
+          <div hidden>
+            <input type="text" id="v1" value="2" disabled><br>
+            <input type="text" id="v2" value="3" disabled><br>
+            <input type="text" id="switchy" value="23" disabled><br>
+            <input type="number" id="pirace" value=35 disabled>
+          </div>
+
+          <script>
+            function sizev(sv) {
+              document.getElementById("v1").value = sv;
+            }
+
+            function typev(tv) {
+              document.getElementById("v2").value = tv;
+            }
+
+            function pree() {
+              var one = document.getElementById("v1").value;
+              var two = document.getElementById("v2").value;
+              var three = one + two;
+              document.getElementById("switchy").value = three;
+            }
+
+            function aa() {
+              var uwu;
+              var owo = document.getElementById("switchy").value;
+              switch (owo) {
+                case "11":
+                  uwu = 10;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "12":
+                  uwu = 20;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "13":
+                  uwu = 30;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "21":
+                  uwu = 15;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "22":
+                  uwu = 25;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "23":
+                  uwu = 35;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "31":
+                  uwu = 25;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "32":
+                  uwu = 35;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                case "33":
+                  uwu = 50;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+                default:
+                  uwu = 0;
+                  document.getElementById("pirace").value = uwu;
+                  break;
+              }
+            }
+
+            function meow() {
+              var tyme
+              var usada = document.getElementById("pirace").value;
+              switch (tyme) {
+                case 1:
+                  document.getElementById("price").value = usada;
+                  break;
+                default:
+                  for (tyme = document.getElementById("quantity").value; tyme > 1; tyme--) {
+                    usada = usada / 2 * 3;
+                  }
+                  document.getElementById("price").value = usada;
+                  break;
+              }
+
+            }
+
+          </script>
+
+        </div>
+        <div style="height:100%; width: 300px;float:left;">
+            <div class="comm" style="content:url(images/Lineart.png);"></div>
+            <div class="comm" style="content:url(images/Flat.png);"></div>
+            <div class="comm" style="content:url(images/Full.png);"></div>
+            <div class="comm" style="content:url(images/shade1.png);"></div>
+            <div class="comm" style="content:url(images/shade2.png);"></div>
+            <div class="comm" style="content:url(images/Crop.png);"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="background-color: #8ce967; height: 5px;margin-top:-5px"></div>
     <div class="footer">
-                
-            <!--FOOOT-->
-            <!--<div class="socials">
+
+      <!--FOOOT-->
+      <!--<div class="socials">
                 <ul>
                     <li><a href="about">About</a></li>
                     <li><a href="members">Members</a></li>
@@ -63,18 +169,20 @@
                     <li><a href="extras">Extras</a></li>
                 </ul>
             </div>-->
-            <ul>
-                <li>
-                    <div class="footlog">
-                    <h4>Macchako Lounge</h4>
-                    <h5>まっちゃこ・ラウンジ</h5>
-                    </div>
-                </li>
-                <div class="copyright">
-                    <li><h6>Copyright © Macchako Lounge. All rights reserved.</h6></li>
-                </div>
-                <li>
-                    <!--<div class="mumbojumbo">
+      <ul>
+        <li>
+          <div class="footlog">
+            <h4>Macchako Lounge</h4>
+            <h5>まっちゃこ・ラウンジ</h5>
+          </div>
+        </li>
+        <div class="copyright">
+          <li>
+            <h6>Copyright © Macchako Lounge. All rights reserved.</h6>
+          </li>
+        </div>
+        <li>
+          <!--<div class="mumbojumbo">
                         <ul>
                             <li><a href="credits">Credits</a></li>
                             <li><a href="disclaimer">Disclaimer</a></li>
@@ -82,19 +190,19 @@
                             <li><a href="legal">Legal</a></li>
                         </ul>
                     </div>-->
-                </li>
-            </ul>
-                <!--cooooooooooooooooooooooooo-->
-        
-                <!--mononobenofooter-->
-        
-        </div>
-        
-        <!--Script di fork dari http://kenwheeler.github.io/slick/-->
-        <!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        </li>
+      </ul>
+      <!--cooooooooooooooooooooooooo-->
+
+      <!--mononobenofooter-->
+
+    </div>
+
+    <!--Script di fork dari http://kenwheeler.github.io/slick/-->
+    <!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="slick/slick.min.js"></script>
         <script type="text/javascript" src="js/initialization.js"></script>-->
-    </body>
-    
+  </body>
+
 </html>
