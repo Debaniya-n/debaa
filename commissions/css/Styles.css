@@ -228,7 +228,7 @@ body{
 }
 
 #lineart {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -237,7 +237,7 @@ body{
 } 
 
 #flatc {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -246,7 +246,7 @@ body{
 }
 
 #fullc {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -255,7 +255,7 @@ body{
 }
 
 #shadow1 {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -264,7 +264,7 @@ body{
 }
 
 #shadow2 {
-	opacity: 0;
+	opacity: 1;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
