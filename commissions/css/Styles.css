@@ -291,6 +291,7 @@ body{
 }
 
 #cropper {
+	overflow:hidden;
 	margin-top:20%;
 	opacity:0;
 	-webkit-transition: all 0.5s ease-in-out;
