@@ -6,6 +6,11 @@
 	url("/css/fonts/UDDigiKyokashoNK-B.svg") format("svg");
 	}
   
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
 body{
 	margin: 0;
     background-color: #202420;
