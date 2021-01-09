@@ -12,6 +12,7 @@ html, body {
 }
 
 body{
+	position: relative;
 	margin: 0;
     background-color: #202420;
 	font-family: "UD Digi Kyokasho NK-B"
