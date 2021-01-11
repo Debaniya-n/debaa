@@ -33,7 +33,7 @@ LAppLive2DManager.prototype.changeModel = function(gl)
     {
         // モデル切り替えボタンが押された時、モデルを再読み込みする
         this.reloadFlg = false;
-        var no = parseInt(this.count % 5);
+        var no = parseInt(this.count % 2);
 
         var thisRef = this;
         switch (no)
@@ -48,9 +48,9 @@ LAppLive2DManager.prototype.changeModel = function(gl)
             case 1: // しずく
                 this.releaseModel(0, gl);
                 this.createModel();
-                this.models[0].load(gl, LAppDefine.MODEL_NIA_B);
+                this.models[0].load(gl, LAppDefine.MODEL_MEIDO);
                 break;
-            case 2: // わんこ
+            /*case 2: // わんこ
                 this.releaseModel(0, gl);
                 this.createModel();
                 this.models[0].load(gl, LAppDefine.MODEL_WANKO);
@@ -69,7 +69,7 @@ LAppLive2DManager.prototype.changeModel = function(gl)
                     thisRef.createModel();
                     thisRef.models[1].load(gl, LAppDefine.MODEL_HARU_B);
                 });
-                break;
+                break;*/
             default:
                 break;
         }
