@@ -48,7 +48,7 @@ LAppLive2DManager.prototype.changeModel = function(gl)
             case 1: // しずく
                 this.releaseModel(0, gl);
                 this.createModel();
-                this.models[0].load(gl, LAppDefine.MODEL_SHIZUKU);
+                this.models[0].load(gl, LAppDefine.MODEL_NIA_B);
                 break;
             case 2: // わんこ
                 this.releaseModel(0, gl);

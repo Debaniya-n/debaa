@@ -33,7 +33,7 @@ var LAppDefine = {
     MODEL_NIA : "assets/live2d/nia/nia.model.json",
     MODEL_HARU_A : "assets/live2d/haru/haru_01.model.json",
     MODEL_HARU_B : "assets/live2d/haru/haru_02.model.json",
-    MODEL_SHIZUKU : "assets/live2d/shizuku/shizuku.model.json",
+    MODEL_NIA_B : "assets/live2d/model/model.model.json",
     MODEL_WANKO : "assets/live2d/wanko/wanko.model.json",
     MODEL_EPSILON : "assets/live2d/Epsilon2.1/Epsilon2.1.model.json",
 
