@@ -33,7 +33,7 @@ LAppLive2DManager.prototype.changeModel = function(gl)
     {
         // モデル切り替えボタンが押された時、モデルを再読み込みする
         this.reloadFlg = false;
-        var no = parseInt(this.count % 2);
+        var no = parseInt(this.count % 4);
 
         var thisRef = this;
         switch (no)
@@ -43,21 +43,28 @@ LAppLive2DManager.prototype.changeModel = function(gl)
                 this.releaseModel(0, gl);
                 // OpenGLのコンテキストをセット
                 this.createModel();
+                this.models[0].load(gl, LAppDefine.MODEL_DEBA);
+                document.getElementById("glbg").src = "assets/image/DebaBG.mp4";
+                break;
+            case 1: // わんこ
+                this.releaseModel(0, gl);
+                this.createModel();
+                this.models[0].load(gl, LAppDefine.MODEL_MAICHI);
+                document.getElementById("glbg").src = "assets/image/MaichiBG.mp4";
+                break;
+            case 2: // しずく
+                this.releaseModel(0, gl);
+                this.createModel();
                 this.models[0].load(gl, LAppDefine.MODEL_NIA);
                 document.getElementById("glbg").src = "assets/image/NiaBG.mp4";
                 break;
-            case 1: // しずく
+            case 3: // わんこ
                 this.releaseModel(0, gl);
                 this.createModel();
                 this.models[0].load(gl, LAppDefine.MODEL_MEIDO);
                 document.getElementById("glbg").src = "assets/image/MeidoBG.mp4";
                 break;
-            /*case 2: // わんこ
-                this.releaseModel(0, gl);
-                this.createModel();
-                this.models[0].load(gl, LAppDefine.MODEL_WANKO);
-                break;
-            case 3: // Epsilon2.1モデル
+            /*case 3: // Epsilon2.1モデル
                 this.releaseModel(0, gl);
                 this.createModel();
                 this.models[0].load(gl, LAppDefine.MODEL_EPSILON);
