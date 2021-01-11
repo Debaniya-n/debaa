@@ -30,7 +30,7 @@ var LAppDefine = {
     BACK_IMAGE_NAME : "assets/image/back_class_normal.png",
 
     //  モデル定義
-    MODEL_NIA : "assets/live2d/nia/nia.model.json",
+    MODEL_NIA : "assets/live2d/nia/model.model.json",
     MODEL_HARU_A : "assets/live2d/haru/haru_01.model.json",
     MODEL_HARU_B : "assets/live2d/haru/haru_02.model.json",
     MODEL_NIA_B : "assets/live2d/model/model.model.json",

@@ -1,8 +1,0 @@
-{
-	"type": "Live2D Model Setting",
-	"name": "nia",
-	"model": "nia.moc",
-	"textures": [
-		"nia.1024/texture_00.png"
-	]
-}
