@@ -47,10 +47,10 @@ var Simple = function() {
     // Epsilon 2.1モデル
     this.modelDef = {
         "type":"Live2D Model Setting",
-        "name":"Epsilon2.1",
-        "model":"assets/Epsilon2.1/Epsilon2.1.moc",
+        "name":"nia",
+        "model":"assets/nia/nia.moc",
         "textures":[
-            "assets/Epsilon2.1/Epsilon2.1.2048/texture_00.png",
+            "assets/nia/nia.1024/texture_00.png",
         ]
     };
 
