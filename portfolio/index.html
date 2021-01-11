@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Portfolio - Debaa | Macchako Lounge</title>
+    <link rel="stylesheet" href="css/Styles.css">
+    <link rel="icon" href="images/Logo x0.5.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=1080">
+    <!-- Live2D Library -->
+    <script src="lib/live2d.min.js"></script>
+
+    <!-- Live2D Framework -->
+    <script src="framework/Live2DFramework.js"></script>
+    
+    <!-- User's Script -->
+    <script src="src/utils/MatrixStack.js"></script>
+    <script src="src/utils/ModelSettingJson.js"></script>
+    <script src="src/PlatformManager.js"></script>
+    <script src="src/LAppDefine.js"></script>
+    <script src="src/LAppModel.js"></script>
+    <script src="src/LAppLive2DManager.js"></script>
+    <script src="src/SampleApp1.js"></script>
+  </head>
+
+  <body style="overflow-y:hidden" onload="sampleApp1()">
+    <div class="header">
+      <h4>Debaa | Macchako Lounge</h4>
+      <h5>まっちゃこ・ラウンジ</h5>
+      <!--ayayayayayayayayayyayayayayayayayayayayayayayayayayayayayayayayay-->
+
+    </div>
+    <div style='height: 5px;background-color:#8ce967;'>
+    </div>
+
+    <div style="width: 100%;position: relative;overflow: hidden;">
+      <video id="glbg" class="videobg" autoplay loop style="width:100%; position: absolute;"><source src=assets/image/NiaBG.mp4><source></video>
+      <canvas id="glcanvas" width="1280" height="600" style="width: 100%;position: absolute;"></canvas>
+      <div style="position: absolute;background-color: rgba(20,20,20,0.9);width: 30%;height: 100%;margin-left: 60%;text-align: left;color: white;padding:5%">
+        <div id="metadatae">
+
+        <img src="images/ico_nia.png" style="height:100px; border-radius:50%; text-align: center;">
+        <h1>"Nia"</h1>
+        <h2>The Lovely Airhead</h2>
+
+        Date of Creation: December 9th 2020<br><br>
+        Debut: December 12th 2020<br><br>
+        Status: Active<br><br>
+        Channel: <a href="https://www.twitch.tv/niatheairhead" style="color: violet;text-decoration: none;">niatheairhead</a><br><br>
+        Description: <br>
+        An early prototype of deba's second generation Live2D model.
+        Unlike the other earlier models,
+        She has more deformers instead of artmeshes assigned to parameters, Resulting in lower cpu usage.
+        </div>
+
+        <p style="text-align: right;">
+          <style>
+            .active:active{
+              border: none;
+              outline: none;
+            }
+          </style>
+          <button id="btnChange" onclick="metanext()" class="active" style="font-family: 'UD Digi Kyokasho NK-B';color:#8ce967;background-color: rgba(0,0,0,0);border: none;">Next Model</button>
+        </p>
+        <input type="number" hidden value="2" id="switcher"></input>
+
+      </div>
+      <canvas width="1280" height="590" style="width: 100%;"></canvas>
+    </div>
+
+    <script>
+      function metanext(){
+        var owo = document.getElementById("switcher").value; 
+          switch(owo){
+            case "1" :
+              document.getElementById("metadatae").innerHTML = '<img src="images/ico_nia.png" style="height:100px; border-radius:50%; text-align: center;"><h1>"Nia"</h1><h2>The Lovely Airhead</h2>Date of Creation: December 9th 2020<br><br>Debut: December 12th 2020<br><br>Status: Active<br><br>Channel: <a href="https://www.twitch.tv/niatheairhead" style="color: violet;text-decoration: none;">niatheairhead</a><br><br>Description: <br>An early prototype of deba’s second generation of Live2D models. Unlike the other earlier models, She has more deformers instead of artmeshes assigned to parameters, Resulting in lower cpu usage';
+              document.getElementById("switcher").value = "2";
+              break;
+
+            case "2" : 
+              document.getElementById("metadatae").innerHTML = '<img src="images/ico_meido.png" style="height:100px; border-radius:50%; text-align: center;"><h1>"Spare"</h1><h2>The Spare Maid</h2>Date of Creation: December 22th 2020<br><br>Debut: December 23th 2020<br><br>Status: Active<br><br>Channel: <a href="https://www.twitch.tv/maidspare" style="color: violet;text-decoration: none;">maidspare</a><br><br>Description: <br>The second prototype of deba’s second generation of Live2d models. She’s the very first model to ever got her 2d physics implemented. While also being the first model to have a toggleable expression';
+              document.getElementById("switcher").value = "1";
+              break;
+            default:
+              break;
+          }
+      }
+    </script>
+
+    
+  
+        <div style="background-color:#8ce967;height:5px;width:100%;margin-top: 0px;">
+        </div>
+            <div class="contents" style="text-align: center;padding-bottom:0px;width:100%;">
+                <div style="display:inline-block;text-align: center; width:550px;background-color: white;">
+                    <h1>Lorem Ipsum</h1>
+                    <h2>dolor sit amet</h2><br>
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                    mollit anim id est laborum.
+                </div><br>
+                <img style="width:200px" src="images/baba.png">
+                <div style="background-color: #8ce967; height: 5px;margin-top:-5px"></div>
+                <div class="footer">
+        
+                    <!--FOOOT-->
+                    <!--<div class="socials">
+                        <ul>
+                        <li><a href="about">About</a></li>
+                        <li><a href="members">Members</a></li>
+                        <li><a href="event">Events</a></li>
+                       <li><a href="products">Products</a></li>
+                        <li><a href="extras">Extras</a></li>
+                        </ul>
+                </div>-->
+          <ul>
+            <li>
+              <div class="footlog">
+                <h4>Macchako Lounge</h4>
+                <h5>まっちゃこ・ラウンジ</h5>
+              </div>
+            </li>
+            <div class="copyright">
+              <li>
+                <h6>Copyright © Macchako Lounge. All rights reserved.</h6>
+              </li>
+            </div>
+            <li>
+              <!--<div class="mumbojumbo">
+                            <ul>
+                                <li><a href="credits">Credits</a></li>
+                                <li><a href="disclaimer">Disclaimer</a></li>
+                                <li><a href="sources">Source Code</a></li>
+                                <li><a href="legal">Legal</a></li>
+                            </ul>
+                        </div>-->
+            </li>
+          </ul>
+          <!--cooooooooooooooooooooooooo-->
+    
+          <!--mononobenofooter-->
+    
+        </div>
+            </div>
+        
+    
+    <!--<div style="background-color: #8ce967; height: 5px;margin-top:-5px"></div>
+    <div class="footer">-->
+
+      <!--FOOOT-->
+      <!--<div class="socials">
+                <ul>
+                    <li><a href="about">About</a></li>
+                    <li><a href="members">Members</a></li>
+                    <li><a href="event">Events</a></li>
+                    <li><a href="products">Products</a></li>
+                    <li><a href="extras">Extras</a></li>
+                </ul>
+            </div>-->
+      <!--<ul>
+        <li>
+          <div class="footlog">
+            <h4>Macchako Lounge</h4>
+            <h5>まっちゃこ・ラウンジ</h5>
+          </div>
+        </li>
+        <div class="copyright">
+          <li>
+            <h6>Copyright © Macchako Lounge. All rights reserved.</h6>
+          </li>
+        </div>
+        <li>-->
+          <!--<div class="mumbojumbo">
+                        <ul>
+                            <li><a href="credits">Credits</a></li>
+                            <li><a href="disclaimer">Disclaimer</a></li>
+                            <li><a href="sources">Source Code</a></li>
+                            <li><a href="legal">Legal</a></li>
+                        </ul>
+                    </div>-->
+        <!--</li>
+      </ul>
+      
+    </div>-->
+
+    <!--Script di fork dari http://kenwheeler.github.io/slick/-->
+    <!--<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script type="text/javascript" src="js/initialization.js"></script>-->
+  </body>
+
+</html>

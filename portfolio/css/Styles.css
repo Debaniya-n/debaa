@@ -1,0 +1,555 @@
+@font-face {
+	font-family: "UD Digi Kyokasho NK-B";
+	src: url("/css/fonts/UDDigiKyokashoNK-B.eot");
+	src: url("/css/fonts/UDDigiKyokashoNK-B.woff") format("woff"),
+	url("/css/fonts/UDDigiKyokashoNK-B.otf") format("opentype"),
+	url("/css/fonts/UDDigiKyokashoNK-B.svg") format("svg");
+	}
+  
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+body{
+	position: relative;
+	margin: 0;
+    background-color: #202420;
+	font-family: "UD Digi Kyokasho NK-B";
+	overflow-y:hidden
+}
+
+.header{
+    background-color: #202420;
+    color: #8ce967;
+    font-family:"UD Digi Kyokasho NK-B";
+    padding: 10px 10px 1px 150px;
+    line-height: 1px
+}   
+.logo{
+    text-align: center
+}
+
+
+.menu ul{
+    font-family: "UD Digi Kyokasho NK-B";
+    text-align: right;
+    background-color: rgba(0,0,0,0.7);
+    margin: 0px;
+    padding: 25px 150px 25px 0px;
+}
+
+.title{
+	color:white;
+	text-align: center;
+	vertical-align: middle;
+	width:425px;
+	margin-left: 250px;
+	display:inline-block;
+	padding: bottom 50px;
+	line-height:75px
+}
+
+/**.title{
+	color:white;
+	text-align: middle;
+	vertical-align: middle;
+	width:425px;
+	display:inline-block;
+	padding: bottom 50px;
+	line-height:75px
+}**/
+
+#container {
+    margin-left:160px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+  }
+  #navi,
+  #infoi {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #infoi {
+    z-index: 10;
+  }
+
+.menu li{
+    display: inline;
+    margin: 20px;
+}
+
+.menu li a{
+    color: white;
+    text-decoration: none
+}
+
+.menu li a:hover{
+    color:#8ce967
+}
+
+.centerer{
+	height:530px;
+	text-align: center;
+}
+
+.carousel{
+    color:white;
+    margin-top:10px;
+    margin-bottom:100px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+    line-height:200px;
+    padding: 0px 0px 50px 0px;
+    width:940px;
+    height: 438px;
+    display:inline-block;
+}
+
+.members{
+    color:white;
+    margin-top:10px;
+    margin-bottom:100px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+    line-height:200px;
+    padding: 0px 0px 50px 0px;
+    width:100%;
+    height: 200px;
+    display:inline-block;
+}
+
+.members img{
+	display:block;
+	margin:auto;
+	height:550px
+}
+
+.contents{
+    text-align: center;    
+    vertical-align: top;
+    padding: 20px 0px 20px 0px;
+    background-color:white;
+    height:100%;
+}
+
+.tabs{
+	border-radius: 4px;
+	Width:300px;
+    background-color:rgba(0,0,0,0);
+    height:100%;
+    display:inline-block;
+    /**border: solid 1px black;**/
+    vertical-align: top;
+    text-align: left
+}
+
+
+.mrgn{
+	margin-left:15px
+}
+.mrgnd{
+	margin-left:60px
+}
+
+.footer{
+    background-color:#202420;
+    padding:20px 0px 20px 0px;
+}
+
+.footer li{
+    display:inline;
+}
+
+.footer ul{
+    font-family: "UD Digi Kyokasho NK-B";
+    text-align: center;
+    margin: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.footlog{
+    color: #8ce967;
+    line-height: 1px
+}
+
+.copyright{
+	color:gray;
+	height:25px
+}
+
+.socials ul{
+    font-family: "UD Digi Kyokasho NK-B";
+    text-align: center;
+    /**background-color: rgba(0,0,0,0.7);**/
+    margin: 0px;
+	padding: 0px;
+}
+
+.socials li{
+    display: inline;
+    margin: 20px;
+}
+
+.socials li a{
+    color: white;
+    text-decoration: none
+}
+
+.socials li a:hover{
+    color:#8ce967
+}
+
+.mumbojumbo ul{
+    font-family: "UD Digi Kyokasho NK-B";
+    text-align: center;
+    /**background-color: rgba(0,0,0,0.7);**/
+    margin: 0px;
+	padding: 0px 0px 30px 0px;
+	font-size: 50%;
+}
+
+.mumbojumbo li{
+    display: inline;
+    margin: 5px;
+}
+
+.mumbojumbo li a{
+    color: white;
+    text-decoration: none
+}
+
+.mumbojumbo li a:hover{
+    color:#8ce967
+}
+
+.comm{
+	height:700px;
+	position: absolute;
+}
+
+#lineart {
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+} 
+
+#flatc {
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#fullc {
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#shadow1 {
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#shadow2 {
+	opacity: 1;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#p1 {
+	opacity: 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#p2 {
+	opacity: 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#cropper {
+	overflow:hidden;
+	margin-top:20%;
+	opacity:0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
+/** nyerah ku sama ini
+a.twitter-timeline {
+	font-family: "UD Digi Kyokasho NK-B"
+  } **/
+
+/** Nyomot dari malasngoding.com karena saya malas ngoding :v -deba **/
+/** eh akhirnya gak kepake juga **/
+
+/**.slider { 
+	border: 0px solid #efefef; 
+	position: relative; 
+	overflow: hidden; 
+	background: #efefef;
+}
+ 
+.slider { 
+	margin:0px auto;
+	width: 940px;
+	height: 438px; 
+}
+ 
+.slidercontents img { 
+	width: 940px;
+	height: 438px; 
+	float: left;
+}
+ 
+.slidercontents { 
+	position: absolute; 
+	width:2820px;  
+ **/
+	/*pengaturan durasi lama tampil gambar bisa di atur di bawah ini*/
+	/**animation-name:slider;
+	animation-duration:16s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+	-webkit-animation-name:slider;
+	-webkit-animation-duration:16s;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count:infinite;
+	-moz-animation-name:slider;
+	-moz-animation-duration:16s;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-iteration-count:infinite;
+	-o-animation-name:slider;
+	-o-animation-duration:16s;
+	-o-animation-timing-function: ease-in-out;
+	-o-animation-iteration-count:infinite;
+}**/
+ 
+ 
+/*saat gambar di hover oleh cursor mouse maka berhenti slide*/
+/**.slidercontents:hover { 
+	-webkit-animation-play-state:paused; 
+	-moz-animation-play-state:paused; 
+	-o-animation-play-state:paused; 
+	animation-play-state:paused; }
+ 
+.slidercontents img { 
+	float: right; 
+}
+ 
+.slider:after { 
+	font-size: 150px; 
+	position: absolute; 
+	z-index: 12; 
+	color: rgba(255,255,255, 0); 
+	left: 300px; top: 80px; 
+	-webkit-transition: 1s all ease-in-out; 
+	-moz-transition: 1s all ease-in-out; 
+	transition: 1s all ease-in-out; 
+}
+ 
+.slider:hover:after { 
+	color: rgba(255,255,255, 0.6);  
+}
+ 
+ 
+@-moz-keyframes slider {     
+	0% {
+		left: 0; opacity: 0; 
+	}     
+	2% {
+		opacity: 1; 
+	}     
+	20% {
+		left: 0; opacity: 1; 
+	}     
+	21% {
+		opacity: 0; 
+	}     
+	24% {
+		opacity: 0; 
+	}     
+	25% {
+		left: -940px; opacity: 1; 
+	}       
+	45% {
+		left: -940px; opacity: 1; 
+	}     
+	46% {
+		opacity: 0; 
+	}     
+	48% {
+		opacity: 0; 
+	}     
+	50% {
+		left: -1880px; opacity: 1; 
+	}     
+	70% {
+		left: -1880px; opacity: 1; 
+	}     
+	72% {
+		opacity: 0; 
+	}     
+	74% {
+		opacity: 0; 
+	}    
+	75% {
+		left: -2820px; opacity: 1; 
+	}   	
+	95% {
+		left: -2820px; opacity: 1; 
+	}   	
+	97% { 
+		left: -2820px; opacity: 0;
+	}   	
+	100% {
+		left: 0; opacity: 0; 
+	}
+} 
+ 
+@-webkit-keyframes slider {     
+	0% {
+		left: 0; opacity: 0; 
+	}     
+	2% {
+		opacity: 1; 
+	}     
+	20% {
+		left: 0; opacity: 1; 
+	}     
+	21% {
+		opacity: 0; 
+	}     
+	24% {
+		opacity: 0; 
+	}     
+	25% {
+		left: -940px; opacity: 1; 
+	}       
+	45% {
+		left: -940px; opacity: 1; 
+	}     
+	46% {
+		opacity: 0; 
+	}     
+	48% {
+		opacity: 0; 
+	}     
+	50% {
+		left: -1880px; opacity: 1; 
+	}     
+	70% {
+		left: -1880px; opacity: 1; 
+	}     
+	72% {
+		opacity: 0; 
+	}     
+	74% {
+		opacity: 0; 
+	}    
+	75% {
+		left: -2820px; opacity: 1; 
+	}   	
+	95% {
+		left: -2820px; opacity: 1; 
+	}   	
+	97% { 
+		left: -2820px; opacity: 0;
+	}   	
+	100% {
+		left: 0; opacity: 0; 
+	}
+} 
+ 
+ 
+@keyframes slider {     
+	0% {
+		left: 0; opacity: 0; 
+	}     
+	2% {
+		opacity: 1; 
+	}     
+	20% {
+		left: 0; opacity: 1; 
+	}     
+	21% {
+		opacity: 0; 
+	}     
+	24% {
+		opacity: 0; 
+	}     
+	25% {
+		left: -940px; opacity: 1; 
+	}     
+	45% {
+		left: -940px; opacity: 1; 
+	}     
+	46% {
+		opacity: 0; 
+	}     
+	48% {
+		opacity: 0; 
+	}     
+	50% {
+		left: -1880px; opacity: 1; 
+	}     
+	70% {
+		left: -1880px; opacity: 1; 
+	}     
+	72% {
+		opacity: 0; 
+	}     
+	74% {
+		opacity: 0; 
+	}    
+	75% {
+		left: -2820px; opacity: 1; 
+	}   	
+	95% {
+		left: -2820px; opacity: 1; 
+	}   	
+	97% { 
+		left: -2820px; opacity: 0; 
+	} 
+ 
+	100% {
+		left: 0; opacity: 0; 
+	}
+}**/
