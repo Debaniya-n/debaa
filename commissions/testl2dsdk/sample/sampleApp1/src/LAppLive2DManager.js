@@ -43,7 +43,7 @@ LAppLive2DManager.prototype.changeModel = function(gl)
                 this.releaseModel(0, gl);
                 // OpenGLのコンテキストをセット
                 this.createModel();
-                this.models[0].load(gl, LAppDefine.MODEL_HARU);
+                this.models[0].load(gl, LAppDefine.MODEL_NIA);
                 break;
             case 1: // しずく
                 this.releaseModel(0, gl);
