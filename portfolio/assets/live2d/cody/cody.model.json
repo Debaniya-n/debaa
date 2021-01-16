@@ -1,15 +1,15 @@
 {
 	"type": "Live2D Model Setting",
-	"name": "maichi",
-	"model": "maichi.moc",
+	"name": "cody",
+	"model": "cody.moc",
 	"textures": [
-		"maichi.1024/texture_00.png"
+		"cody.2048/texture_00.png"
 	],
 	"layout":
 	{
 		"center_x":-0.4,
-		"y":0.47,
-		"width":0.875
+		"y":0.45,
+		"width":0.95
 	},
 	"expressions":[
 		{"name":"f04.exp.json","file":"expressions/f04.exp.json"},

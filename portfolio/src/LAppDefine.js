@@ -36,6 +36,7 @@ var LAppDefine = {
     MODEL_MEIDO : "assets/live2d/meido/meido.model.json",
     MODEL_DEBA : "assets/live2d/deba/deba.model.json",
     MODEL_MAICHI : "assets/live2d/maichi/maichi.model.json",
+    MODEL_CODY : "assets/live2d/cody/cody.model.json",
 
     // 外部定義ファイル(json)と合わせる
     MOTION_GROUP_IDLE : "idle", // アイドリング
