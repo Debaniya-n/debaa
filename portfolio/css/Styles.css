@@ -308,9 +308,22 @@ body{
 	transition: all 0.5s ease-in-out;
 }
 
+@keyframes slide {
+    from{
+        background-position:100vw;
+    }
+    to{
+        background-position:-100vw;
+    }
+}
 
-
-
+#mango{
+    width:100%;
+    height:37.5vw;
+	background:url(../images/comiku.png);
+	background-size: 100vw;
+    animation: slide 120s linear infinite;
+}
 
 /** nyerah ku sama ini
 a.twitter-timeline {
