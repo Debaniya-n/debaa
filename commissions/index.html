@@ -60,41 +60,54 @@
 
           Size:<br>
 
-          <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="1">
+          <input type="radio" onclick="sizev(this.value);pree();aa();meow();damnson();" name="size" value="1">
           <label for="size1">Bust Up</label><br>
 
-          <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="2">
+          <input type="radio" onclick="sizev(this.value);pree();aa();meow();damnson();" name="size" value="2">
           <label for="size2">Half Body</label><br>
 
-          <input type="radio" onclick="sizev(this.value);pree();aa();meow();" name="size" value="3" checked>
+          <input type="radio" onclick="sizev(this.value);pree();aa();meow();damnson();" name="size" value="3" checked>
           <label for="size3">Full Body</label><br><br>
 
           Type:<br>
 
-          <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="1">
+          <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="1">
           <label for="size1">Lineart</label><br>
 
-          <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="2">
+          <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="2">
           <label for="size2">Flat Color</label><br>
 
-          <input type="radio" onclick="typev(this.value);pree();aa();meow();" name="type" value="3" checked>
+          <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="3" checked>
           <label for="size3">Full Color</label><br><br>
 
           Figure:<br>
-          <input type="number" onclick="meow(this.value)" id="quantity" name="quantity" min="1" max="5" value="1">
+          <input type="number" onclick="meow(this.value);damnson();" id="quantity" name="quantity" min="1" max="5" value="1">
           <label for="quantity">Figures/Characters</label>
           <br><br>
 
+          Work:<br>
+
+          <input type="radio" onclick="workv(this.value);" name="work" value="1" checked>
+          <label for="size1">Safe</label><br>
+
+          <input type="radio" onclick="workv(this.value);" name="work" value="2">
+          <label for="size2">Risque</label><br>
+
+          <input type="radio" onclick="workv(this.value);" name="work" value="3">
+          <label for="size2">NSFW</label><br><br>
+
           Price:<br><div style="font-size: 20pt;position: absolute;">
-          USD <input style="font-family:'UD Digi Kyokasho NK-B';color: white;background:none;outline: none;border: none;font-size: 20pt;" type="number" id="price" value=50 disabled>
+          USD <input style="font-family:'UD Digi Kyokasho NK-B';color: white;background:none;outline: none;border: none;font-size: 20pt;" type="number" id="realprice" value=100 disabled>
           </div>
           <br><br>
 
           <div hidden>
             <input type="text" id="v1" value="3" disabled><br>
             <input type="text" id="v2" value="3" disabled><br>
-            <input type="text" id="switchy" value="33" disabled><br>
-            <input type="number" id="pirace" value=50 disabled>
+            <input type="text" id="v3" value="1" disabled><br>
+            <input type="text" id="switchy" value="33" disabled><br> <!--commish type combination-->
+            <input type="number" id="pirace" value=100 disabled> <!--value before charcount modifier-->
+            <input type="number" id="price" value=100 disabled> <!--value after modifier-->
           </div>
 
           <script>
@@ -106,6 +119,11 @@
               document.getElementById("v2").value = tv;
             }
 
+            function workv(wv) {
+              document.getElementById("v3").value = wv;
+              damnson();
+            }
+
             function pree() {
               var one = document.getElementById("v1").value;
               var two = document.getElementById("v2").value;
@@ -113,80 +131,156 @@
               document.getElementById("switchy").value = three;
             }
 
+            function damnson() {
+              var wav = document.getElementById("v3").value;
+              var the = document.getElementById("price").value;
+              switch(wav){
+                case "1":
+                  document.getElementById("realprice").value = the;
+                  document.getElementById("shadow1").style.content = "url(images/shade1.png)";
+                  document.getElementById("shadow2").style.content = "url(images/shade2.png)";
+                  document.getElementById("lineart").style.content = "url(images/Lineart.png)";
+                  document.getElementById("flatc").style.content = "url(images/Flat.png)";
+                  document.getElementById("fullc").style.content = "url(images/Full.png)";
+                  document.getElementById("shadow1").style.filter = "blur(0px)";
+                  document.getElementById("shadow2").style.filter = "blur(0px)";
+                  document.getElementById("lineart").style.filter = "blur(0px)";
+                  document.getElementById("flatc").style.filter = "blur(0px)";
+                  document.getElementById("fullc").style.filter = "blur(0px)";
+                  document.getElementById("foggers").style.filter = "blur(0px)";
+                  $('#foggers').css('opacity', 0);
+                  break;
+                case "2":
+                  document.getElementById("realprice").value = the*0.3+parseInt(the);
+                  document.getElementById("shadow1").style.content = "url(images/shade1r.png)";
+                  document.getElementById("shadow2").style.content = "url(images/shade2r.png)";
+                  document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
+                  document.getElementById("flatc").style.content = "url(images/Flatr.png)";
+                  document.getElementById("fullc").style.content = "url(images/Fullr.png)";
+                  document.getElementById("shadow1").style.filter = "blur(0px)";
+                  document.getElementById("shadow2").style.filter = "blur(0px)";
+                  document.getElementById("lineart").style.filter = "blur(0px)";
+                  document.getElementById("flatc").style.filter = "blur(0px)";
+                  document.getElementById("fullc").style.filter = "blur(0px)";
+                  document.getElementById("foggers").style.filter = "blur(0px)";
+                  $('#foggers').css('opacity', 0);
+                  break;
+                case "3":
+                  document.getElementById("realprice").value = the/2*3;
+                  document.getElementById("shadow1").style.content = "url(images/shade1r.png)";
+                  document.getElementById("shadow2").style.content = "url(images/shade2r.png)";
+                  document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
+                  document.getElementById("flatc").style.content = "url(images/Flatr.png)";
+                  document.getElementById("fullc").style.content = "url(images/Fullr.png)";
+                  document.getElementById("shadow1").style.filter = "blur(5px)";
+                  document.getElementById("shadow2").style.filter = "blur(5px)";
+                  document.getElementById("lineart").style.filter = "blur(5px)";
+                  document.getElementById("flatc").style.filter = "blur(5px)";
+                  document.getElementById("fullc").style.filter = "blur(5px)";
+                  document.getElementById("foggers").style.filter = "blur(5px)";
+                  $('#foggers').css('opacity', 1);
+                  break;
+                default:
+                  document.getElementById("realprice").value = the;
+                  document.getElementById("shadow1").style.content = "url(images/shade1.png)";
+                  document.getElementById("shadow2").style.content = "url(images/shade2.png)";
+                  document.getElementById("lineart").style.content = "url(images/Lineart.png)";
+                  document.getElementById("flatc").style.content = "url(images/Flat.png)";
+                  document.getElementById("fullc").style.content = "url(images/Full.png)";
+                  document.getElementById("shadow1").style.filter = "blur(0px)";
+                  document.getElementById("shadow2").style.filter = "blur(0px)";
+                  document.getElementById("lineart").style.filter = "blur(0px)";
+                  document.getElementById("flatc").style.filter = "blur(0px)";
+                  document.getElementById("fullc").style.filter = "blur(0px)";
+                  document.getElementById("foggers").style.filter = "blur(0px)";
+                  $('#foggers').css('opacity', 0);
+                  break;
+              }
+            }
+
             function aa() {
               var uwu;
               var owo = document.getElementById("switchy").value;
               switch (owo) {
-                case "11":
-                  uwu = 10;
+                case "11": //bust up - line
+                  uwu = 40;
                   $('#flatc').css('opacity', 0);
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 0);
                   $('#cropper').css('opacity', 1);
+                  document.getElementById("foggers").style.content = "url(images/fogg.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "12":
-                  uwu = 20;
+                case "12": //bust up - flat
+                  uwu = 50; 
                   $('#flatc').css('opacity', 1);
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 0);
                   $('#cropper').css('opacity', 1);
+                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "13":
-                  uwu = 30;
+                case "13": //bust up - full
+                  uwu = 60;
                   $('#flatc').css('opacity', 0);
                   $('#fullc').css('opacity', 1);
                   $('#cropper').css('margin-top', 0);
                   $('#cropper').css('opacity', 1);
+                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "21":
-                  uwu = 15;
+                case "21": //half bod - line
+                  uwu = 55;
                   $('#flatc').css('opacity', 0);
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 170);
                   $('#cropper').css('opacity', 1);
+                  document.getElementById("foggers").style.content = "url(images/fogg.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "22":
-                  uwu = 25;
+                case "22": //half bod - flat
+                  uwu = 65;
                   $('#flatc').css('opacity', 1);
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 170);
                   $('#cropper').css('opacity', 1);
+                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "23":
-                  uwu = 35;
+                case "23": //half bod - full
+                  uwu = 75;
                   $('#flatc').css('opacity', 0);
                   $('#fullc').css('opacity', 1);
                   $('#cropper').css('margin-top', 170);
                   $('#cropper').css('opacity', 1);
+                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "31":
-                  uwu = 25;
+                case "31": //full bod - line
+                  uwu = 65;
                   $('#flatc').css('opacity', 0);
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 400);
                   $('#cropper').css('opacity', 0);
+                  document.getElementById("foggers").style.content = "url(images/fogg.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "32":
-                  uwu = 35;
+                case "32": //full bod - flat
+                  uwu = 75;
                   $('#flatc').css('opacity', 1);
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 400);
                   $('#cropper').css('opacity', 0);
+                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
-                case "33":
-                  uwu = 50;
+                case "33": //full bod - full
+                  uwu = 100;
                   $('#flatc').css('opacity', 0);
                   $('#fullc').css('opacity', 1);
                   $('#cropper').css('margin-top', 400);
                   $('#cropper').css('opacity', 0);
+                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 default:
@@ -255,10 +349,12 @@
           <div id="lineart" class="comm" style="content:url(images/Lineart.png);"></div>
           <div id="flatc" class="comm" style="content:url(images/Flat.png);"></div>
           <div id="fullc" class="comm" style="content:url(images/Full.png);"></div>
+          <div id="foggers" class="comm" style="content:url(images/fog.png);opacity:0;"></div>
           <div id="shadow1" class="comm" style="content:url(images/shade1.png);"></div>
           <div id="shadow2" class="comm" style="content:url(images/shade2.png);"></div>
           <div id="p1" class="comm" style="content:url(images/p1.png);"></div>
           <div id="p2" class="comm" style="content:url(images/p2.png);"></div>
+
         </div>
         <div style="position: absolute;margin-left:20%;height:550px;padding:4%;padding-top:0;padding-bottom:8%;overflow:hidden">
           <div id="cropper" style="content:url(images/Crop.png);position:relative;width:900px"></div>
@@ -274,7 +370,9 @@
                     <h1>Terms and Conditions</h1>
                     <h2>Guide to Commissioning the ba!</h2><br>
                     Before proceeding please make sure that I am available for commissions, 
-                    you could do that by messaging me at Twitter <a style="color:#8ce967;text-decoration: none;" href="https://twitter.com/messages/compose?recipient_id=18ce54vai7p">@debaa_nyan</a> or my Discord <a style="color:#8ce967;text-decoration: none;" href="https://discordapp.com/users/307728505397968896">@"Debaa"#8969</a>. Keep in mind that Lewd Commissions would cost you an extra 30%<br>
+                    you could do that by messaging me at Twitter <a style="color:#8ce967;text-decoration: none;" href="https://twitter.com/messages/compose?recipient_id=18ce54vai7p">@debaa_nyan</a> or my Discord <a style="color:#8ce967;text-decoration: none;" href="https://discordapp.com/users/307728505397968896">@"Debaa"#8969</a>.<br> 
+                    <br>
+                    Also keep in mind that for Lewd Commissions, client must state that their characters are at least 18 of age.<br>
                     <br>
                     If I happen to have an ongoing project, Your requests would be put on hold until I'm available to work on it.
                     Otherwise I will usually send the initial draft(s) in the first few hours.<br>
