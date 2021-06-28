@@ -131,6 +131,10 @@
               document.getElementById("switchy").value = three;
             }
 
+            /*I don't know why i decided to include this to the main code
+            not sure if it's against Github's ToS
+            Site's probably be down soon wwwwww*/
+
             function damnson() {
               var wav = document.getElementById("v3").value;
               var the = document.getElementById("price").value;
@@ -142,13 +146,6 @@
                   document.getElementById("lineart").style.content = "url(images/Lineart.png)";
                   document.getElementById("flatc").style.content = "url(images/Flat.png)";
                   document.getElementById("fullc").style.content = "url(images/Full.png)";
-                  document.getElementById("shadow1").style.filter = "blur(0px)";
-                  document.getElementById("shadow2").style.filter = "blur(0px)";
-                  document.getElementById("lineart").style.filter = "blur(0px)";
-                  document.getElementById("flatc").style.filter = "blur(0px)";
-                  document.getElementById("fullc").style.filter = "blur(0px)";
-                  document.getElementById("foggers").style.filter = "blur(0px)";
-                  $('#foggers').css('opacity', 0);
                   break;
                 case "2":
                   document.getElementById("realprice").value = the*0.3+parseInt(the);
@@ -157,28 +154,23 @@
                   document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
                   document.getElementById("flatc").style.content = "url(images/Flatr.png)";
                   document.getElementById("fullc").style.content = "url(images/Fullr.png)";
-                  document.getElementById("shadow1").style.filter = "blur(0px)";
-                  document.getElementById("shadow2").style.filter = "blur(0px)";
-                  document.getElementById("lineart").style.filter = "blur(0px)";
-                  document.getElementById("flatc").style.filter = "blur(0px)";
-                  document.getElementById("fullc").style.filter = "blur(0px)";
-                  document.getElementById("foggers").style.filter = "blur(0px)";
-                  $('#foggers').css('opacity', 0);
                   break;
                 case "3":
                   document.getElementById("realprice").value = the/2*3;
-                  document.getElementById("shadow1").style.content = "url(images/shade1r.png)";
-                  document.getElementById("shadow2").style.content = "url(images/shade2r.png)";
-                  document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
-                  document.getElementById("flatc").style.content = "url(images/Flatr.png)";
-                  document.getElementById("fullc").style.content = "url(images/Fullr.png)";
-                  document.getElementById("shadow1").style.filter = "blur(5px)";
-                  document.getElementById("shadow2").style.filter = "blur(5px)";
-                  document.getElementById("lineart").style.filter = "blur(5px)";
-                  document.getElementById("flatc").style.filter = "blur(5px)";
-                  document.getElementById("fullc").style.filter = "blur(5px)";
-                  document.getElementById("foggers").style.filter = "blur(5px)";
-                  $('#foggers').css('opacity', 1);
+                  document.getElementById("shadow1").style.content = "url(images/shade1l.png)";
+                  document.getElementById("shadow2").style.content = "url(images/shade2l.png)";
+                  //Maybe if i host the thingy from outside i could avoid detection >w<
+                  //still can't guarantee tho
+                  //ps: im dum.
+                  document.getElementById("lineart").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318081384546314/Lineartl.png)";
+                  document.getElementById("flatc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318071540121600/Flatl.png)";
+                  document.getElementById("fullc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318085750947870/Fulll.png)";
+                  /*
+                  //open for a surprise ;9
+                  document.getElementById("lineart").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853313593982320670/Lineartuc.png)";
+                  document.getElementById("flatc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853313586834440193/Flatuc.png)";
+                  document.getElementById("fullc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853313597883416586/Fulluc.png)";
+                  */
                   break;
                 default:
                   document.getElementById("realprice").value = the;
@@ -187,13 +179,6 @@
                   document.getElementById("lineart").style.content = "url(images/Lineart.png)";
                   document.getElementById("flatc").style.content = "url(images/Flat.png)";
                   document.getElementById("fullc").style.content = "url(images/Full.png)";
-                  document.getElementById("shadow1").style.filter = "blur(0px)";
-                  document.getElementById("shadow2").style.filter = "blur(0px)";
-                  document.getElementById("lineart").style.filter = "blur(0px)";
-                  document.getElementById("flatc").style.filter = "blur(0px)";
-                  document.getElementById("fullc").style.filter = "blur(0px)";
-                  document.getElementById("foggers").style.filter = "blur(0px)";
-                  $('#foggers').css('opacity', 0);
                   break;
               }
             }
@@ -208,7 +193,6 @@
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 0);
                   $('#cropper').css('opacity', 1);
-                  document.getElementById("foggers").style.content = "url(images/fogg.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "12": //bust up - flat
@@ -217,7 +201,6 @@
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 0);
                   $('#cropper').css('opacity', 1);
-                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "13": //bust up - full
@@ -226,7 +209,6 @@
                   $('#fullc').css('opacity', 1);
                   $('#cropper').css('margin-top', 0);
                   $('#cropper').css('opacity', 1);
-                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "21": //half bod - line
@@ -235,7 +217,6 @@
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 170);
                   $('#cropper').css('opacity', 1);
-                  document.getElementById("foggers").style.content = "url(images/fogg.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "22": //half bod - flat
@@ -244,7 +225,6 @@
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 170);
                   $('#cropper').css('opacity', 1);
-                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "23": //half bod - full
@@ -253,7 +233,6 @@
                   $('#fullc').css('opacity', 1);
                   $('#cropper').css('margin-top', 170);
                   $('#cropper').css('opacity', 1);
-                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "31": //full bod - line
@@ -262,7 +241,6 @@
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 400);
                   $('#cropper').css('opacity', 0);
-                  document.getElementById("foggers").style.content = "url(images/fogg.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "32": //full bod - flat
@@ -271,7 +249,6 @@
                   $('#fullc').css('opacity', 0);
                   $('#cropper').css('margin-top', 400);
                   $('#cropper').css('opacity', 0);
-                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 case "33": //full bod - full
@@ -280,7 +257,6 @@
                   $('#fullc').css('opacity', 1);
                   $('#cropper').css('margin-top', 400);
                   $('#cropper').css('opacity', 0);
-                  document.getElementById("foggers").style.content = "url(images/fog.png)";
                   document.getElementById("pirace").value = uwu;
                   break;
                 default:
@@ -349,7 +325,7 @@
           <div id="lineart" class="comm" style="content:url(images/Lineart.png);"></div>
           <div id="flatc" class="comm" style="content:url(images/Flat.png);"></div>
           <div id="fullc" class="comm" style="content:url(images/Full.png);"></div>
-          <div id="foggers" class="comm" style="content:url(images/fog.png);opacity:0;"></div>
+          <!--<div id="foggers" class="comm" style="content:url(images/fog.png);opacity:0;"></div>-->
           <div id="shadow1" class="comm" style="content:url(images/shade1.png);"></div>
           <div id="shadow2" class="comm" style="content:url(images/shade2.png);"></div>
           <div id="p1" class="comm" style="content:url(images/p1.png);"></div>
