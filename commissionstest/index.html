@@ -51,371 +51,64 @@
     <div style='height: 5px;background-color:#8ce967;'>
     </div>
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <div style='background-color:rgb(200, 200, 200);text-align: center;margin-bottom: -5px;'>
-      <div style='display: inline-block;background-size:100px;background-image: url(images/tile.png);width:80%'>
-        <div style="height:550px;color:white;text-align:left;background-color:#518159;padding:5%; width: 20%;float:left;">
-          <h2>Debaa's Commission Prices:</h2>
-
-          Size:<br>
-
-          <input type="radio" onclick="sizev(this.value);pree();aa();meow();damnson();" name="size" value="1">
-          <label for="size1">Bust Up</label><br>
-
-          <input type="radio" onclick="sizev(this.value);pree();aa();meow();damnson();" name="size" value="2">
-          <label for="size2">Half Body</label><br>
-
-          <input type="radio" onclick="sizev(this.value);pree();aa();meow();damnson();" name="size" value="3" checked>
-          <label for="size3">Full Body</label><br><br>
-
-          Type:<br>
-
-          <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="1">
-          <label for="size1">Lineart</label><br>
-
-          <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="2">
-          <label for="size2">Flat Color</label><br>
-
-          <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="3" checked>
-          <label for="size3">Full Color</label><br><br>
-
-          Figure:<br>
-          <input type="number" onclick="meow(this.value);damnson();" id="quantity" name="quantity" min="1" max="5" value="1">
-          <label for="quantity">Figures/Characters</label>
-          <br><br>
-
-          Work:<br>
-
-          <input type="radio" onclick="workv(this.value);" name="work" value="1" checked>
-          <label for="size1">Safe</label><br>
-
-          <input type="radio" onclick="workv(this.value);" name="work" value="2">
-          <label for="size2">Risque</label><br>
-
-          <input type="radio" onclick="workv(this.value);" name="work" value="3">
-          <label for="size2">NSFW</label><br><br>
-
-          Price:<br><div style="font-size: 20pt;position: absolute;">
-          USD <input style="font-family:'UD Digi Kyokasho NK-B';color: white;background:none;outline: none;border: none;font-size: 20pt;" type="number" id="realprice" value=100 disabled>
-          </div>
-          <br><br>
-
-          <div hidden>
-            <input type="text" id="v1" value="3" disabled><br>
-            <input type="text" id="v2" value="3" disabled><br>
-            <input type="text" id="v3" value="1" disabled><br>
-            <input type="text" id="switchy" value="33" disabled><br> <!--commish type combination-->
-            <input type="number" id="pirace" value=100 disabled> <!--value before charcount modifier-->
-            <input type="number" id="price" value=100 disabled> <!--value after modifier-->
-          </div>
-
-          <script>
-            function sizev(sv) {
-              document.getElementById("v1").value = sv;
-            }
-
-            function typev(tv) {
-              document.getElementById("v2").value = tv;
-            }
-
-            function workv(wv) {
-              document.getElementById("v3").value = wv;
-              damnson();
-            }
-
-            function pree() {
-              var one = document.getElementById("v1").value;
-              var two = document.getElementById("v2").value;
-              var three = one + two;
-              document.getElementById("switchy").value = three;
-            }
-
-            /*I don't know why i decided to include this to the main code
-            not sure if it's against Github's ToS
-            Site's probably be down soon wwwwww*/
-
-            function damnson() {
-              var wav = document.getElementById("v3").value;
-              var the = document.getElementById("price").value;
-              switch(wav){
-                case "1":
-                  document.getElementById("realprice").value = the;
-                  document.getElementById("shadow1").style.content = "url(images/shade1.png)";
-                  document.getElementById("shadow2").style.content = "url(images/shade2.png)";
-                  document.getElementById("lineart").style.content = "url(images/Lineart.png)";
-                  document.getElementById("flatc").style.content = "url(images/Flat.png)";
-                  document.getElementById("fullc").style.content = "url(images/Full.png)";
-                  break;
-                case "2":
-                  document.getElementById("realprice").value = the*0.3+parseInt(the);
-                  document.getElementById("shadow1").style.content = "url(images/shade1r.png)";
-                  document.getElementById("shadow2").style.content = "url(images/shade2r.png)";
-                  document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
-                  document.getElementById("flatc").style.content = "url(images/Flatr.png)";
-                  document.getElementById("fullc").style.content = "url(images/Fullr.png)";
-                  break;
-                case "3":
-                  document.getElementById("realprice").value = the/2*3;
-                  document.getElementById("shadow1").style.content = "url(images/shade1l.png)";
-                  document.getElementById("shadow2").style.content = "url(images/shade2l.png)";
-                  //Maybe if i host the thingy from outside i could avoid detection >w<
-                  //still can't guarantee tho
-                  //ps: im dum.
-                  document.getElementById("lineart").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318081384546314/Lineartl.png)";
-                  document.getElementById("flatc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318071540121600/Flatl.png)";
-                  document.getElementById("fullc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318085750947870/Fulll.png)";
-                  /*
-                  //open for a surprise ;9
-                  document.getElementById("lineart").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853313593982320670/Lineartuc.png)";
-                  document.getElementById("flatc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853313586834440193/Flatuc.png)";
-                  document.getElementById("fullc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853313597883416586/Fulluc.png)";
-                  */
-                  break;
-                default:
-                  document.getElementById("realprice").value = the;
-                  document.getElementById("shadow1").style.content = "url(images/shade1.png)";
-                  document.getElementById("shadow2").style.content = "url(images/shade2.png)";
-                  document.getElementById("lineart").style.content = "url(images/Lineart.png)";
-                  document.getElementById("flatc").style.content = "url(images/Flat.png)";
-                  document.getElementById("fullc").style.content = "url(images/Full.png)";
-                  break;
-              }
-            }
-
-            function aa() {
-              var uwu;
-              var owo = document.getElementById("switchy").value;
-              switch (owo) {
-                case "11": //bust up - line
-                  uwu = 40;
-                  $('#flatc').css('opacity', 0);
-                  $('#fullc').css('opacity', 0);
-                  $('#cropper').css('margin-top', 0);
-                  $('#cropper').css('opacity', 1);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "12": //bust up - flat
-                  uwu = 50; 
-                  $('#flatc').css('opacity', 1);
-                  $('#fullc').css('opacity', 0);
-                  $('#cropper').css('margin-top', 0);
-                  $('#cropper').css('opacity', 1);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "13": //bust up - full
-                  uwu = 60;
-                  $('#flatc').css('opacity', 0);
-                  $('#fullc').css('opacity', 1);
-                  $('#cropper').css('margin-top', 0);
-                  $('#cropper').css('opacity', 1);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "21": //half bod - line
-                  uwu = 55;
-                  $('#flatc').css('opacity', 0);
-                  $('#fullc').css('opacity', 0);
-                  $('#cropper').css('margin-top', 170);
-                  $('#cropper').css('opacity', 1);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "22": //half bod - flat
-                  uwu = 65;
-                  $('#flatc').css('opacity', 1);
-                  $('#fullc').css('opacity', 0);
-                  $('#cropper').css('margin-top', 170);
-                  $('#cropper').css('opacity', 1);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "23": //half bod - full
-                  uwu = 75;
-                  $('#flatc').css('opacity', 0);
-                  $('#fullc').css('opacity', 1);
-                  $('#cropper').css('margin-top', 170);
-                  $('#cropper').css('opacity', 1);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "31": //full bod - line
-                  uwu = 65;
-                  $('#flatc').css('opacity', 0);
-                  $('#fullc').css('opacity', 0);
-                  $('#cropper').css('margin-top', 400);
-                  $('#cropper').css('opacity', 0);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "32": //full bod - flat
-                  uwu = 75;
-                  $('#flatc').css('opacity', 1);
-                  $('#fullc').css('opacity', 0);
-                  $('#cropper').css('margin-top', 400);
-                  $('#cropper').css('opacity', 0);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                case "33": //full bod - full
-                  uwu = 100;
-                  $('#flatc').css('opacity', 0);
-                  $('#fullc').css('opacity', 1);
-                  $('#cropper').css('margin-top', 400);
-                  $('#cropper').css('opacity', 0);
-                  document.getElementById("pirace").value = uwu;
-                  break;
-                default:
-                  uwu = 0;
-                  document.getElementById("pirace").value = uwu;
-                  break;
-              }
-            }
-
-            function meow(nya) {
-              var tyme
-              var eep
-              eep = nya
-              var usada = document.getElementById("pirace").value;
-              switch (tyme) {
-                case 1:
-                  document.getElementById("price").value = usada;
-                  break;
-
-                default:
-                  for (tyme = document.getElementById("quantity").value; tyme > 1; tyme--) {
-                    usada = usada / 2 * 3;
-                  }
-                  document.getElementById("price").value = usada;
-                  switch (eep) {
-                    case "1":
-                      $('#shadow1').css('opacity', 1);
-                      $('#shadow2').css('opacity', 1);
-                      $('#p1').css('opacity', 0);
-                      $('#p2').css('opacity', 0);
-                      break;
-                    case "2":
-                      $('#shadow1').css('opacity', 0);
-                      $('#shadow2').css('opacity', 1);
-                      $('#p1').css('opacity', 0);
-                      $('#p2').css('opacity', 0);
-                      break;
-                    case "3":
-                      $('#shadow1').css('opacity', 0);
-                      $('#shadow2').css('opacity', 0);
-                      $('#p1').css('opacity', 0);
-                      $('#p2').css('opacity', 0);
-                      break;
-                    case "4":
-                      $('#shadow1').css('opacity', 0);
-                      $('#shadow2').css('opacity', 0);
-                      $('#p1').css('opacity', 1);
-                      $('#p2').css('opacity', 0);
-                      break;
-                    case "5":
-                      $('#shadow1').css('opacity', 0);
-                      $('#shadow2').css('opacity', 0);
-                      $('#p1').css('opacity', 0);
-                      $('#p2').css('opacity', 1);
-                      break;
-                  }
-                  break;
-              }
-
-            }
-
-          </script>
-
-        </div>
-        <div style="position: absolute;margin-left:20%;height:550px;padding:4%;padding-bottom:8%;padding-top:0%;overflow:hidden;width: 100%;">
-          <div id="lineart" class="comm" style="content:url(images/Lineart.png);"></div>
-          <div id="flatc" class="comm" style="content:url(images/Flat.png);"></div>
-          <div id="fullc" class="comm" style="content:url(images/Full.png);"></div>
-          <!--<div id="foggers" class="comm" style="content:url(images/fog.png);opacity:0;"></div>-->
-          <div id="shadow1" class="comm" style="content:url(images/shade1.png);"></div>
-          <div id="shadow2" class="comm" style="content:url(images/shade2.png);"></div>
-          <div id="p1" class="comm" style="content:url(images/p1.png);"></div>
-          <div id="p2" class="comm" style="content:url(images/p2.png);"></div>
-
-        </div>
-        <div style="position: absolute;margin-left:20%;height:550px;padding:4%;padding-top:0;padding-bottom:8%;overflow:hidden">
-          <div id="cropper" style="content:url(images/Crop.png);position:relative;width:900px"></div>
-          </div>
-      </div>
-    </div>
-    
-    <!--<div id="weh" style="position: absolute; background-color: rgba(0, 0, 0, 0.75);width:90vw;height:300vw;margin-top: -150vw;color:white;font-size: larger;text-align: center;padding-left: 5vw;padding-right: 5vw;">
-      <div style="background-color: rgba(0, 0, 0, 0.25);padding:20px;height:100%">
-        <h1 style="color: white; margin-top: 114vw;">Notice</h1>
-        After a lot of thoughtful days, I decided that it's finally time to update my commission prices<br>
-        I have improved a lot since I first started and for that,<br>
-        I have been taking more and more hours on each art piece<br>
-        from where I used to take 1 to 2 hours a piece to an average of 6 hours per illustration,<br>
-        with that taken into consideration, I think it's proper ;w;<br>
-        <br>
-        <h3>What does this mean to you?</h3> 
-        Not much really, other than the fact that my prices are generally a bit more pricy<br>
-        (imsorry I feel so bad for doing this but i had to ;w;)<br>
-        <br>
-        But unless you've ordered/reserved a commission before you see this message<br>
-        (May 26th 2021, 12:00PM GMT+7)<br>
-        then the new prices will be applied to you. Otherwise you will still be able to pay<br>
-        with the original price we've agreed prior to the changes.<br>
-        <br>
-        The current prices are still subject to changes, so if you have any tips or suggestions<br>
-        please send them to my Discord: <a style="color:#8ce967;text-decoration: none;" href="https://discordapp.com/users/307728505397968896">@"Debaa"#8969</a>
-        <br>
-        With that said, I hope you're having a nice day, and welcome to my commission page! ^w^
-        <div style="display: inline-block;">
-          <blockquote class="twitter-tweet" >
-            <p lang="en" dir="ltr">THANK YOU EVERYONE FOR THE SUPPORT
-              <br>i really can&#39;t thank you enough &gt;///&lt;
-              <br>everyone came so fast we hit the target in less than an hour
-              <br>i&#39;m actually crying ;w;<br><br>with that said, i won&#39;t be able to take any more commissions until i finished this batch!
-              <br>again, thank you very much! ;w; 
-              <a href="https://t.co/eyOkXEQVvV">https://t.co/eyOkXEQVvV</a>
-            </p>&mdash; でばあ🍵 (@debaa_nyan) 
-            <a href="https://twitter.com/debaa_nyan/status/1399798167290355713?ref_src=twsrc%5Etfw">June 1, 2021</a>
-          </blockquote> 
-        </div>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <br>
-        <br>
-        <br>
-        <button onclick="okay()" class="active" style="font-family: 'UD Digi Kyokasho NK-B';color:#8ce967;background-color: rgba(0,0,0,0);border: none;font-size: larger;">Continue</button>
-      </div>
-    </div>
-
-    <script>
-      function okay(){
-        document.getElementById("weh").style.display = "none";
+    <style>
+      .backgrrrr{
+        animation: slide 25s linear infinite;
       }
-    </script>-->
 
-    <div>
-        <div style="background-color:#8ce967;height:5px;width:100%;">
-        </div>
-            <div class="contents" style="text-align: center;padding-bottom:0px;width:100%;padding-top:5px;">
-                <div style="display:inline-block;text-align: center; width:550px;background-color: white;">
-                    <h1>Terms and Conditions</h1>
-                    <h2>Guide to Commissioning the ba!</h2><br>
-                    Before proceeding please make sure that I am available for commissions, 
-                    you could do that by messaging me at Twitter <a style="color:#8ce967;text-decoration: none;" href="https://twitter.com/messages/compose?recipient_id=18ce54vai7p">@debaa_nyan</a> or my Discord <a style="color:#8ce967;text-decoration: none;" href="https://discordapp.com/users/307728505397968896">@"Debaa"#8969</a>.<br> 
-                    <br>
-                    Also keep in mind that for Lewd Commissions, client must state that their characters are at least 18 of age.<br>
-                    <br>
-                    If I happen to have an ongoing project, Your requests would be put on hold until I'm available to work on it.
-                    Otherwise I will usually send the initial draft(s) in the first few hours.<br>
-                    <br>
-                    Average working time is around 10 to 45 days after the initial sketch (excluding Weekends). During that time period,
-                    please refrain from cancelling your orders.<br>
 
-                    <br>During the working period, you are eligible to request up to 2 revisions. After that, there will be a USD20 fee for each revisions<br>
-                    <br>
-                    Payments could be done anytime prior or during the working period whether it's a full payment or in stages. Though it's recommended to do so After the initial draft, Preferably with a full payment.<br>
-                    <br>
-                    Payments are done either through my <a style="color:#8ce967;text-decoration: none;" href="https://ko-fi.com/debaa_nyan">Ko-fi</a>, <a style="color:#8ce967;text-decoration: none;" href="https://streamlabs.com/debaa_nyan/tip">Streamlabs</a>, or preferrably <a style="color:#8ce967;text-decoration: none;"href="https://www.paypal.com/paypalme/debaniyan">PayPal</a>. Though, I could also accept something else if negotiated. ;9
-                    <br>
-                    <br>
-                    Best regards<br>
-                    <h3>Debaa (Nyan) Eru</h3>
-                </div><br>
+      @keyframes slide {
+        0% {
+          background-position-x: right;
+        }
+        100% {
+          background-position-x: left;
+        }
+      }
+    </style>
+
+            <div class="backgrrrr" style="text-align: center;padding-bottom:0px;width:100%;padding-top:0px;background:url(images/bgbg.png) repeat-x;">
+                  <div style="margin-top:5vw;display:inline-block;text-align:left; width:1000px;">
+                    <div style="height: 576px; width: 400px; border-radius: 5px; background-color:#2a2a2a;display:inline-block;">
+                      <div style="height: 518px; width: 400px; border-radius: 5px; background-image:url(images/aaaa.png);"></div>
+                      <div style="padding-top:10px;padding-left:10px;color: white;">Regular Illustrations</div>
+                      <div style="padding-right:10px;color: #8ce967;text-align: right;font-size: smaller;">Starting from <div style="display: inline-block;font-size: 15pt;">$40</div></div>
+
+                    </div>
+                    <div style="display: inline-block;">
+                      <div style="height: 398px; width: 595px; border-radius: 5px; background-color:#2a2a2a;display:inline-block;">
+                        <div style="height: 340px; width: 595px; border-radius: 5px; background-image:url(images/aaaa.png);"></div>
+                        <div style="padding-top:10px;padding-left:10px;color: white;">Indie V-Tuber 'Starter Pack'</div>
+                        <div style="padding-right:10px;color: #8ce967;text-align: right;font-size: smaller;">Starting from <div style="display: inline-block;font-size: 15pt;">$1500</div></div>
+                      </div><br>
+                      <div style="height: 181px; width: 595px; border-radius: 6px;display:inline-block;">
+                        <div style="height: 82px; width: 292px; border-radius: 6px; background-color:#2a2a2a;margin-right:4px;display:inline-block;">
+                          <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);"></div>
+                          <div style="font-size: 10pt;padding-top: 3px;padding-left: 10px;color: white;display: inline-block;">Live2D Models</div>
+                          <div style="width:58%;text-align:right; font-size: 5pt;padding-top: 3px;color: #8ce967;display: inline-block;">Starting from <div style="font-size: 10pt;display: inline-block;">$350</div></div>
+                        </div>
+                        <div style="height: 82px; width: 292px; border-radius: 6px; background-color:#2a2a2a;margin-top: 6px;display:inline-block;">
+                          <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);"></div>
+                          <div style="font-size: 10pt;padding-top: 3px;padding-left: 10px;color: white;display: inline-block;">Reactive Images</div>
+                          <div style="width:54%;text-align:right; font-size: 5pt;padding-top: 3px;color: #8ce967;display: inline-block;">Starting from <div style="font-size: 10pt;display: inline-block;">$60</div></div>
+                        </div>
+                        <div style="height: 82px; width: 292px; border-radius: 6px; background-color:#2a2a2a;margin-right:4px;margin-top: 6px;display:inline-block;">
+                          <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);"></div>
+                          <div style="font-size: 10pt;padding-top: 3px;padding-left: 10px;color: white;display: inline-block;">Emote Packs</div>
+                          <div style="width:62%;text-align:right; font-size: 5pt;padding-top: 3px;color: #8ce967;display: inline-block;">Starting from <div style="font-size: 10pt;display: inline-block;">$40</div></div>
+                        </div>
+                        <div style="height: 82px; width: 292px; border-radius: 6px; background-color:#2a2a2a;display:inline-block;">
+                          <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);"></div>
+                          <div style="width:42%;font-size: 10pt;padding-top: 3px;padding-left: 10px;color: white;display: inline-block;">Stingers</div>
+                          <div style="width:50%;text-align:right; font-size: 5pt;padding-top: 3px;color: #8ce967;display: inline-block;">Starting from <div style="font-size: 10pt;display: inline-block;">$150</div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                <br>
                 <img style="width:200px" src="images/baba.png">
-                <div style="background-color: #8ce967; height: 5px;margin-top:-5px"></div>
+                <div style="background-color: #8ce967; height: 5px;margin-top:-4px"></div>
                 <div class="footer">
         
                     <!--FOOOT-->
@@ -456,7 +149,7 @@
           <!--mononobenofooter-->
     
         </div>
-            </div>
+      </div>
         
     </div>
     <!--<div style="background-color: #8ce967; height: 5px;margin-top:-5px"></div>
