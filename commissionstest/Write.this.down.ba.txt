@@ -1,0 +1,47 @@
+//PRICES ARE NOT FINAL
+
+.Model{
+    Waist Up: 350
+    Full Body: 475
+    Extra Clothes: 250
+    Motions: +50 
+}
+
+.Reactive{
+    Base: 60
+    Extra Clothes: 30
+}
+
+.Emote Packs{
+    Single: 25
+    5Pack: 115
+    10Pack: 200
+    Ani-Single: 60
+    Ani-5Pack: 250
+}
+
+.Stingers{
+    150-250 Depending on Length/Complexity
+}
+
+.Animation{
+    Trad{
+        Minimum: 75 
+        Extra Frame after 8th: 10
+    }
+    Live2D{
+        Base Illust + 35
+        Per moving part: 25
+        Seconds after the 5th: 25
+    }
+
+}
+
+.Alerts{
+    Single: 60
+    3Pack(Follow,Sub,Raid): 150
+    5Pack(3Pack+Bits,Host): 230
+}
+
+Starter Pack :
+All above + 10% Discount
