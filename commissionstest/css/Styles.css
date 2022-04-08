@@ -243,8 +243,8 @@ body{
 	transition: all 0.5s ease-in-out;
 } 
 
-#flatc {
-	opacity: 1;
+.flatc {
+	opacity: 0;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -252,8 +252,8 @@ body{
 	transition: all 0.5s ease-in-out;
 }
 
-#fullc {
-	opacity: 1;
+.fullc {
+	opacity: 0;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -262,7 +262,7 @@ body{
 }
 
 #shadow1 {
-	opacity: 1;
+	opacity: 0;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -271,7 +271,7 @@ body{
 }
 
 #shadow2 {
-	opacity: 1;
+	opacity: 0;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -299,8 +299,26 @@ body{
 
 #cropper {
 	overflow:hidden;
-	margin-top:20%;
-	opacity:0;
+	opacity:100;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#warapper {
+	overflow:hidden;
+	opacity:100;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#moveprice {
+	opacity:100;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
