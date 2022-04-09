@@ -40,7 +40,7 @@
 .Alerts{
     Single: 60
     3Pack(Follow,Sub,Raid): 150
-    5Pack(3Pack+Bits,Host): 230
+    6Pack(3Pack+Bits,Host,Gift): 280
 }
 
 Starter Pack :
