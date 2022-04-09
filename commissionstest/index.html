@@ -65,11 +65,11 @@
 
     @keyframes slide {
       0% {
-        background-position-x: right;
+        background-position-x: 0px;
       }
 
       100% {
-        background-position-x: left;
+        background-position-x: -1000px;
       }
     }
 
@@ -304,7 +304,7 @@
                     style="background:url(images/commfc2.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div>
+                <div id="shadow3">
                   <div style="background:url(images/commla1.png);height: 563px;width:660px;margin-top: -563px;"></div>
                   <div class="flatc"
                     style="background:url(images/commfl1.png);height: 563px;width:660px;margin-top: -563px;"></div>
@@ -619,9 +619,9 @@
           </div>
             
           <div>
-            <div id="l2dwrap" style="background-color: #303332; border-radius: 6px; width: 660px;">
+            <div id="l2dwrap" style="background-color: #303332; border-radius: 6px; width: 660px; height:421px">
               
-              <div style="position: absolute;width: 660px;margin: 20px;margin-left: 270px;margin-top: 300px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
+              <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: 300px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
                   Price: <br>
                   <div style="font-size: 20pt;position: absolute;">$<input
                       style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
@@ -629,20 +629,17 @@
                   </div>
               </div>
 
-              <div style="width: 250px; height:371px;color: white;">
+              <div style="width: 660px; height:421px;color: white;">
                 <br>
                 <br>
-                <div style="margin-left: 20px;">Model Specifications
-                <br>
-                <br>
-                Size:
-                <br>
+                <div id="l2dopt" style="margin-left: 20px;margin-top: 351px;">Model Size:
+                
                 <input type="radio" onclick="l2dsize(this.value);" name="l2dsize" value="1"checked>
                 <label for="l2dsize1">Waist Up</label>
-                <br>
+                
                 <input type="radio" onclick="l2dsize(this.value);" name="l2dsize" value="2">
                 <label for="l2dsize2">Knee Up</label>
-                <br>
+                
                 <input type="radio" onclick="l2dsize(this.value);" name="l2dsize" value="3">
                 <label for="l2dsize3">Full Body</label>
                 
@@ -651,22 +648,30 @@
                     switch (l2ds){
                       case "1":
                         $('#l2dback').css('height', 371);
+                        $('#l2dwrap').css('height', 371+50);
                         $('#l2dmoveprice').css('margin-top', 300);
+                        $('#l2dopt').css('margin-top', 300+51);
                         document.getElementById("l2drealprice").value = 350;
                         break;
                       case "2":
                         $('#l2dback').css('height', 521);
+                        $('#l2dwrap').css('height', 521+50);
                         $('#l2dmoveprice').css('margin-top', 521-71);
+                        $('#l2dopt').css('margin-top', 521-20);
                         document.getElementById("l2drealprice").value = 475;
                         break;
                       case "3":
                         $('#l2dback').css('height', 771);
+                        $('#l2dwrap').css('height', 771+50);
                         $('#l2dmoveprice').css('margin-top', 700);
+                        $('#l2dopt').css('margin-top', 771-20);
                         document.getElementById("l2drealprice").value = 500;
                       break;
                       default:
                         $('#l2dback').css('height', 371);
+                        $('#l2dwrap').css('height', 371+50);
                         $('#l2dmoveprice').css('margin-top', 300);
+                        $('#l2dopt').css('margin-top', 371-20);
                         document.getElementById("l2drealprice").value = 350;
                       break;
                     }
@@ -677,13 +682,13 @@
                 
 
               </div>
-              <div id="l2dback" style="background-image:url(images/aaaa.png);height: 371px; width: 410px;margin-bottom: 30px;border-radius: 6px;overflow:hidden;margin-left: 250px;margin-top: -371px;">
+              <div id="l2dback" style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow:hidden;margin-top: -421px;">
 
                 <style>
                   #l2d-canvas{
                     width: 1620px;
                     height: 783.83px;
-                    margin-left: -600px;
+                    margin-left: -480px;
                   }
                 </style>
 
