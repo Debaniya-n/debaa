@@ -273,23 +273,41 @@
           style="margin-right: 0;margin-left: auto;margin-top: -530px;background-color: #202420;width: 700px;padding-top: 30px;text-align: left;padding-left: 40px;color: white;padding-right: 20px; padding-bottom: 30px;">
 
           <div>
+            
+            <!-- Artwork applet -->
             <div style="background-color: #303332; border-radius: 6px; height: 360px; width: 660px;" id="warapper">
               <div
                 style="background-image:url(images/aaaa.png);height: 190px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;"
                 id="cropper">
 
                 <div
-                  style="position: absolute;width: 660px;margin: 20px;margin-top: 119px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;"
+                  style="position: absolute;width: 660px;margin: 20px;margin-top: 119px;padding: 8px;text-shadow:0 0 5px rgba(0, 0, 0, 1) ;color: #8ce967;"
                   id="moveprice">
                   Price: <br>
                   <div style="font-size: 20pt;position: absolute;">$<input
-                      style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
+                      style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px rgba(0, 0, 0, 1) ;"
                       type="number" id="realprice" value=40 disabled>
                   </div>
                 </div>
 
+                <div id="shadowF">
+                  <div style="background:url(images/commla5.png);height: 563px;width:660px;"></div>
+                  <div class="flatc"
+                    style="background:url(images/commfl5.png);height: 563px;width:660px;margin-top: -563px;"></div>
+                  <div class="fullc"
+                    style="background:url(images/commfc5.png);height: 563px;width:660px;margin-top: -563px;"></div>
+                </div>
+
+                <div id="shadow0">
+                  <div style="background:url(images/commla4.png);height: 563px;width:660px;margin-top: -563px;"></div>
+                  <div class="flatc"
+                    style="background:url(images/commfl4.png);height: 563px;width:660px;margin-top: -563px;"></div>
+                  <div class="fullc"
+                    style="background:url(images/commfc4.png);height: 563px;width:660px;margin-top: -563px;"></div>
+                </div>
+
                 <div id="shadow1">
-                  <div style="background:url(images/commla3.png);height: 563px;width:660px;"></div>
+                  <div style="background:url(images/commla3.png);height: 563px;width:660px;margin-top: -563px;"></div>
                   <div class="flatc"
                     style="background:url(images/commfl3.png);height: 563px;width:660px;margin-top: -563px;"></div>
                   <div class="fullc"
@@ -570,32 +588,32 @@
                         case "1":
                           $('#shadow1').css('opacity', 0);
                           $('#shadow2').css('opacity', 0);
-                          $('#p1').css('opacity', 0);
-                          $('#p2').css('opacity', 0);
+                          $('#shadowF').css('opacity', 0);
+                          $('#shadow0').css('opacity', 0);
                           break;
                         case "2":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 0);
-                          $('#p1').css('opacity', 0);
-                          $('#p2').css('opacity', 0);
+                          $('#shadowF').css('opacity', 0);
+                          $('#shadow0').css('opacity', 0);
                           break;
                         case "3":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 1);
-                          $('#p1').css('opacity', 0);
-                          $('#p2').css('opacity', 0);
+                          $('#shadowF').css('opacity', 0);
+                          $('#shadow0').css('opacity', 0);
                           break;
                         case "4":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 1);
-                          $('#p1').css('opacity', 1);
-                          $('#p2').css('opacity', 0);
+                          $('#shadowF').css('opacity', 1);
+                          $('#shadow0').css('opacity', 0);
                           break;
                         case "5":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 1);
-                          $('#p1').css('opacity', 0);
-                          $('#p2').css('opacity', 1);
+                          $('#shadowF').css('opacity', 1);
+                          $('#shadow0').css('opacity', 1);
                           break;
                       }
                       break;
@@ -619,6 +637,8 @@
           </div>
             
           <div>
+
+            <!-- Live2D applet -->
             <div id="l2dwrap" style="background-color: #303332; border-radius: 6px; width: 660px; height:421px">
               
               <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: 300px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
@@ -804,8 +824,26 @@
             <br>
           </div>
 
-          <div
-            style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          <!-- Reactive applet -->
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:320px">
+
+            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;">
+              <div id="noelr" style="background-image: url(images/Noellawebc.gif);background-size: contain;height: 300px;width: 226px;margin-left: 60px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
+              <div id="babar" style="background-image: url(images/Babawebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 170px;position:relative;animation: mover 4s infinite  alternate;"></div>
+              <div id="koncr" style="background-image: url(images/Konchiewebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 280px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
+              <div id="mydir" style="background-image: url(images/Mydiawebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 390px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;"></div>
+              <div style="color: white;margin-top: -280px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;">Collab Pack!</div>
+            </div>
+            <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
+
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
+              Price: <br>
+              <div style="font-size: 20pt;position: absolute;">$<input
+                  style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
+                  type="number" id="reactrealprice" value=200 disabled>
+              </div>
+            </div>
+
           </div>
           <h2>Reactive Images</h2>
           <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -817,8 +855,9 @@
           <br>
           <br>
           <br>
-          <div
-            style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          
+          <!-- Emote applet -->
+          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
           </div>
           <h2>Emote Packs</h2>
           <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -830,8 +869,9 @@
           <br>
           <br>
           <br>
-          <div
-            style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+
+          <!-- Stinger applet -->
+          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
           </div>
           <h2>Stingers</h2>
           <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -843,8 +883,9 @@
           <br>
           <br>
           <br>
-          <div
-            style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+
+          <!-- Alert applet -->
+          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
           </div>
           <h2>Alert Packs</h2>
           <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -856,8 +897,9 @@
           <br>
           <br>
           <br>
-          <div
-            style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+
+          <!-- Animate applet -->
+          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
           </div>
           <h2>Animations</h2>
           <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -867,8 +909,9 @@
             with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
             publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
           <br><br><br>
-          <div
-            style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          
+          <!-- Pack applet -->
+          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
           </div>
           <h2>Indie V-Tuber Pack</h2><b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
@@ -877,6 +920,8 @@
             popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
             recently with desktop publishing software like Aldus PageMaker including versions of Lorem
             Ipsum.</b><br><br><br>
+
+
         </div>
       </div>
     </div><br><img style="width:200px" src="images/baba.png">
