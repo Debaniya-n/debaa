@@ -385,6 +385,14 @@ body{
 	transition: all 0.5s ease-in-out;
 }
 
+.sublink {
+	color: #8ce967;
+}
+
+.sublink:hover {
+	color: white;
+}
+
 #babar:hover {
 	background-image: url(../images/Babawebo.gif) !important;
 	-webkit-animation: speak-now 1s  alternate !important;
