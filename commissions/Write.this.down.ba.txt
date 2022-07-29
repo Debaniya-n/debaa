@@ -13,9 +13,9 @@
 }
 
 .Emote Packs{
-    Single: 25
-    5Pack: 115
-    10Pack: 200
+    Single: 35
+    5Pack: 155
+    10Pack: 300
     Ani-Single: 60
     Ani-5Pack: 250
 }
