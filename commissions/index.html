@@ -89,7 +89,7 @@
       <div style="background-color: rgba(0, 0, 0, 0.5); height: 100%;width: 100%;">
         <div style=" height: 93%;width: 60%;text-align: left;padding-top:3%; padding-left:5%;color: white;">
           <div style="font-size: 7pt;">
-            <b style="font-size: 9pt;">248</b> orders Finished, <b style="font-size: 9pt;">8</b> currently in queue.
+            <b style="font-size: 9pt;">242</b> orders Finished, <b style="font-size: 9pt;">17</b> currently in queue.
             Last Updated 7/29/22
           </div>
           <div style="font-size: 15pt;margin-top: 210px;">Help unite Debaa and Mydia!</div>
@@ -113,14 +113,20 @@
             style="border-color: white;border-style: solid;border-radius: 50%; position: absolute;width: 5px;height: 5px;border-width: 2px;top:-4px;right:-4px;">
           </div>
           <div style="color: white;font-size: 7pt;position: absolute;bottom: 15px;left: 80%;white-space: nowrap;">
-            Current campaign progress $ <b id="moolah">150</b>/ <b id="goals">1250</b>
+            Current campaign progress $ <b id="moolah">330</b>/ <b id="goals">1250</b>
           </div>
         </div>
 
         <script>
           var mone = document.getElementById("moolah").innerHTML; 
           var gol = document.getElementById("goals").innerHTML;
-          document.getElementById("donoprogress").style.width = mone/gol*100+"%";
+          if(mone/gol*100 > 100){
+            document.getElementById("donoprogress").style.width = 100+"%";
+          }
+          else{
+            document.getElementById("donoprogress").style.width = mone/gol*100+"%";
+          }
+
         </script>
 
         <!-- <script>
