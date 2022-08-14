@@ -315,11 +315,11 @@
             <!-- Artwork applet -->
             <div style="background-color: #303332; border-radius: 6px; height: 360px; width: 660px;" id="warapper">
               <div
-                style="background-image:url(images/aaaa.png);height: 190px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;"
+                style="background-image:url(images/aaaa.png);height: 190px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;display: flex;"
                 id="cropper">
 
                 <div
-                  style="position: absolute;width: 660px;margin: 20px;margin-top: 119px;padding: 8px;text-shadow:0 0 5px rgba(0, 0, 0, 1) ;color: #8ce967;"
+                  style="position: absolute;width: 660px;margin: 20px;margin-top: 119px;padding: 8px;text-shadow:0 0 5px rgba(0, 0, 0, 1) ;color: #8ce967;z-index: 10;"
                   id="moveprice">
                   Price: <br>
                   <div style="font-size: 20pt;position: absolute;">$<input
@@ -329,42 +329,42 @@
                 </div>
 
                 <div id="shadowF">
-                  <div style="background:url(images/commla5.png);height: 563px;width:660px;"></div>
-                  <div class="flatc"
+                  <div id="FLA" style="background:url(images/commla5.png);height: 563px;width:660px;"></div>
+                  <div id="FFL" class="flatc"
                     style="background:url(images/commfl5.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="FFC" class="fullc"
                     style="background:url(images/commfc5.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow0">
-                  <div style="background:url(images/commla4.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow0" style="margin-left:-660px;">
+                  <div id="0LA" style="background:url(images/commla4.png);height: 563px;width:660px;"></div>
+                  <div id="0FL" class="flatc"
                     style="background:url(images/commfl4.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="0FC" class="fullc"
                     style="background:url(images/commfc4.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow1">
-                  <div style="background:url(images/commla3.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow1" style="margin-left:-660px;">
+                  <div id="1LA" style="background:url(images/commla3.png);height: 563px;width:660px;"></div>
+                  <div id="1FL" class="flatc"
                     style="background:url(images/commfl3.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="1FC" class="fullc"
                     style="background:url(images/commfc3.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow2">
-                  <div style="background:url(images/commla2.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow2" style="margin-left:-660px;">
+                  <div id="2LA" style="background:url(images/commla2.png);height: 563px;width:660px;"></div>
+                  <div id="2FL" class="flatc"
                     style="background:url(images/commfl2.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="2FC" class="fullc"
                     style="background:url(images/commfc2.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow3">
-                  <div style="background:url(images/commla1.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow3" style="margin-left:-660px;">
+                  <div id="3LA" style="background:url(images/commla1.png);height: 563px;width:660px;"></div>
+                  <div id="3FL" class="flatc"
                     style="background:url(images/commfl1.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="3FC" class="fullc"
                     style="background:url(images/commfc1.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
@@ -475,41 +475,101 @@
                       axe = the;
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2.png)";
-                      //document.getElementById("lineart").style.content = "url(images/Lineart.png)";
-                      //document.getElementByClass("flatc").style.content = "url(images/Flat.png)";
-                      //document.getElementByClass("fullc").style.content = "url(images/Full.png)";
+                      document.getElementById("shadow3").style.zIndex = 0; 
+                      document.getElementById("shadow2").style.zIndex = 0; 
+                      document.getElementById("shadow1").style.zIndex = 0; 
+                      document.getElementById("shadow0").style.zIndex = 0; 
+                      document.getElementById("shadowF").style.zIndex = 0; 
+                      document.getElementById("FLA").style.background = "url(images/commla5.png)";
+                      document.getElementById("0LA").style.background = "url(images/commla4.png)";
+                      document.getElementById("1LA").style.background = "url(images/commla3.png)";
+                      document.getElementById("2LA").style.background = "url(images/commla2.png)";
+                      document.getElementById("3LA").style.background = "url(images/commla1.png)";
+                      document.getElementById("FFL").style.background = "url(images/commfl5.png)";
+                      document.getElementById("0FL").style.background = "url(images/commfl4.png)";
+                      document.getElementById("1FL").style.background = "url(images/commfl3.png)";
+                      document.getElementById("2FL").style.background = "url(images/commfl2.png)";
+                      document.getElementById("3FL").style.background = "url(images/commfl1.png)";
+                      document.getElementById("FFC").style.background = "url(images/commfc5.png)";
+                      document.getElementById("0FC").style.background = "url(images/commfc4.png)";
+                      document.getElementById("1FC").style.background = "url(images/commfc3.png)";
+                      document.getElementById("2FC").style.background = "url(images/commfc2.png)";
+                      document.getElementById("3FC").style.background = "url(images/commfc1.png)";
                       break;
                     case "2":
                       axe = the * 0.3 + parseInt(the);
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1r.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2r.png)";
-                      //document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
-                      //document.getElementByClass("flatc").style.content = "url(images/Flatr.png)";
-                      //document.getElementByClass("fullc").style.content = "url(images/Fullr.png)";
+                      document.getElementById("shadow3").style.zIndex = 1; 
+                      document.getElementById("shadow2").style.zIndex = 2; 
+                      document.getElementById("shadow1").style.zIndex = 3; 
+                      document.getElementById("shadow0").style.zIndex = 4; 
+                      document.getElementById("shadowF").style.zIndex = 5; 
+                      document.getElementById("FLA").style.background = "url(images/commrla5.png)";
+                      document.getElementById("0LA").style.background = "url(images/commrla4.png)";
+                      document.getElementById("1LA").style.background = "url(images/commrla3.png)";
+                      document.getElementById("2LA").style.background = "url(images/commrla2.png)";
+                      document.getElementById("3LA").style.background = "url(images/commrla1.png)";
+                      document.getElementById("FFL").style.background = "url(images/commrfl5.png)";
+                      document.getElementById("0FL").style.background = "url(images/commrfl4.png)";
+                      document.getElementById("1FL").style.background = "url(images/commrfl3.png)";
+                      document.getElementById("2FL").style.background = "url(images/commrfl2.png)";
+                      document.getElementById("3FL").style.background = "url(images/commrfl1.png)";
+                      document.getElementById("FFC").style.background = "url(images/commrfc5.png)";
+                      document.getElementById("0FC").style.background = "url(images/commrfc4.png)";
+                      document.getElementById("1FC").style.background = "url(images/commrfc3.png)";
+                      document.getElementById("2FC").style.background = "url(images/commrfc2.png)";
+                      document.getElementById("3FC").style.background = "url(images/commrfc1.png)";
                       break;
                     case "3":
                       axe = the / 2 * 3;
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1l.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2l.png)";                 
-                      //document.getElementById("lineart").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318081384546314/Lineartl.png)";
-                      //document.getElementByClass("flatc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318071540121600/Flatl.png)";
-                      //document.getElementByClass("fullc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318085750947870/Fulll.png)";
+                      document.getElementById("shadow3").style.zIndex = 5; //5 Dogy
+                      document.getElementById("shadow2").style.zIndex = 4; //4 Der
+                      document.getElementById("shadow1").style.zIndex = 1; //3 Konchy
+                      document.getElementById("shadow0").style.zIndex = 3; //2 Noella
+                      document.getElementById("shadowF").style.zIndex = 2; //1 Ba
+                      document.getElementById("FLA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271134313152542/commlla5.png)";
+                      document.getElementById("0LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271133910519900/commlla4.png)";
+                      document.getElementById("1LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271133541400666/commlla3.png)";
+                      document.getElementById("2LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271133155536986/commlla2.png)";
+                      document.getElementById("3LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271132778057808/commlla1.png)";
+                      document.getElementById("FFL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271095264182272/commlfl5.png)";
+                      document.getElementById("0FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271098334412850/commlfl4.png)";
+                      document.getElementById("1FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271098019844186/commlfl3.png)";
+                      document.getElementById("2FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271097680109638/commlfl2.png)";
+                      document.getElementById("3FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271097327779840/commlfl1.png)";
+                      document.getElementById("FFC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271097034190908/commlfc5.png)";
+                      document.getElementById("0FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271096723808317/commlfc4.png)";
+                      document.getElementById("1FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271096396644382/commlfc3.png)";
+                      document.getElementById("2FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271096040140892/commlfc2.png)";
+                      document.getElementById("3FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271095616512050/commlfc1.png)";
                       break;
                     default:
                       axe = the;
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2.png)";
-                      //document.getElementById("lineart").style.content = "url(images/Lineart.png)";
-                      //document.getElementByClass("flatc").style.content = "url(images/Flat.png)";
-                      //document.getElementByClass("fullc").style.content = "url(images/Full.png)";
+                      document.getElementById("shadow3").style.zIndex = 0; 
+                      document.getElementById("shadow2").style.zIndex = 0; 
+                      document.getElementById("shadow1").style.zIndex = 0; 
+                      document.getElementById("shadow0").style.zIndex = 0; 
+                      document.getElementById("shadowF").style.zIndex = 0; 
+                      document.getElementById("FLA").style.background = "url(images/commla5.png)";
+                      document.getElementById("0LA").style.background = "url(images/commla4.png)";
+                      document.getElementById("1LA").style.background = "url(images/commla3.png)";
+                      document.getElementById("2LA").style.background = "url(images/commla2.png)";
+                      document.getElementById("3LA").style.background = "url(images/commla1.png)";
+                      document.getElementById("FFL").style.background = "url(images/commfl5.png)";
+                      document.getElementById("0FL").style.background = "url(images/commfl4.png)";
+                      document.getElementById("1FL").style.background = "url(images/commfl3.png)";
+                      document.getElementById("2FL").style.background = "url(images/commfl2.png)";
+                      document.getElementById("3FL").style.background = "url(images/commfl1.png)";
+                      document.getElementById("FFC").style.background = "url(images/commfc5.png)";
+                      document.getElementById("0FC").style.background = "url(images/commfc4.png)";
+                      document.getElementById("1FC").style.background = "url(images/commfc3.png)";
+                      document.getElementById("2FC").style.background = "url(images/commfc2.png)";
+                      document.getElementById("3FC").style.background = "url(images/commfc1.png)";
                       break;
 
                   }
