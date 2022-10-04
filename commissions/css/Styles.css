@@ -411,8 +411,14 @@ body{
     animation: speak-now 1s  alternate !important;
 }
 
-#mydir:hover {
-	background-image: url(../images/Mydiawebo.gif) !important;
+#aryar:hover {
+	background-image: url(../images/Aryawebo.gif) !important;
+	-webkit-animation: speak-now 1s  alternate !important;
+    animation: speak-now 1s  alternate !important;
+}
+
+#dogyr:hover {
+	background-image: url(../images/Dogywebo.gif) !important;
 	-webkit-animation: speak-now 1s  alternate !important;
     animation: speak-now 1s  alternate !important;
 }
