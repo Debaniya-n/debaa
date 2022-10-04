@@ -421,6 +421,7 @@ body{
 	background-image: url(../images/Dogywebo.gif) !important;
 	-webkit-animation: speak-now 1s  alternate !important;
     animation: speak-now 1s  alternate !important;
+	
 }
 
 @keyframes mover {
