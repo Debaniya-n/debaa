@@ -433,6 +433,13 @@ body{
 	
 }
 
+#mydir:hover {
+	background-image: url(../images/Mydiawebo.gif) !important;
+	-webkit-animation: speak-now 1s  alternate !important;
+    animation: speak-now 1s  alternate !important;
+	
+}
+
 @keyframes mover {
     0% { transform: translateY(0); }
     100% { transform: translateY(20px); }
