@@ -987,26 +987,156 @@
           </div>
 
           <!-- Reactive applet -->
-          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:320px">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:332px">
 
-            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;">
-              <div id="aryar" style="background-image: url(images/AryawebC.gif);background-size: contain;height: 300px;width: 226px;                    margin-left: -9px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.7s;"></div>
-              <div id="noelr" style="background-image: url(images/Noellawebc2.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 104px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
-              <div id="babar" style="background-image: url(images/Babawebc.gif);   background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div>
-              <div id="koncr" style="background-image: url(images/Konchiewebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
-              <div id="dogyr" style="background-image: url(images/Dogywebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 443px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2.2s;"></div>
-              <!--<div id="mydir" style="background-image: url(images/Mydiawebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 390px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;"></div>-->
-              <div style="color: white;margin-top: -280px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;">Party Pack!</div>
+            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;" class="reactor">
+              <div id="aryar" class="reactor" style="background-image: url(images/AryawebC.gif);     background-size: contain;height: 300px;width: 226px;                    margin-left: -9px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.7s;"></div>
+              <div id="noelr" class="reactor" style="background-image: url(images/Noellawebc2.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 104px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
+              <div id="babar" class="reactor" style="background-image: url(images/Babawebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div>
+              <div id="mydir" class="reactor" style="background-image: url(images/Mydiawebc.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;"></div>
+              <div id="koncr" class="reactor" style="background-image: url(images/Konchiewebc.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
+              <div id="dogyr" class="reactor" style="background-image: url(images/Dogywebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 443px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2.2s;"></div>
+              <div style="color: white;margin-top: -280px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;" id="reactivetitle">Party Pack!</div>
             </div>
-            <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
 
-            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -100px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="reactprice">
               Price: <br>
               <div style="font-size: 20pt;position: absolute;">$<input
                   style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
-                  type="number" id="reactrealprice" value=300 disabled>
+                  type="number" id="reactrealprice" value=290 disabled>
               </div>
             </div>
+
+            <div style="margin-left: 20px;margin-top: -15px;">
+            <div style="display: inline-block;"><div style="margin-top:-8px;position: absolute;">Pack Contents</div><div style="opacity: 0;">Pack Contents</div></div> 
+            
+            
+
+            <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
+                <input type="number" onclick="reactno();" id="reactquantity" name="quantity" min="1" max="5" value="5">
+                <label for="quantity">Characters</label>
+            </div>
+
+            <div style="display: inline-block; margin-left: 20px;"> Extras: <br>
+                <input type="checkbox" onclick="reactno();" id="reactunif" name="size" value="0">
+                <label for="size1">Extra Uniform</label>
+            </div>
+
+
+            </div>
+
+            <script>
+            function reactno(){
+              var reactquant = document.getElementById("reactquantity").value;
+              var uni
+              if (document.getElementById("reactunif").checked){
+                uni = 30;
+              }
+              else{
+                uni = 0;
+              }
+              switch (reactquant){
+                case "1":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 0);
+                  $('#noelr').css('opacity', 0);
+                  $('#dogyr').css('opacity', 0);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  document.getElementById("reactrealprice").value = uni + 60;
+                  document.getElementById("reactivetitle").innerHTML = "Single Pack!";
+                  break;
+                case "2":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 1);
+                  $('#koncr').css('opacity', 0);
+                  $('#noelr').css('opacity', 0);
+                  $('#dogyr').css('opacity', 0);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 160.5 + "px");
+                  $('#mydir').css('margin-left', 273.5 + "px");
+                  $('#koncr').css('margin-left', 273.5 + "px");
+                  $('#noelr').css('margin-left', 47.5 + "px");
+                  $('#dogyr').css('margin-left', 386.5 + "px");
+                  $('#aryar').css('margin-left', -74.5 + "px");
+                  document.getElementById("reactrealprice").value = uni + 117.5;
+                  document.getElementById("reactivetitle").innerHTML = "Couple Pack!";
+                  break;
+                case "3":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 0);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  document.getElementById("reactrealprice").value = uni + 175;
+                  document.getElementById("reactivetitle").innerHTML = "Collab Pack!";
+                break;
+                case "4":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 1);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 160.5 + "px");
+                  $('#mydir').css('margin-left', 273.5 + "px");
+                  $('#koncr').css('margin-left', 273.5 + "px");
+                  $('#noelr').css('margin-left', 47.5 + "px");
+                  $('#dogyr').css('margin-left', 386.5 + "px");
+                  $('#aryar').css('margin-left', -74.5 + "px");
+                  document.getElementById("reactrealprice").value = uni + 235;
+                  document.getElementById("reactivetitle").innerHTML = "Collab Pack! +1";
+                break;
+                case "5":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 1);
+                  $('#aryar').css('opacity', 1);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  document.getElementById("reactrealprice").value = uni + 290;
+                  document.getElementById("reactivetitle").innerHTML = "Party Pack!";
+                break;
+                default:
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 1);
+                  $('#aryar').css('opacity', 1);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  document.getElementById("reactrealprice").value = uni + 290;
+                  document.getElementById("reactivetitle").innerHTML = "Party Pack!";
+                break;
+              }
+            }
+          </script>
+
+            
 
           </div>
           <h2>Reactive Images</h2>
