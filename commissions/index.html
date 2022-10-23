@@ -483,9 +483,30 @@
       </div>
       <div style="width: 1000px;background-color: #272b27;">
 
-        <div
-          style="margin-left: 0;margin-right:auto;height:500px;background-color: #272b27;width: 300px;padding-top: 30px;text-align: left;padding-left: 40px;font-size: 7pt;color: white;">
-          <div>
+
+        <!--sticky js-->
+        <script>
+          var handlerFired;
+          window.addEventListener('scroll', function(e){
+            var containerTop = document.querySelector('.sticker').getBoundingClientRect().top;
+            if (containerTop <= 0) {
+              if (!handlerFired) {
+                handlerFired = 1;
+                document.getElementById("stickler").style.position = "fixed";
+                document.getElementById("stickler").style.marginTop = "30px";
+              }    
+            }
+            if (containerTop >= 0) {
+              handlerFired = 0;
+              document.getElementById("stickler").style.position = "static";
+              document.getElementById("stickler").style.marginTop = "0px";
+            }
+            });
+        </script>
+        
+        <div class="sticker"></div>
+        <div style="margin-left: 0;margin-right:auto;height:500px;background-color: #272b27;width: 300px;padding-top: 30px;text-align: left;padding-left: 40px;font-size: 7pt;color: white;">
+          <div id="stickler" style="position:static; margin-top: 0px; top:0;">
             <div style="font-size: 12pt;">Commission Types</div>
             <br>
             <div style="color: #8ce967;">
