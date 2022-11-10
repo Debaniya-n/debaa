@@ -8,40 +8,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <meta name="viewport" content="width=1080">
   <!--OGP META-->
-  <script>
-    fetch('https://trello.com/b/XidhbVro/macchako-automation-with-trello-api.json')
-    .then((response) => response.json())
-    .then((data) => {
-      var commstat = data.cards[0].cover.color;
-      switch(commstat){
-        case "green":
-          //commissions open codeblock
-          document.getElementById("ogpbanner").content = "https://debaa.macchako.moe/images/commbanner.png)";
-          document.getElementById("ogptwitter").content = "https://debaa.macchako.moe/images/commbanner.png)";
-          break;
-        case "red":
-          //commissions closed codeblock
-          document.getElementById("ogpbanner").content = "https://debaa.macchako.moe/images/closedbanner.png)";
-          document.getElementById("ogptwitter").content = "https://debaa.macchako.moe/images/closedbanner.png)";
-          break;
-        case "yellow":
-          //custom commissions banner and stuff codeblock 
-          var banner = data.cards[5].attachments[0].url;
-          document.getElementById("ogpbanner").style.background = banner;
-          document.getElementById("ogptwitter").style.background = banner;
-          break;
-        default:
-          //API error codeblock
-          document.getElementById("ogpbanner").content = "https://debaa.macchako.moe/images/commbanner.png)";
-          document.getElementById("ogptwitter").content = "https://debaa.macchako.moe/images/commbanner.png)";
-          break;
-      }
-    })
-  </script>
   <meta property="og:title" content="Debaa's Commissions" />
   <meta property="og:description" content="Ba's official commission reference page!" />
   <meta property="og:url" content="https://debaa.macchako.moe/commissions" />
-  <meta id="ogpbanner" property="og:image" content="https://debaa.macchako.moe/images/closedbanner.png" />
+  <meta id="ogpbanner" property="og:image" content="https://debaa.macchako.moe/images/banner.png" />
   <meta property="og:image:width" content="960" />
   <meta property="og:image:height" content="540" />
   <meta property="og:site_name" content="Debaa | Macchako Lounge" />
@@ -53,7 +23,7 @@
   <meta name="twitter:creator" content="@debaa_nyan">
   <meta name="twitter:title" content="Debaa's Commissions">
   <meta name="twitter:description" content="Ba's official commission reference page!">
-  <meta id="ogptwitter" name="twitter:image" content="http://debaa.macchako.moe/images/closedbanner.png">
+  <meta id="ogptwitter" name="twitter:image" content="http://debaa.macchako.moe/images/banner.png">
   <!-- Live2DCubismCore script -->
   <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
   <!-- Build script -->
