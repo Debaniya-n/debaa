@@ -394,6 +394,27 @@ body{
 	transition: all 0.1s ease-in-out;
 }
 
+#sailorcostume {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+#nocostume {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+.reactor:hover {
+	-webkit-animation: speak-now 1s  alternate !important;
+    animation: speak-now 1s  alternate !important;
+}
+
 .sublink {
 	color: #8ce967;
 }
@@ -404,40 +425,50 @@ body{
 
 #babar:hover {
 	background-image: url(../images/Babawebo.gif) !important;
-	-webkit-animation: speak-now 1s  alternate !important;
-    animation: speak-now 1s  alternate !important;
 }
 
 #noelr:hover {
 	background-image: url(../images/Noellawebo2.gif) !important;
-	-webkit-animation: speak-now 1s  alternate !important;
-    animation: speak-now 1s  alternate !important;
 }
 
 #koncr:hover {
 	background-image: url(../images/Konchiewebo.gif) !important;
-	-webkit-animation: speak-now 1s  alternate !important;
-    animation: speak-now 1s  alternate !important;
 }
 
 #aryar:hover {
 	background-image: url(../images/AryawebO.gif) !important;
-	-webkit-animation: speak-now 1s  alternate !important;
-    animation: speak-now 1s  alternate !important;
 }
 
 #dogyr:hover {
 	background-image: url(../images/Dogywebo.gif) !important;
-	-webkit-animation: speak-now 1s  alternate !important;
-    animation: speak-now 1s  alternate !important;
-	
 }
 
 #mydir:hover {
 	background-image: url(../images/Mydiawebo.gif) !important;
-	-webkit-animation: speak-now 1s  alternate !important;
-    animation: speak-now 1s  alternate !important;
-	
+}
+
+#babars:hover {
+	background-image: url(../images/SailorBabaO.gif) !important;
+}
+
+#noelrs:hover {
+	background-image: url(../images/SailorNoellaO.gif) !important;
+}
+
+#koncrs:hover {
+	background-image: url(../images/SailorKonchieO.gif) !important;
+}
+
+#aryars:hover {
+	background-image: url(../images/SailorAryaO.gif) !important;
+}
+
+#dogyrs:hover {
+	background-image: url(../images/SailorDogO.gif) !important;
+}
+
+#mydirs:hover {
+	background-image: url(../images/SailorMydiaO.gif) !important;
 }
 
 @keyframes mover {
