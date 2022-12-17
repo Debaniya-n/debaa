@@ -104,14 +104,14 @@
                   document.getElementById("bannerimage").style.backgroundImage = "url(images/babadraw.jpg)";
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = "Commissions are Open!";
-                  document.getElementById("bannersubtitle").innerHTML = "Debaa is accepting new requests!<br>Check Queues below to view progress, Scroll down for pricing.<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> or <a class=sublink href=discord://-/users/109294441826635776>Mydia</a> for inquiries.";
+                  document.getElementById("bannersubtitle").innerHTML = "Debaa is accepting new requests!<br>Check Queues below to view progress, Scroll down for pricing.<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> for inquiries.";
                   break;
                 case "red":
                   //commissions closed codeblock
                   document.getElementById("bannerimage").style.backgroundImage = "url(images/rest.jpg)";
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = "Commissions are Closed...";
-                  document.getElementById("bannersubtitle").innerHTML = "Debaa is currently not taking new requests,<br>We'll be opening again soon, Check again later!<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> or <a class=sublink href=discord://-/users/109294441826635776>Mydia</a> for inquiries.";
+                  document.getElementById("bannersubtitle").innerHTML = "Debaa is currently not taking new requests,<br>We'll be opening again soon, Check again later!<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> for inquiries.";
                   break;
                 case "yellow":
                   //custom commissions banner and stuff codeblock 
@@ -139,7 +139,7 @@
                   document.getElementById("bannerimage").style.backgroundImage = "url(images/error.jpg)";
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = "API Error.";
-                  document.getElementById("bannersubtitle").innerHTML = "Failed to fetch commission status,<br>If you're seeing this, please contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> or <a class=sublink href=discord://-/users/109294441826635776>Mydia</a>.<br>You can still check queue and prices below.";
+                  document.getElementById("bannersubtitle").innerHTML = "Failed to fetch commission status,<br>If you're seeing this, please contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a>.<br>You can still check queue and prices below.";
                   break;
               }
               var goalstat = data.cards[1].cover.color;
@@ -327,7 +327,7 @@
       <div style="height: 576px; width: 397px; border-radius: 5px; background-color:#434945;">
         <div style="height: 518px; width: 397px; border-radius: 5px;overflow: hidden;background-image:url(images/aaaa.png);">
           <video class="videobutton" autoplay muted loop style="filter: opacity(50%);"onclick="scrollto(1)">
-            <source src=images/Illust.mp4 type="video/mp4">
+            <source src=images/Illustkon.mp4 type="video/mp4">
           </video>
         </div>
         <div style="padding-top:10px;padding-left:10px;color: white;">Regular Illustrations</div>
@@ -1191,12 +1191,12 @@
 
             <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
                 <input type="number" onclick="reactno();" id="reactquantity" name="quantity" min="1" max="5" value="5">
-                <label for="quantity">Characters</label>
+                <label for="reactquantity">Characters</label>
             </div>
 
             <div style="display: inline-block; margin-left: 20px;"> Extras: <br>
                 <input type="checkbox" onclick="reactno();" id="reactunif" name="size" value="0">
-                <label for="size1">Extra Uniform</label>
+                <label for="reactunif">Extra Uniform</label>
             </div>
 
 
@@ -1489,11 +1489,11 @@
           <br>
           
           <!-- Emote applet -->
-          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:351px">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:360px">
             <div style="background-image:url(images/aaaa.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
               <div style="background-image:url(images/seamotes.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
             </div>
-            <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
+            <div style="margin-left: 20px;margin-top: -7px;"></div>
 
             <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
               Price: <br>
@@ -1502,6 +1502,37 @@
                   type="number" id="emoterealprice" value=200 disabled>
               </div>
             </div>
+
+            <div style="margin-left: 20px;margin-top: -15px;">
+              <div style="display: inline-block;"><div style="margin-top:-8px;position: absolute;">Pack Contents</div><div style="opacity: 0;">Emote Bundles</div></div> 
+              
+              
+  
+              <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
+                  <input type="number" onclick="reactno();" id="emotequantity" name="quantity" min="1" max="10" value="10">
+                  <label for="quantity">Pieces</label>
+              </div>
+  
+              <div style="display: inline-block; margin-left: 20px;">Discount: <br>
+                  <select type="checkbox" onclick="reactno();" id="emotediscount" name="size">
+                    <option value=0 hidden>None</option>
+                    <option value=1>Starter</option>
+                    <option value=2>Affiliate</option>
+                    <option value=3>Animated</option>
+                  </select>
+                  <label for="size1">Bundle</label>
+              </div>
+  
+              <div style="display: inline-block; margin-left: 20px;"> Type: <br>
+                <select type="checkbox" onclick="reactno();" id="emotepack" name="size">
+                  <option value=1>Static</option>
+                  <option value=2>Animated</option>
+                </select>
+                <label for="size2">Emotes</label>
+            </div>
+  
+            </div>
+
           </div>
 
           <h2 id="emotebookmark">Emote Packs</h2>
