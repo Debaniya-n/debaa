@@ -11,7 +11,7 @@
   <meta property="og:title" content="Debaa's Commissions" />
   <meta property="og:description" content="Ba's official commission reference page!" />
   <meta property="og:url" content="https://debaa.macchako.moe/commissions" />
-  <meta property="og:image" content="https://debaa.macchako.moe/images/commbanner.png" />
+  <meta id="ogpbanner" property="og:image" content="https://debaa.macchako.moe/images/banner.png" />
   <meta property="og:image:width" content="960" />
   <meta property="og:image:height" content="540" />
   <meta property="og:site_name" content="Debaa | Macchako Lounge" />
@@ -23,7 +23,7 @@
   <meta name="twitter:creator" content="@debaa_nyan">
   <meta name="twitter:title" content="Debaa's Commissions">
   <meta name="twitter:description" content="Ba's official commission reference page!">
-  <meta name="twitter:image" content="http://debaa.macchako.moe/images/commbanner.png">
+  <meta id="ogptwitter" name="twitter:image" content="http://debaa.macchako.moe/images/banner.png">
   <!-- Live2DCubismCore script -->
   <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
   <!-- Build script -->
@@ -84,39 +84,250 @@
   </style>
   <div class="backgrrrr"
     style="text-align: center;padding-bottom:0px;width:100%;padding-top:0px;background:url(images/bgbg.png) repeat;">
-    <div
-      style="background:url(images/babadraw.jpg); background-size: contain; width:1000px;height:563px;display: inline-block;">
-      <div style="background-color: rgba(0, 0, 0, 0.5); height: 100%;width: 100%;">
+    <div style="display:inline-block">
+    <div  style="background:url(images/aaaa.png); width:1000px;height:563px;"></div>
+    <div  style="background-color: rgba(0, 0, 0, 0.5); width:1000px;height:563px;margin-top: -563px;"></div>
+    <div id="bannerimagefader" style="opacity: 0;margin-top: -563px;"><div id="bannerimage" style="background:url(); background-size: contain; width:1000px;height:563px;"></div><div id="bgpatch" style="background-color: rgba(0, 0, 0, 0.5);width:1000px;height:563px;margin-top:-563px;opacity:0;"></div></div>
+    <div style="background:url(); background-size: contain; width:1000px;height:563px;margin-top: -563px;">
+      <div style="height: 100%;width: 100%;">
         <div style=" height: 93%;width: 60%;text-align: left;padding-top:3%; padding-left:5%;color: white;">
-          <div style="font-size: 7pt;">
-            <b style="font-size: 9pt;">222</b> orders Finished, <b style="font-size: 9pt;">13</b> currently in queue.
-            Last Updated 4/18/22
+
+          <!--Trello API to change banner things-->
+          <script>
+            fetch('https://trello.com/b/XidhbVro/macchako-automation-with-trello-api.json')
+            .then((response) => response.json())
+            .then((data) => {
+              var commstat = data.cards[0].cover.color;
+              switch(commstat){
+                case "green":
+                  //commissions open codeblock
+                  document.getElementById("bannerimage").style.backgroundImage = "url(images/babadraw.jpg)";
+                  document.getElementById("bannerimage").backgroundSize = "contain";
+                  document.getElementById("bannertitle").innerHTML = "Commissions are Open!";
+                  document.getElementById("bannersubtitle").innerHTML = "Debaa is accepting new requests!<br>Check Queues below to view progress, Scroll down for pricing.<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> for inquiries.";
+                  break;
+                case "red":
+                  //commissions closed codeblock
+                  document.getElementById("bannerimage").style.backgroundImage = "url(images/rest.jpg)";
+                  document.getElementById("bannerimage").backgroundSize = "contain";
+                  document.getElementById("bannertitle").innerHTML = "Commissions are Closed...";
+                  document.getElementById("bannersubtitle").innerHTML = "Debaa is currently not taking new requests,<br>We'll be opening again soon, Check again later!<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> for inquiries.";
+                  break;
+                case "yellow":
+                  //custom commissions banner and stuff codeblock 
+                  var banner = data.cards[4].attachments[0].url;
+                  var title = data.cards[4].name;
+                  var subtitle = data.cards[4].desc;
+                  //replace the linebreaks with <br>
+                  subtitle = subtitle.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                  //check for links [text](url)
+                  let elements = subtitle.match(/\[.*?\)/g);
+                  if( elements != null && elements.length > 0){
+                    for(el of elements){
+                      let txt = el.match(/\[(.*?)\]/)[1];//get only the txt
+                      let url = el.match(/\((.*?)\)/)[1];//get only the link
+                      subtitle = subtitle.replace(el,'<a class="sublink" href="'+url+'" target="_blank">'+txt+'</a>')
+                    }
+                  } 
+                  document.getElementById("bannerimage").style.backgroundImage = "url("+banner+")";
+                  document.getElementById("bannerimage").backgroundSize = "contain";
+                  document.getElementById("bannertitle").innerHTML = title;
+                  document.getElementById("bannersubtitle").innerHTML = subtitle;
+                  break;
+                default:
+                  //API error codeblock
+                  document.getElementById("bannerimage").style.backgroundImage = "url(images/error.jpg)";
+                  document.getElementById("bannerimage").backgroundSize = "contain";
+                  document.getElementById("bannertitle").innerHTML = "API Error.";
+                  document.getElementById("bannersubtitle").innerHTML = "Failed to fetch commission status,<br>If you're seeing this, please contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a>.<br>You can still check queue and prices below.";
+                  break;
+              }
+              var goalstat = data.cards[1].cover.color;
+
+              function goalies(){
+                var mone = document.getElementById("moolah").innerHTML; 
+                var gol = document.getElementById("goals").innerHTML;
+                if(mone/gol*100 > 100){
+                  document.getElementById("donoprogress").style.width = 100+"%";
+                }
+                else{
+                  document.getElementById("donoprogress").style.width = mone/gol*100+"%";
+                }
+              }
+
+              switch(goalstat){
+                case "green":
+                  var goalend = data.cards[1].desc;
+                  var goalprog = data.cards[2].desc;
+                  document.getElementById("goals").innerHTML = goalend;
+                  document.getElementById("moolah").innerHTML = goalprog;
+                  document.getElementById("goalslash").style.display = "inline-block";
+                  document.getElementById("goals").style.display = "inline-block";
+                  document.getElementById("moolah").style.display = "inline-block";
+                  goalies();
+                  break;
+                case "red":
+                  document.getElementById("goaltext").innerHTML = "There are no campaigns at the moment...";
+                  document.getElementById("goalslash").style.display = "none";
+                  document.getElementById("goals").style.display = "none";
+                  document.getElementById("moolah").style.display = "none";
+                  document.getElementById("donoprogress").style.width = 100+"%";
+                  
+                  break;
+                default:
+                  document.getElementById("goaltext").innerHTML = "Failed to fetch API Data..."
+                  document.getElementById("goalslash").style.display = "none";
+                  document.getElementById("goals").style.display = "none";
+                  document.getElementById("moolah").style.display = "none";
+                  document.getElementById("donoprogress").style.width = 100+"%";
+                  
+                  break;
+              }
+
+              
+              document.getElementById("bannertitle").style.opacity = "1";
+              document.getElementById("bannersubtitle").style.opacity = "1";
+              document.getElementById("bannerbutton").style.opacity = "1";
+              document.getElementById("donoprogresstext").style.opacity = "1";
+              document.getElementById("donoprogresscircle").style.opacity = "1";
+              document.getElementById("fetchingdata").style.opacity = "1";
+              document.getElementById("bgpatch").style.opacity = "1";
+              document.getElementById("loadinger").style.opacity = "0";
+              document.getElementById("bannerimagefader").style.opacity = "1";
+              document.getElementById("loadinger").style.marginTop = "250px";
+              document.getElementById("goalslash").style.opacity = "1";
+              document.getElementById("goals").style.opacity = "1";
+              document.getElementById("moolah").style.opacity = "1";
+              document.getElementById("goaltext").style.opacity = "1";
+            })
+          </script>
+
+
+          <!--Trello card counter, Thank you RedRiolite! >w< -->
+          <script>
+          fetch('https://trello.com/b/pHtqWzR2/commissions.json')
+          .then((response) => response.json())
+          .then((data) => {
+            var cards = data.cards;
+            var count1 = 0;
+            var count2 = 0;
+            var count3 = 0;
+            var count4 = 0;
+            var count5 = 0;
+            cards.forEach(element => {
+              if (element.idList == "62927640604aec8dcc03ce27"){
+                count1++;
+              }
+            });
+            cards.forEach(element => {
+              if (element.idList == "6292783eabf29344b744deca"){
+                count2++;
+              }
+            });
+            cards.forEach(element => {
+              if (element.idList == "62927640604aec8dcc03ce28"){
+                count3++;
+              }
+            });
+            cards.forEach(element => {
+              if (element.idList == "6292784d91dba84a1603836b"){
+                count4++;
+              }
+            });
+            cards.forEach(element => {
+              if (element.idList == "62927640604aec8dcc03ce29"){
+                count5++;
+              }
+            });
+            var date = data.dateLastActivity;
+            date = date.substring(0, 10);
+            date = date.replace(/-/g, "/");
+            console.log(date);
+  	        function formatDate (input) {
+  		        var datePart = input.match(/\d+/g),
+  		        year = datePart[0].substring(2), // get only two digits
+  		        month = datePart[1], day = datePart[2];
+			
+              month = parseInt(month, 10);
+              day = parseInt(day, 10);
+			
+  		        return month+'/'+day+'/'+year;
+            }
+            date = formatDate (date);
+  	        document.getElementById("treldate").innerHTML = date;
+            document.getElementById("onprog").innerHTML = count1 + count2 + count3 + count4;
+            document.getElementById("fin").innerHTML = count5 + 204;
+            document.getElementById("fetchingdata").style.display = "none";
+            document.getElementById("CommStatus").style.display = "block";
+          });
+          </script>
+
+          <div style="font-size: 7pt;display:block;opacity:0;" id="fetchingdata">
+            Fetching data, please wait... <b style="font-size: 9pt;opacity:0">0</b>
           </div>
-          <div style="font-size: 15pt;margin-top: 210px;">baba's official commission page!</div>
-          <div style="color: #8ce967;font-size: 11pt;">lorem ipsum dolor sit amet</div>
+          <div style="font-size: 7pt;display:none" id="CommStatus">
+            <b style="font-size: 9pt;" id="fin">0</b> orders Finished, <b style="font-size: 9pt;" id="onprog">0</b> currently in queue.
+            Last Updated <b id="treldate">0/0/00</b>
+          </div>
+
+          <div style="position: absolute;margin-top: 205px;width:300px;" id="loadinger">
+            <div style="position: absolute;"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+            <div style="position: absolute; margin-top: 30px;margin-left:85px;font-size: 15pt;white-space: nowrap;">Checking commission status...</div>
+          </div>
+          
+          <div id="bannertitle" style="font-size: 15pt;margin-top: 210px; opacity: 0;"><!--Commissions are Open!-->Commissions are Closed...</div>
+          <div id="bannersubtitle" style="color: #8ce967;font-size: 11pt; opacity: 0;"><!--Debaa is accepting new requests!-->Debaa is currently not taking new requests,<br><!--Check Queues below to view progress, Scroll down for pricing.-->We'll be opening again soon, Check again later!<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> or <a class=sublink href=discord://-/users/109294441826635776>Mydia</a> for inquiries.</div>
           <br>
-          <div class="butt"
-            style="background-color: #375929;height: 50px;width: 134px; border-radius: 5px;box-shadow: 0px 0px 5px #000;position: relative;">
-            <div style="position: absolute;top: 36%;left: 13%;font-size: 11pt;">Check Prices</div>
+          <div id="bannerbutton" style="opacity: 0; ">
+            <div class="butt" 
+              style="background-color: #375929;height: 50px;width: 145px; border-radius: 5px;box-shadow: 0px 0px 5px #000;position: relative;cursor: pointer;" onclick="NewTab()">
+              <div style="position: absolute;top: 36%;left: 13%;font-size: 11pt;cursor: pointer;">Check Queues</div>
+            </div>
           </div>
         </div>
-        <div class="donoprogress" style="background-color: #8ce967;height: 2%;width: 0%;position: relative;">
+
+        <script>
+          function NewTab() {
+              window.open(
+                "https://trello.com/b/pHtqWzR2/commissions", "_blank");
+          }
+        </script>
+
+        <div id="donoprogress" style="background-color: #8ce967;height: 2%;width: 0%;position: relative;">
           <div
-            style="border-color: white;border-style: solid;border-radius: 50%; position: absolute;width: 5px;height: 5px;border-width: 2px;top:-4px;right:-4px;">
+            style="border-color: white;border-style: solid;border-radius: 50%; position: absolute;width: 5px;height: 5px;border-width: 2px;top:-4px;right:-4px;opacity:0;" id="donoprogresscircle">
           </div>
-          <div style="color: white;font-size: 7pt;position: absolute;bottom: 15px;left: 80%;white-space: nowrap;">
-            There are no campaign at the moment... <b id="moolah"></b> <b id="goals"></b>
+          <div style="color: white;font-size: 7pt;position: absolute;bottom: 15px;left: 80%;white-space: nowrap;opacity:0;" id="donoprogresstext">
+            <div id="goaltext" style="display: inline-block; opacity: 0;">Current campaign progress $ </div><b style="opacity: 0;" id="moolah">550</b><div id="goalslash" style="display: inline-block;opacity: 0;"> / </div><b style="opacity: 0;" id="goals">2250</b>
           </div>
         </div>
+
+        <!-- <script>
+          
+            var today = new Date();
+            var isitjune = today.getMonth();
+            if(isitjune == "5"){
+              var deet = today.getDate();
+              document.getElementById("date").innerHTML = deet;
+              document.getElementById("donoprogress").style.width = deet/30*100+"%";
+            }
+            else {
+              document.getElementById("date").innerHTML = 30;
+              document.getElementById("donoprogress").style.width = 100+"%";
+            }
+            
+
+        </script> -->
+
       </div>
+    </div>
     </div>
     <br>
     <div style="margin-top:10px;display:inline-block;text-align:left; width:1000px;">
-      <div style="height: 576px; width: 397px; border-radius: 5px; background-color:#434945;display:inline-block;">
-        <div
-          style="height: 518px; width: 397px; border-radius: 5px;overflow: hidden;background-image:url(images/aaaa.png);">
-          <video autoplay muted loop style="filter: opacity(50%);">
-            <source src=images/Illust.mp4 type="video/mp4">
+      <div style="height: 576px; width: 397px; border-radius: 5px; background-color:#434945;">
+        <div style="height: 518px; width: 397px; border-radius: 5px;overflow: hidden;background-image:url(images/aaaa.png);">
+          <video class="videobutton" autoplay muted loop style="filter: opacity(50%);"onclick="scrollto(1)">
+            <source src=images/Illustkon.mp4 type="video/mp4">
           </video>
         </div>
         <div style="padding-top:10px;padding-left:10px;color: white;">Regular Illustrations</div>
@@ -124,21 +335,22 @@
             style="display: inline-block;font-size: 15pt;">$40</div>
         </div>
       </div>
-      <div style="display: inline-block;">
-        <div style="height: 313px; width: 595px; border-radius: 5px; background-color:#434945;display:inline-block;">
-          <div style="height: 255px; width: 595px; border-radius: 5px; background-image:url(images/aaaa.png);"></div>
+      <div style="margin-top: -576px; margin-left: 405px;">
+        <div style="height: 313px; width: 595px; border-radius: 5px; background-color:#434945;">
+          <div style="height: 255px; width: 595px; border-radius: 5px; background-image:url(images/aaaa.png);">
+            <div class="videobutton" style="height: 255px; width: 595px; border-radius: 5px; background-image:url(images/pack.png);filter: opacity(50%);"onclick="scrollto(8)"></div>
+          </div>
           <div style="padding-top:10px;padding-left:10px;color: white;">Indie V-Tuber 'Starter Pack'</div>
           <div style="padding-right:10px;color: #8ce967;text-align: right;font-size: smaller;">Starting from <div
               style="display: inline-block;font-size: 15pt;">$810</div>
           </div>
         </div>
-        <br>
-        <div style="height: 181px; width: 595px; border-radius: 6px;display:inline-block;">
+        <div style="height: 181px; width: 595px; border-radius: 6px;">
           <div
             style="height: 82px; width: 292px; border-radius: 6px; background-color:#434945;margin-right:4px;display:inline-block;">
             <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);">
               <div style="height: 60px; width: 292px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop style="filter: opacity(50%);">
+                <video class="videobutton" autoplay muted loop style="filter: opacity(50%);object-fit: fill;height: 60px; width: 292px;"onclick="scrollto(2)">
                   <source src=images/model.mp4 type="video/mp4">
                 </video>
               </div>
@@ -154,7 +366,7 @@
             style="height: 82px; width: 292px; border-radius: 6px; background-color:#434945;margin-top: 6px;display:inline-block;">
             <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);">
               <div style="height: 60px; width: 292px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop style="filter: opacity(50%);">
+                <video class="videobutton" autoplay muted loop style="filter: opacity(50%);object-fit: fill;height: 60px; width: 292px;"onclick="scrollto(3)">
                   <source src=images/react.mp4 type="video/mp4">
                 </video>
               </div>
@@ -170,7 +382,7 @@
             style="height: 82px; width: 292px; border-radius: 6px; background-color:#434945;margin-right:4px;margin-top: 6px;display:inline-block;">
             <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);">
               <div style="height: 60px; width: 292px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop style="filter: opacity(50%);">
+                <video class="videobutton" autoplay muted loop style="filter: opacity(50%);object-fit: fill;height: 60px; width: 292px;"onclick="scrollto(4)">
                   <source src=images/emo.mp4 type="video/mp4">
                 </video>
               </div>
@@ -185,7 +397,7 @@
           <div style="height: 82px; width: 292px; border-radius: 6px; background-color:#434945;display:inline-block;">
             <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);">
               <div style="height: 60px; width: 292px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop style="filter: opacity(50%);">
+                <video class="videobutton" autoplay muted loop style="filter: opacity(50%);object-fit: fill;height: 60px; width: 292px;"onclick="scrollto(5)">
                   <source src=images/sting.mp4 type="video/mp4">
                 </video>
               </div>
@@ -202,7 +414,7 @@
             style="height: 82px; width: 292px; border-radius: 6px; background-color:#434945;margin-right:4px;margin-top: 6px;display:inline-block;">
             <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);">
               <div style="height: 60px; width: 292px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop style="filter: opacity(50%);">
+                <video class="videobutton" autoplay muted loop style="filter: opacity(50%);object-fit: fill;height: 60px; width: 292px;"onclick="scrollto(6)">
                   <source src=images/alert.mp4 type="video/mp4">
                 </video>
               </div>
@@ -217,7 +429,7 @@
           <div style="height: 82px; width: 292px; border-radius: 6px; background-color:#434945;display:inline-block;">
             <div style="height: 60px; width: 292px; border-radius: 6px; background-image:url(images/aaaa.png);">
               <div style="height: 60px; width: 292px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop style="filter: opacity(50%);">
+                <video class="videobutton" autoplay muted loop style="filter: opacity(50%);object-fit: fill;height: 60px; width: 292px;"onclick="scrollto(7)">
                   <source src=images/ani.mp4 type="video/mp4">
                 </video>
               </div>
@@ -241,33 +453,90 @@
       </div>
       <div style="width: 1000px;background-color: #272b27;">
 
-        <div
-          style="margin-left: 0;margin-right:auto;height:500px;background-color: #272b27;width: 300px;padding-top: 30px;text-align: left;padding-left: 40px;font-size: 7pt;color: white;">
-          <div>
+
+        <!--sticky js-->
+        <script>
+          var handlerFired;
+          window.addEventListener('scroll', function(e){
+            var containerTop = document.querySelector('.sticker').getBoundingClientRect().top;
+            if (containerTop <= 0) {
+              if (!handlerFired) {
+                handlerFired = 1;
+                document.getElementById("stickler").style.position = "fixed";
+                document.getElementById("stickler").style.marginTop = "30px";
+              }    
+            }
+            if (containerTop >= 0) {
+              handlerFired = 0;
+              document.getElementById("stickler").style.position = "static";
+              document.getElementById("stickler").style.marginTop = "0px";
+            }
+            });
+        </script>
+        
+        <div class="sticker"></div>
+        <div style="margin-left: 0;margin-right:auto;height:500px;background-color: #272b27;width: 300px;padding-top: 30px;text-align: left;padding-left: 40px;font-size: 7pt;color: white;">
+          <div id="stickler" style="position:static; margin-top: 0px; top:0;">
             <div style="font-size: 12pt;">Commission Types</div>
             <br>
             <div style="color: #8ce967;">
-              <div class="submenuwu">Illustrations</div>
+              <div class="submenuwu" onclick="scrollto(1)">Illustrations</div>
               <br>
-              <div class="submenuwu">Live2D Models</div>
+              <div class="submenuwu" onclick="scrollto(2)">Live2D Models</div>
               <br>
-              <div class="submenuwu">Reactive Images</div>
+              <div class="submenuwu" onclick="scrollto(3)">Reactive Images</div>
               <br>
-              <div class="submenuwu">Emote Packs</div>
+              <div class="submenuwu" onclick="scrollto(4)">Emote Packs</div>
               <br>
-              <div class="submenuwu">Stingers</div>
+              <div class="submenuwu" onclick="scrollto(5)">Stingers</div>
               <br>
-              <div class="submenuwu">Alert Packs</div>
+              <div class="submenuwu" onclick="scrollto(6)">Alert Packs</div>
               <br>
-              <div class="submenuwu">Animations</div>
+              <div class="submenuwu" onclick="scrollto(7)">Animations</div>
               <br>
-              <div class="submenuwu">Indie V-Tuber Pack</div>
+              <div class="submenuwu" onclick="scrollto(8)">Indie V-Tuber Pack</div>
             </div>
             <br>
             <br>
             <div style="font-size: 12pt;">Terms of Service</div>
           </div>
         </div>
+
+        <!--Scroller-->
+        <script>
+          function scrollto(sroll) {
+            var realsroll;
+            switch(sroll){
+              case 1:
+                realsroll = "illustbookmark"
+                break;
+              case 2:
+                realsroll = "l2dbookmark"
+                break;
+              case 3:
+                realsroll = "reactbookmark"
+                break;
+              case 4:
+                realsroll = "emotebookmark"
+                break;
+              case 5:
+                realsroll = "stingerbookmark"
+                break;
+              case 6:
+                realsroll = "alertbookmark"
+                break;
+              case 7:
+                realsroll = "animbookmark"
+                break;
+              case 8:
+                realsroll = "packbookmark"
+                break;
+            }
+            const element = document.getElementById(realsroll);
+            element.scrollIntoView({behavior: 'smooth',block: 'center'});
+          }
+        </script>
+
 
         <div
           style="margin-right: 0;margin-left: auto;margin-top: -530px;background-color: #202420;width: 700px;padding-top: 30px;text-align: left;padding-left: 40px;color: white;padding-right: 20px; padding-bottom: 30px;">
@@ -277,56 +546,56 @@
             <!-- Artwork applet -->
             <div style="background-color: #303332; border-radius: 6px; height: 360px; width: 660px;" id="warapper">
               <div
-                style="background-image:url(images/aaaa.png);height: 190px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;"
+                style="background-image:url(images/aaaa.png);height: 190px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;display: flex;"
                 id="cropper">
 
                 <div
-                  style="position: absolute;width: 660px;margin: 20px;margin-top: 119px;padding: 8px;text-shadow:0 0 5px rgba(0, 0, 0, 1) ;color: #8ce967;"
+                  style="position: absolute;width: 660px;margin: 20px;margin-top: 119px;padding: 8px;text-shadow:0 0 5px rgba(0, 0, 0, 1) ;color: #8ce967;z-index: 10;"
                   id="moveprice">
                   Price: <br>
                   <div style="font-size: 20pt;position: absolute;">$<input
                       style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px rgba(0, 0, 0, 1) ;"
-                      type="number" id="realprice" value=40 disabled>
+                      type="number" id="realprice" value=304 disabled>
                   </div>
                 </div>
 
                 <div id="shadowF">
-                  <div style="background:url(images/commla5.png);height: 563px;width:660px;"></div>
-                  <div class="flatc"
+                  <div id="FLA" style="background:url(images/commla5.png);height: 563px;width:660px;"></div>
+                  <div id="FFL" class="flatc"
                     style="background:url(images/commfl5.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="FFC" class="fullc"
                     style="background:url(images/commfc5.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow0">
-                  <div style="background:url(images/commla4.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow0" style="margin-left:-660px;">
+                  <div id="0LA" style="background:url(images/commla4.png);height: 563px;width:660px;"></div>
+                  <div id="0FL" class="flatc"
                     style="background:url(images/commfl4.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="0FC" class="fullc"
                     style="background:url(images/commfc4.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow1">
-                  <div style="background:url(images/commla3.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow1" style="margin-left:-660px;">
+                  <div id="1LA" style="background:url(images/commla3.png);height: 563px;width:660px;"></div>
+                  <div id="1FL" class="flatc"
                     style="background:url(images/commfl3.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="1FC" class="fullc"
                     style="background:url(images/commfc3.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow2">
-                  <div style="background:url(images/commla2.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow2" style="margin-left:-660px;">
+                  <div id="2LA" style="background:url(images/commla2.png);height: 563px;width:660px;"></div>
+                  <div id="2FL" class="flatc"
                     style="background:url(images/commfl2.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="2FC" class="fullc"
                     style="background:url(images/commfc2.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
-                <div id="shadow3">
-                  <div style="background:url(images/commla1.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="flatc"
+                <div id="shadow3" style="margin-left:-660px;">
+                  <div id="3LA" style="background:url(images/commla1.png);height: 563px;width:660px;"></div>
+                  <div id="3FL" class="flatc"
                     style="background:url(images/commfl1.png);height: 563px;width:660px;margin-top: -563px;"></div>
-                  <div class="fullc"
+                  <div id="3FC" class="fullc"
                     style="background:url(images/commfc1.png);height: 563px;width:660px;margin-top: -563px;"></div>
                 </div>
 
@@ -349,14 +618,13 @@
               </div>
 
               <div style="display: inline-block;margin-left: 20px;"> Type: <br>
-                <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="1"
-                  checked>
+                <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="1">
                 <label for="size1">Lineart</label>
                 <br>
                 <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="2">
                 <label for="size2">Flat Color</label>
                 <br>
-                <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="3">
+                <input type="radio" onclick="typev(this.value);pree();aa();meow();damnson();" name="type" value="3" checked>
                 <label for="size3">Full Color</label>
                 <br>
                 <br>
@@ -377,7 +645,7 @@
 
               <div style="display: inline-block;margin-left: 20px;"> Figure: <br>
                 <input type="number" onclick="meow(this.value);damnson();" id="quantity" name="quantity" min="1" max="5"
-                  value="1">
+                  value="5">
                 <label for="quantity">Heads</label>
                 <br>
                 <br>
@@ -386,18 +654,18 @@
               <br>
               <br>
               <div hidden>
-                <input type="text" id="v1" value="1" disabled>
+                <input type="text" id="v1" value="1" disabled> <!--crop-->
                 <br>
-                <input type="text" id="v2" value="1" disabled>
+                <input type="text" id="v2" value="3" disabled> <!--color-->
                 <br>
-                <input type="text" id="v3" value="1" disabled>
+                <input type="text" id="v3" value="1" disabled> <!--type-->
                 <br>
-                <input type="text" id="switchy" value="11" disabled>
+                <input type="text" id="switchy" value="13" disabled>
                 <br>
                 <!--commish type combination-->
-                <input type="number" id="pirace" value=40 disabled>
+                <input type="number" id="pirace" value=60 disabled>
                 <!--value before charcount modifier-->
-                <input type="number" id="price" value=40 disabled>
+                <input type="number" id="price" value=60 disabled>
                 <!--value after modifier-->
               </div>
 
@@ -437,41 +705,101 @@
                       axe = the;
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2.png)";
-                      //document.getElementById("lineart").style.content = "url(images/Lineart.png)";
-                      //document.getElementByClass("flatc").style.content = "url(images/Flat.png)";
-                      //document.getElementByClass("fullc").style.content = "url(images/Full.png)";
+                      document.getElementById("shadow3").style.zIndex = 0; 
+                      document.getElementById("shadow2").style.zIndex = 0; 
+                      document.getElementById("shadow1").style.zIndex = 0; 
+                      document.getElementById("shadow0").style.zIndex = 0; 
+                      document.getElementById("shadowF").style.zIndex = 0; 
+                      document.getElementById("FLA").style.background = "url(images/commla5.png)";
+                      document.getElementById("0LA").style.background = "url(images/commla4.png)";
+                      document.getElementById("1LA").style.background = "url(images/commla3.png)";
+                      document.getElementById("2LA").style.background = "url(images/commla2.png)";
+                      document.getElementById("3LA").style.background = "url(images/commla1.png)";
+                      document.getElementById("FFL").style.background = "url(images/commfl5.png)";
+                      document.getElementById("0FL").style.background = "url(images/commfl4.png)";
+                      document.getElementById("1FL").style.background = "url(images/commfl3.png)";
+                      document.getElementById("2FL").style.background = "url(images/commfl2.png)";
+                      document.getElementById("3FL").style.background = "url(images/commfl1.png)";
+                      document.getElementById("FFC").style.background = "url(images/commfc5.png)";
+                      document.getElementById("0FC").style.background = "url(images/commfc4.png)";
+                      document.getElementById("1FC").style.background = "url(images/commfc3.png)";
+                      document.getElementById("2FC").style.background = "url(images/commfc2.png)";
+                      document.getElementById("3FC").style.background = "url(images/commfc1.png)";
                       break;
                     case "2":
                       axe = the * 0.3 + parseInt(the);
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1r.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2r.png)";
-                      //document.getElementById("lineart").style.content = "url(images/Lineartr.png)";
-                      //document.getElementByClass("flatc").style.content = "url(images/Flatr.png)";
-                      //document.getElementByClass("fullc").style.content = "url(images/Fullr.png)";
+                      document.getElementById("shadow3").style.zIndex = 1; 
+                      document.getElementById("shadow2").style.zIndex = 2; 
+                      document.getElementById("shadow1").style.zIndex = 3; 
+                      document.getElementById("shadow0").style.zIndex = 4; 
+                      document.getElementById("shadowF").style.zIndex = 5; 
+                      document.getElementById("FLA").style.background = "url(images/commrla5.png)";
+                      document.getElementById("0LA").style.background = "url(images/commrla4.png)";
+                      document.getElementById("1LA").style.background = "url(images/commrla3.png)";
+                      document.getElementById("2LA").style.background = "url(images/commrla2.png)";
+                      document.getElementById("3LA").style.background = "url(images/commrla1.png)";
+                      document.getElementById("FFL").style.background = "url(images/commrfl5.png)";
+                      document.getElementById("0FL").style.background = "url(images/commrfl4.png)";
+                      document.getElementById("1FL").style.background = "url(images/commrfl3.png)";
+                      document.getElementById("2FL").style.background = "url(images/commrfl2.png)";
+                      document.getElementById("3FL").style.background = "url(images/commrfl1.png)";
+                      document.getElementById("FFC").style.background = "url(images/commrfc5.png)";
+                      document.getElementById("0FC").style.background = "url(images/commrfc4.png)";
+                      document.getElementById("1FC").style.background = "url(images/commrfc3.png)";
+                      document.getElementById("2FC").style.background = "url(images/commrfc2.png)";
+                      document.getElementById("3FC").style.background = "url(images/commrfc1.png)";
                       break;
                     case "3":
                       axe = the / 2 * 3;
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1l.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2l.png)";                 
-                      //document.getElementById("lineart").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318081384546314/Lineartl.png)";
-                      //document.getElementByClass("flatc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318071540121600/Flatl.png)";
-                      //document.getElementByClass("fullc").style.content = "url(https://cdn.discordapp.com/attachments/739427735511760908/853318085750947870/Fulll.png)";
+                      document.getElementById("shadow3").style.zIndex = 2; //5 Ba
+                      document.getElementById("shadow2").style.zIndex = 3; //4 Noella
+                      document.getElementById("shadow1").style.zIndex = 1; //3 Konchy
+                      document.getElementById("shadow0").style.zIndex = 4; //2 Der
+                      document.getElementById("shadowF").style.zIndex = 5; //1 Dogy
+                      document.getElementById("FLA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271134313152542/commlla5.png)";
+                      document.getElementById("0LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1027635081684197476/commlla4.png)";
+                      document.getElementById("1LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271133541400666/commlla3.png)";
+                      document.getElementById("2LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1027635081046655018/commlla2.png)";
+                      document.getElementById("3LA").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271132778057808/commlla1.png)";
+                      document.getElementById("FFL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271095264182272/commlfl5.png)";
+                      document.getElementById("0FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1027635084074950716/commlfl4.png)";
+                      document.getElementById("1FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271098019844186/commlfl3.png)";
+                      document.getElementById("2FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1027636120986599445/commlfl2.png)";
+                      document.getElementById("3FL").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271097327779840/commlfl1.png)";
+                      document.getElementById("FFC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271097034190908/commlfc5.png)";
+                      document.getElementById("0FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1027635082934091806/commlfc4.png)";
+                      document.getElementById("1FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271096396644382/commlfc3.png)";
+                      document.getElementById("2FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1027635082338500669/commlfc2.png)";
+                      document.getElementById("3FC").style.background = "url(https://cdn.discordapp.com/attachments/849490822616973382/1008271095616512050/commlfc1.png)";
                       break;
                     default:
                       axe = the;
                       axe = Math.ceil(axe)
                       document.getElementById("realprice").value = axe;
-                      //document.getElementById("shadow1").style.content = "url(images/shade1.png)";
-                      //document.getElementById("shadow2").style.content = "url(images/shade2.png)";
-                      //document.getElementById("lineart").style.content = "url(images/Lineart.png)";
-                      //document.getElementByClass("flatc").style.content = "url(images/Flat.png)";
-                      //document.getElementByClass("fullc").style.content = "url(images/Full.png)";
+                      document.getElementById("shadow3").style.zIndex = 0; 
+                      document.getElementById("shadow2").style.zIndex = 0; 
+                      document.getElementById("shadow1").style.zIndex = 0; 
+                      document.getElementById("shadow0").style.zIndex = 0; 
+                      document.getElementById("shadowF").style.zIndex = 0; 
+                      document.getElementById("FLA").style.background = "url(images/commla5.png)";
+                      document.getElementById("0LA").style.background = "url(images/commla4.png)";
+                      document.getElementById("1LA").style.background = "url(images/commla3.png)";
+                      document.getElementById("2LA").style.background = "url(images/commla2.png)";
+                      document.getElementById("3LA").style.background = "url(images/commla1.png)";
+                      document.getElementById("FFL").style.background = "url(images/commfl5.png)";
+                      document.getElementById("0FL").style.background = "url(images/commfl4.png)";
+                      document.getElementById("1FL").style.background = "url(images/commfl3.png)";
+                      document.getElementById("2FL").style.background = "url(images/commfl2.png)";
+                      document.getElementById("3FL").style.background = "url(images/commfl1.png)";
+                      document.getElementById("FFC").style.background = "url(images/commfc5.png)";
+                      document.getElementById("0FC").style.background = "url(images/commfc4.png)";
+                      document.getElementById("1FC").style.background = "url(images/commfc3.png)";
+                      document.getElementById("2FC").style.background = "url(images/commfc2.png)";
+                      document.getElementById("3FC").style.background = "url(images/commfc1.png)";
                       break;
 
                   }
@@ -624,13 +952,13 @@
               </script>
 
             </div>
-            <h2>Illustrations</h2>
-            <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-              galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-              also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-              1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
+            <h2 id="illustbookmark">Illustrations</h2>
+            <b style="font-size: 10pt;">A typical illustration commission, Size and coloring types listed above.
+            <br>In the case of a lewd illustration, client must state that their character is at least 18 years of age.
+            <br>Simple backgrounds are free of charge, more complex backgrounds are negotiable!
+            <br>Revisions/Changes are only limited to 2 per request, then $20 every time after.
+            <br>Typical working period varies between 15 days to 8 weeks.
+            <br><br>Will not accept any heavy R-18G themed requests.</b>
             <br>
             <br>
             <br>
@@ -810,29 +1138,422 @@
                 }
                 </script>
               </div>
+              <img src="images/Maipoint.png" style="height: 250px;margin-top: -525px; margin-left: 425px;">
             </div>
             
-            <h2>Live2D Models</h2>
-            <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-              galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-              also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-              1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
+            <h2 id="l2dbookmark">Live2D Models</h2>
+            <b style="font-size: 10pt;">Fully rigged and ready to use Live2D model! Price listed per size above.
+            <br>Comes with 1 wave motion, and 4 toggleable face expressions: Neutral, Happy, Angry and Sad.
+            <br>Pricing also goes up along with mesh count, and complexity and are negotiable!
+            <br>Custom motions/expressions are $20 each. For pre-production or as an Addon.
+            <br>Typical working period varies between 2 to 6 months.
+            <br><br>Includes free post-purchase support/troubleshooting!</b>
             <br>
             <br>
             <br>
           </div>
 
           <!-- Reactive applet -->
-          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:320px">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:332px">
 
-            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;">
-              <div id="noelr" style="background-image: url(images/Noellawebc.gif);background-size: contain;height: 300px;width: 226px;margin-left: 60px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
-              <div id="babar" style="background-image: url(images/Babawebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 170px;position:relative;animation: mover 4s infinite  alternate;"></div>
-              <div id="koncr" style="background-image: url(images/Konchiewebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 280px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
-              <div id="mydir" style="background-image: url(images/Mydiawebc.gif);background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 390px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;"></div>
-              <div style="color: white;margin-top: -280px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;">Collab Pack!</div>
+            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;" class="reactor">
+              <div id="nocostume">
+                <div id="aryar" class="reactor" style="background-image: url(images/AryawebC.gif);     background-size: contain;height: 300px;width: 226px;                    margin-left: -9px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.7s;"></div>
+                <div id="noelr" class="reactor" style="background-image: url(images/Noellawebc2.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 104px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
+                <div id="babar" class="reactor" style="background-image: url(images/Babawebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div>
+                <div id="mydir" class="reactor" style="background-image: url(images/Mydiawebc.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;"></div>
+                <div id="koncr" class="reactor" style="background-image: url(images/Konchiewebc.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
+                <div id="dogyr" class="reactor" style="background-image: url(images/Dogywebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 443px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2.2s;"></div>
+              </div>
+              <div id="sailorcostume" style="margin-top: -300px; opacity: 0;pointer-events : none;">
+                <div id="aryars" class="reactor" style="background-image: url(images/SailorAryaC.gif);     background-size: contain;height: 300px;width: 226px;                    margin-left: -9px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.7s;"></div>
+                <div id="noelrs" class="reactor" style="background-image: url(images/SailorNoellaC.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 104px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
+                <div id="babars" class="reactor" style="background-image: url(images/SailorBabaC.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div>
+                <div id="mydirs" class="reactor" style="background-image: url(images/SailorMydiaC.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;"></div>
+                <div id="koncrs" class="reactor" style="background-image: url(images/SailorKonchieC.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
+                <div id="dogyrs" class="reactor" style="background-image: url(images/SailorDogC.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 443px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2.2s;"></div>
+              </div>
+              <div style="color: white;margin-top: -280px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;" id="reactivetitle">Party Pack!</div>
+            </div>
+
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -100px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="reactprice">
+              Price: <br>
+              <div style="font-size: 20pt;position: absolute;">$<input
+                  style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
+                  type="number" id="reactrealprice" value=290 disabled>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px;margin-top: -15px;">
+            <div style="display: inline-block;"><div style="margin-top:-8px;position: absolute;">Pack Contents</div><div style="opacity: 0;">Pack Contents</div></div> 
+            
+            
+
+            <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
+                <input type="number" onclick="reactno();" id="reactquantity" name="quantity" min="1" max="5" value="5">
+                <label for="reactquantity">Characters</label>
+            </div>
+
+            <div style="display: inline-block; margin-left: 20px;"> Extras: <br>
+                <input type="checkbox" onclick="reactno();" id="reactunif" name="size" value="0">
+                <label for="reactunif">Extra Uniform</label>
+            </div>
+
+
+            </div>
+
+            <script>
+            function reactno(){
+              var reactquant = document.getElementById("reactquantity").value;
+              var uni
+              if (document.getElementById("reactunif").checked){
+                uni = 30;
+                $('#sailorcostume').css('pointer-events', "auto");
+                $('#sailorcostume').css('opacity', 1);
+                $('#nocostume').css('opacity', 0);
+              }
+              else{
+                uni = 0;
+                $('#sailorcostume').css('pointer-events', "none");
+                $('#sailorcostume').css('opacity', 0);
+                $('#nocostume').css('opacity', 1);
+              }
+              switch (reactquant){
+                case "1":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 0);
+                  $('#noelr').css('opacity', 0);
+                  $('#dogyr').css('opacity', 0);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#mydir').css('pointer-events', "none");
+                  $('#koncr').css('pointer-events', "none");
+                  $('#dogyr').css('pointer-events', "none");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  $('#babars').css('opacity', 1);
+                  $('#mydirs').css('opacity', 0);
+                  $('#koncrs').css('opacity', 0);
+                  $('#noelrs').css('opacity', 0);
+                  $('#dogyrs').css('opacity', 0);
+                  $('#aryars').css('opacity', 0);
+                  $('#babars').css('margin-left', 217 + "px");
+                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('margin-left', 330 + "px");
+                  $('#noelrs').css('margin-left', 104 + "px");
+                  $('#dogyrs').css('margin-left', 443 + "px");
+                  $('#aryars').css('margin-left', -9 + "px");
+                  if (document.getElementById("reactunif").checked){
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  else{
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  document.getElementById("reactrealprice").value = uni + 60;
+                  document.getElementById("reactivetitle").innerHTML = "Single Pack!";
+                  break;
+                case "2":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 1);
+                  $('#koncr').css('opacity', 0);
+                  $('#noelr').css('opacity', 0);
+                  $('#dogyr').css('opacity', 0);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 160.5 + "px");
+                  $('#mydir').css('margin-left', 273.5 + "px");
+                  $('#koncr').css('margin-left', 273.5 + "px");
+                  $('#mydir').css('pointer-events', "auto");
+                  $('#koncr').css('pointer-events', "none");
+                  $('#dogyr').css('pointer-events', "none");
+                  $('#noelr').css('margin-left', 47.5 + "px");
+                  $('#dogyr').css('margin-left', 386.5 + "px");
+                  $('#aryar').css('margin-left', -74.5 + "px");
+                  $('#babars').css('opacity', 1);
+                  $('#mydirs').css('opacity', 1);
+                  $('#koncrs').css('opacity', 0);
+                  $('#noelrs').css('opacity', 0);
+                  $('#dogyrs').css('opacity', 0);
+                  $('#aryars').css('opacity', 0);
+                  $('#babars').css('margin-left', 160.5 + "px");
+                  $('#mydirs').css('margin-left', 273.5 + "px");
+                  $('#koncrs').css('margin-left', 273.5 + "px");
+                  $('#koncrs').css('pointer-events', "none");
+                  $('#noelrs').css('margin-left', 47.5 + "px");
+                  $('#dogyrs').css('margin-left', 386.5 + "px");
+                  $('#aryars').css('margin-left', -74.5 + "px");
+                  if (document.getElementById("reactunif").checked){
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "auto");
+                  }
+                  else{
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  document.getElementById("reactrealprice").value = uni + 117.5;
+                  document.getElementById("reactivetitle").innerHTML = "Couple Pack!";
+                  break;
+                case "3":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 0);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#mydir').css('pointer-events', "none");
+                  $('#koncr').css('pointer-events', "auto");
+                  $('#dogyr').css('pointer-events', "none");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  $('#babars').css('opacity', 1);
+                  $('#mydirs').css('opacity', 0);
+                  $('#koncrs').css('opacity', 1);
+                  $('#noelrs').css('opacity', 1);
+                  $('#dogyrs').css('opacity', 0);
+                  $('#aryars').css('opacity', 0);
+                  $('#babars').css('margin-left', 217 + "px");
+                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('pointer-events', "auto");
+                  $('#noelrs').css('margin-left', 104 + "px");
+                  $('#dogyrs').css('margin-left', 443 + "px");
+                  $('#aryars').css('margin-left', -9 + "px");
+                  if (document.getElementById("reactunif").checked){
+                    $('#koncrs').css('pointer-events', "auto");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  else{
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  document.getElementById("reactrealprice").value = uni + 175;
+                  document.getElementById("reactivetitle").innerHTML = "Collab Pack!";
+                break;
+                case "4":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 1);
+                  $('#aryar').css('opacity', 0);
+                  $('#babar').css('margin-left', 160.5 + "px");
+                  $('#mydir').css('margin-left', 273.5 + "px");
+                  $('#koncr').css('margin-left', 273.5 + "px");
+                  $('#mydir').css('pointer-events', "none");
+                  $('#koncr').css('pointer-events', "auto");
+                  $('#dogyr').css('pointer-events', "auto");
+                  $('#noelr').css('margin-left', 47.5 + "px");
+                  $('#dogyr').css('margin-left', 386.5 + "px");
+                  $('#aryar').css('margin-left', -74.5 + "px");
+                  $('#babars').css('opacity', 1);
+                  $('#mydirs').css('opacity', 0);
+                  $('#koncrs').css('opacity', 1);
+                  $('#noelrs').css('opacity', 1);
+                  $('#dogyrs').css('opacity', 1);
+                  $('#aryars').css('opacity', 0);
+                  $('#babars').css('margin-left', 160.5 + "px");
+                  $('#mydirs').css('margin-left', 273.5 + "px");
+                  $('#koncrs').css('margin-left', 273.5 + "px");
+                  $('#koncrs').css('pointer-events', "auto");
+                  $('#noelrs').css('margin-left', 47.5 + "px");
+                  $('#dogyrs').css('margin-left', 386.5 + "px");
+                  $('#aryars').css('margin-left', -74.5 + "px");
+                  if (document.getElementById("reactunif").checked){
+                    $('#koncrs').css('pointer-events', "auto");
+                    $('#dogyrs').css('pointer-events', "auto");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  else{
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  document.getElementById("reactrealprice").value = uni + 235;
+                  document.getElementById("reactivetitle").innerHTML = "Collab Pack! +1";
+                break;
+                case "5":
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 1);
+                  $('#aryar').css('opacity', 1);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#mydir').css('pointer-events', "none");
+                  $('#koncr').css('pointer-events', "auto");
+                  $('#dogyr').css('pointer-events', "auto");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  $('#babars').css('opacity', 1);
+                  $('#mydirs').css('opacity', 0);
+                  $('#koncrs').css('opacity', 1);
+                  $('#noelrs').css('opacity', 1);
+                  $('#dogyrs').css('opacity', 1);
+                  $('#aryars').css('opacity', 1);
+                  $('#babars').css('margin-left', 217 + "px");
+                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('pointer-events', "auto");
+                  $('#noelrs').css('margin-left', 104 + "px");
+                  $('#dogyrs').css('margin-left', 443 + "px");
+                  $('#aryars').css('margin-left', -9 + "px");
+                  if (document.getElementById("reactunif").checked){
+                    $('#koncrs').css('pointer-events', "auto");
+                    $('#dogyrs').css('pointer-events', "auto");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  else{
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  document.getElementById("reactrealprice").value = uni + 290;
+                  document.getElementById("reactivetitle").innerHTML = "Party Pack!";
+                break;
+                default:
+                  $('#babar').css('opacity', 1);
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
+                  $('#dogyr').css('opacity', 1);
+                  $('#aryar').css('opacity', 1);
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#mydir').css('pointer-events', "none");
+                  $('#koncr').css('pointer-events', "auto");
+                  $('#dogyr').css('pointer-events', "auto");
+                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#dogyr').css('margin-left', 443 + "px");
+                  $('#aryar').css('margin-left', -9 + "px");
+                  $('#babars').css('opacity', 1);
+                  $('#mydirs').css('opacity', 0);
+                  $('#koncrs').css('opacity', 1);
+                  $('#noelrs').css('opacity', 1);
+                  $('#dogyrs').css('opacity', 1);
+                  $('#aryars').css('opacity', 1);
+                  $('#babars').css('margin-left', 217 + "px");
+                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('margin-left', 330 + "px");
+                  $('#koncrs').css('pointer-events', "auto");
+                  $('#noelrs').css('margin-left', 104 + "px");
+                  $('#dogyrs').css('margin-left', 443 + "px");
+                  $('#aryars').css('margin-left', -9 + "px");
+                  if (document.getElementById("reactunif").checked){
+                    $('#koncrs').css('pointer-events', "auto");
+                    $('#dogyrs').css('pointer-events', "auto");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  else{
+                    $('#koncrs').css('pointer-events', "none");
+                    $('#dogyrs').css('pointer-events', "none");
+                    $('#mydirs').css('pointer-events', "none");
+                  }
+                  document.getElementById("reactrealprice").value = uni + 290;
+                  document.getElementById("reactivetitle").innerHTML = "Party Pack!";
+                break;
+              }
+            }
+          </script>
+
+            
+
+          </div>
+          <h2 id="reactbookmark">Reactive Images</h2>
+          <b style="font-size: 10pt;">Reactive images with blinking and breathing animations, uniformed for collabs!
+          <br>Priced at $60 each, and $30 per alternate clothing. Custom animations/effects are negotiable.
+          <br>Final package includes 2 .gif images, and 1 custom .css file compatible for Discord Streamkit.
+          <br>Typical working period varies between 2 to 15 days.
+          <br>
+          <br>Fugi-compatible .css file also available upon demand.</b>
+          <br>
+          <br>
+          <br>
+          
+          <!-- Emote applet -->
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:360px">
+            <div style="background-image:url(images/aaaa.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+              <div style="background-image:url(images/seamotes.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
+            </div>
+            <div style="margin-left: 20px;margin-top: -7px;"></div>
+
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
+              Price: <br>
+              <div style="font-size: 20pt;position: absolute;">$<input
+                  style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
+                  type="number" id="emoterealprice" value=200 disabled>
+              </div>
+            </div>
+
+            <div style="margin-left: 20px;margin-top: -15px;">
+              <div style="display: inline-block;"><div style="margin-top:-8px;position: absolute;">Pack Contents</div><div style="opacity: 0;">Emote Bundles</div></div> 
+              
+              
+  
+              <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
+                  <input type="number" onclick="reactno();" id="emotequantity" name="quantity" min="1" max="10" value="10">
+                  <label for="quantity">Pieces</label>
+              </div>
+  
+              <div style="display: inline-block; margin-left: 20px;">Discount: <br>
+                  <select type="checkbox" onclick="reactno();" id="emotediscount" name="size">
+                    <option value=0 hidden>None</option>
+                    <option value=1>Starter</option>
+                    <option value=2>Affiliate</option>
+                    <option value=3>Animated</option>
+                  </select>
+                  <label for="size1">Bundle</label>
+              </div>
+  
+              <div style="display: inline-block; margin-left: 20px;"> Type: <br>
+                <select type="checkbox" onclick="reactno();" id="emotepack" name="size">
+                  <option value=1>Static</option>
+                  <option value=2>Animated</option>
+                </select>
+                <label for="size2">Emotes</label>
+            </div>
+  
+            </div>
+
+          </div>
+
+          <h2 id="emotebookmark">Emote Packs</h2>
+          <b style="font-size: 10pt;">Cute emotes for your Twitch channel or/and Discord server!
+          <br>Priced at $35 per image, and $60 per animated image. Discounts available for ordering 5 or more!
+          <br>Please submit a list of emotes and references on how you want the emote to look like prior request.
+          <br>Typical working period varies between 30 to 60 days depening on how many images produced.
+          <br>
+          <br>For twitch emote attribution/crediting, Please link to my channel @debaa_nyan</b>
+          <br>
+          <br>
+          <br>
+
+          <!-- Stinger applet -->
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:431px">
+            <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+              <div style="height: 371px; width: 660px; border-radius: 6px;overflow: hidden;;">
+                <video autoplay muted loop>
+                  <source src=images/stingview.mp4 type="video/mp4">
+                </video>
+              </div>
             </div>
             <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
 
@@ -840,88 +1561,91 @@
               Price: <br>
               <div style="font-size: 20pt;position: absolute;">$<input
                   style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
-                  type="number" id="reactrealprice" value=200 disabled>
+                  type="number" id="stingerrealprice" value=150 disabled>
               </div>
             </div>
 
           </div>
-          <h2>Reactive Images</h2>
-          <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
-          <br>
-          <br>
-          <br>
-          
-          <!-- Emote applet -->
-          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
-          </div>
-          <h2>Emote Packs</h2>
-          <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
-          <br>
-          <br>
-          <br>
 
-          <!-- Stinger applet -->
-          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
-          </div>
-          <h2>Stingers</h2>
-          <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
+          <h2 id="stingerbookmark">Stingers</h2>
+          <b style="font-size: 10pt;">Custom animations for your Scene-to-scene Transitions!
+          <br>Pricing starts at $150 for a basic stinger, up to $250+ depending on Length and Complexity.
+          <br>Please describe/send a base reference for me to work on how you want the animation to look like
+          <br>prior to ordering to speed up the working process.
+          <br>Typical working period varies between 60 to 120 days.
+          <br>
+          <br>Anything in-between are always Negotiable!</b>
           <br>
           <br>
           <br>
 
           <!-- Alert applet -->
-          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:312px">
+            <div style="background-image:url(images/aaaa.png);height: 252px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+              <div style="background-image:url(images/babalert.png);height: 252px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
+            </div>
+            <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
+
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
+              Price: <br>
+              <div style="font-size: 20pt;position: absolute;">$<input
+                  style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
+                  type="number" id="emoterealprice" value=200 disabled>
+              </div>
+            </div>
           </div>
-          <h2>Alert Packs</h2>
-          <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
+
+          <h2 id="alertbookmark">Alert Packs</h2>
+          <b style="font-size: 10pt;">Cute alert stickers for your streams!
+          <br>Price starts at $60 per alert, or $150 for a 3 Pack (Follow, Sub, and Raid)
+          <br>and $280 for a full alert set (3 Pack + Bits, Host, and Gift)! Other designs are negotiable!
+          <br>Typical working period varies between 15 to 22 days.
+          <br>
+          <br>Custom .css also available starting at $30!</b>
           <br>
           <br>
           <br>
 
           <!-- Animate applet -->
-          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:431px">
+            <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+              <div style="height: 371px; width: 660px; border-radius: 6px;overflow: hidden;;">
+                <video autoplay muted loop>
+                  <source src=images/konblonk.mp4 type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
+
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
+              Price: <br>
+              <div style="font-size: 20pt;position: absolute;">$<input
+                  style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
+                  type="number" id="animrealprice" value=180 disabled>
+              </div>
+            </div>
+
           </div>
-          <h2>Animations</h2>
-          <b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</b>
+          <h2 id="animbookmark">Animations</h2>
+          <b style="font-size: 10pt;">Animated illustrations for your waiting or intermission screen background!
+          <br>Pricing depends on the price of your base illustration plus the base price of your animation type.
+          <br>With traditional starting at $75 plus $10 per frame after the 8th frame (non-duplicate),
+          <br>and Live2D starting at $35 plus $25 per moving part at $10 per 5 second after the 5th.
+          <br>Typical working period varies between 2 to 5 months.
+          <br>
+          <br>Simple sticker animations are available with negotiable prices!</b>
           <br><br><br>
           
           <!-- Pack applet -->
-          <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          <div style="background-image:url(images/packupscale.png);height: 283px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
           </div>
-          <h2>Indie V-Tuber Pack</h2><b style="font-size: 10pt;">Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-            unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-            recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum.</b><br><br><br>
+          <h2 id="packbookmark">Indie V-Tuber Pack</h2><b style="font-size: 10pt;">An all-in-one "Starter Pack" for new and aspiring Vtubers!
+          <br>The pack contains a Live2D Model, Reactive images, Emote and Alert packs, Stingers,
+          <br>and an animated Wallpaper. With prices and specifications grabbed from all of the applets above.
+          <br>With a 10% discount on top!</b>
+          <br><br><br>
 
-
+          <!-- <div style="width:760px; background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)); height: 650px;position: absolute; margin-left: -40px; margin-top: -620px;"></div> -->
         </div>
       </div>
     </div><br><img style="width:200px" src="images/baba.png">
