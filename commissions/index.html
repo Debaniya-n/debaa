@@ -1564,7 +1564,26 @@
           <!-- Emote applet -->
           <div style="background-color: #303332; border-radius: 6px; width: 660px; height:360px">
             <div style="background-image:url(images/aaaa.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
-              <div style="background-image:url(images/seamotes.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
+              <div style="height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
+              <div class="seaanim" id="seatop" style="margin-left:0px;">
+                <div class="seaanim" id="sea1" style="background-image:url(images/sea1.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea2" style="background-image:url(images/sea2.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea3" style="background-image:url(images/sea3.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea4" style="background-image:url(images/sea4.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea5" style="background-image:url(images/sea5.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="ses1" style="background-image:url(images/ses1.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none; opacity: 0;"> </div>
+                <div class="seaanim" id="ses2" style="background-image:url(images/ses2.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none; opacity: 0;"> </div>
+                <div class="seaanim" id="ses3" style="background-image:url(images/ses3.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none; opacity: 0;"> </div>
+                <div class="seaanim" id="ses4" style="background-image:url(images/ses4.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none; opacity: 0;"> </div>
+                <div class="seaanim" id="ses5" style="background-image:url(images/ses5.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none; opacity: 0;"> </div>
+              </div>
+              <div class="seaanim" id="seabottom" style="margin-left:0px;"> 
+                <div class="seaanim" id="sea6" style="background-image:url(images/sea6.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea7" style="background-image:url(images/sea7.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea8" style="background-image:url(images/sea8.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="sea9" style="background-image:url(images/sea9.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+                <div class="seaanim" id="seaA" style="background-image:url(images/seaA.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px; margin-top: -321px;pointer-events: none;"> </div>
+              </div>
             </div>
             <div style="margin-left: 20px;margin-top: -7px;"></div>
 
@@ -1572,7 +1591,7 @@
               Price: <br>
               <div style="font-size: 20pt;position: absolute;">$<input
                   style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
-                  type="number" id="emoterealprice" value=200 disabled>
+                  type="number" id="emoterealprice" value=300 disabled>
               </div>
             </div>
 
@@ -1582,27 +1601,272 @@
               
   
               <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
-                  <input type="number" onclick="reactno();" id="emotequantity" name="quantity" min="1" max="10" value="10">
+                  <input type="number" onclick="emoteno();" id="emotequantity" name="quantity" min="1" max="10" value="10">
                   <label for="quantity">Pieces</label>
               </div>
   
               <div style="display: inline-block; margin-left: 20px;">Discount: <br>
-                  <select type="checkbox" onclick="reactno();" id="emotediscount" name="size">
-                    <option value=0 hidden>None</option>
-                    <option value=1>Starter</option>
-                    <option value=2>Affiliate</option>
-                    <option value=3>Animated</option>
+                  <select onclick="emotediscer();" id="emotediscount" name="size">
+                      <option value=0 hidden>None</option>
+                      <option value=1>Starter</option>
+                      <option value=2 selected>Affiliate</option>
+                      <option value=3>Animated</option>
                   </select>
                   <label for="size1">Bundle</label>
               </div>
   
               <div style="display: inline-block; margin-left: 20px;"> Type: <br>
-                <select type="checkbox" onclick="reactno();" id="emotepack" name="size">
-                  <option value=1>Static</option>
-                  <option value=2>Animated</option>
+                <select onclick="emoteno();" name="size" id="emotepack"> 
+                  <option value="1">Static</option>
+                  <option value="2">Animated</option> 
                 </select>
                 <label for="size2">Emotes</label>
             </div>
+
+            <script>
+              function emotediscer(){
+                var discou = document.getElementById("emotediscount").value;
+                var dscvle = document.getElementById("emotequantity").value;
+                switch(discou){
+                  case "0":
+                    break;
+                  case "1":
+                    document.getElementById("emotepack").value = 1;
+                    console.log(dscvle)
+                    if(dscvle >= 4 && dscvle <= 9){
+                      emoteno();
+                    }
+                    else{
+                      document.getElementById("emotequantity").value = 5;
+                      emoteno();
+                    }
+                    break;
+                  case "2":
+                    document.getElementById("emotepack").value = 1;
+                    if(dscvle >= 10){
+                      emoteno();
+                    }
+                    else{
+                      document.getElementById("emotequantity").value = 10;
+                      emoteno();
+                    }
+                    break;
+                  case "3":
+                    document.getElementById("emotepack").value = 2;
+                    if(dscvle >= 5){
+                      emoteno();
+                    }
+                    else{
+                      document.getElementById("emotequantity").value = 5;
+                      emoteno();
+                    }
+                    break;
+                }
+              }
+
+              function emoteno(){
+                var emoqua = document.getElementById("emotequantity").value;
+                var emotype = document.getElementById("emotepack").value;
+                var emoprice;
+                var emorqua = emoqua;
+                var remaind10;
+                var remaind5;
+                remaind10 = ~~(emoqua/10);
+                console.log("new sum below");
+                console.log(remaind10);
+                emoqua = emoqua%10;
+                console.log(emoqua);
+                remaind5 = ~~(emoqua/5);
+                console.log(remaind5);
+                emoqua = emoqua%5;
+                console.log(emoqua);
+                emodisplay();
+                console.log("tried calling emodisplay")
+                switch(emotype){
+                  case "1":
+                    document.getElementById("emotequantity").max = 10;
+                    emoprice = emoqua*35+(remaind5*155)+(remaind10*300);
+                    console.log(emoprice);
+                    document.getElementById("emoterealprice").value = emoprice;
+                    console.log(emorqua);
+                    switch(emorqua){
+                      case "1":
+                      case "2":
+                      case "3":
+                      case "4":
+                        document.getElementById("emotediscount").value = 0;
+                        break;
+                      case "5":
+                      case "6":
+                      case "7":
+                      case "8":
+                      case "9":
+                        document.getElementById("emotediscount").value = 1;
+                        break;
+                      case "10":
+                        document.getElementById("emotediscount").value = 2;
+                        break;
+                    }
+                    break;
+                  case "2":
+                    document.getElementById("emotequantity").max = 5;
+                    emoprice = emoqua*60+(remaind5*250)+(remaind10*500);
+                    console.log(emoprice);
+                    document.getElementById("emoterealprice").value = emoprice;
+                    if(emorqua>5){
+                      document.getElementById("emotequantity").value = 5;
+                      console.log("baba is ba")
+                      document.getElementById("emoterealprice").value = 250;
+                    }
+                    switch(emorqua){
+                      case "1":
+                      case "2":
+                      case "3":
+                      case "4":
+                        document.getElementById("emotediscount").value = 0;
+                        break;
+                      case "5":
+                      case "6":
+                      case "7":
+                      case "8":
+                      case "9":
+                        document.getElementById("emotediscount").value = 3;
+                        break;
+                      case "10":
+                        document.getElementById("emotediscount").value = 3;
+                        break;
+                    }
+                    break;
+                }
+                
+              }
+
+              function emodisplay(){
+                var emonum = document.getElementById("emotequantity").value;
+                var emoty = document.getElementById("emotepack").value;
+                var emognum;
+                emognum = emonum%2;
+                console.log("i am called too!")
+                switch(emoty){
+                  case "1":
+                    $('#sea1').css('opacity', 0);
+                    $('#sea2').css('opacity', 0);
+                    $('#sea3').css('opacity', 0);
+                    $('#sea4').css('opacity', 0);
+                    $('#sea5').css('opacity', 0);
+                    $('#sea6').css('opacity', 0);
+                    $('#sea7').css('opacity', 0);
+                    $('#sea8').css('opacity', 0);
+                    $('#sea9').css('opacity', 0);
+                    $('#seaA').css('opacity', 0);
+                    $('#ses1').css('opacity', 0);
+                    $('#ses2').css('opacity', 0);
+                    $('#ses3').css('opacity', 0);
+                    $('#ses4').css('opacity', 0);
+                    $('#ses5').css('opacity', 0);
+                      switch(emonum){
+                        case "10":
+                          console.log("i am called")
+                          $('#seaA').css('opacity', 1);
+                        case "9":
+                          $('#sea6').css('opacity', 1);
+                        case "8":
+                          $('#sea9').css('opacity', 1);
+                        case "7":
+                          $('#sea7').css('opacity', 1);
+                        case "6":
+                          $('#sea8').css('opacity', 1);
+                        case "5":
+                          $('#sea5').css('opacity', 1);
+                        case "4":
+                          $('#sea1').css('opacity', 1);
+                        case "3":
+                          $('#sea4').css('opacity', 1);
+                        case "2":
+                          $('#sea2').css('opacity', 1);
+                        case "1":
+                          $('#sea3').css('opacity', 1);
+                          if(emonum < 6){
+                            console.log("ababababjjhaba");
+                            console.log("emognum is " + emognum);
+                            switch(emognum){
+                              case 0:
+                                console.log("abababababa");
+                                $('#seatop').css('margin-left', "60px");
+                                break;
+                              case 1:
+                                $('#seatop').css('margin-left', "0px");
+                                break;
+                            }
+                          $('#sea1').css('margin-top', "-265.25px");
+                          }
+                          else{
+                            switch(emognum){
+                              case 1:
+                                console.log("abababababa");
+                                $('#seabottom').css('margin-left', "60px");
+                                break;
+                              case 0:
+                                $('#seabottom').css('margin-left', "0px");
+                                break;
+                            }
+                            $('#sea1').css('margin-top', "-321px");
+                          }
+                      }
+                    break;
+                  case "2":
+                    $('#sea1').css('opacity', 0);
+                    $('#sea2').css('opacity', 0);
+                    $('#sea3').css('opacity', 0);
+                    $('#sea4').css('opacity', 0);
+                    $('#sea5').css('opacity', 0);
+                    $('#sea6').css('opacity', 0);
+                    $('#sea7').css('opacity', 0);
+                    $('#sea8').css('opacity', 0);
+                    $('#sea9').css('opacity', 0);
+                    $('#seaA').css('opacity', 0);
+                    $('#ses1').css('opacity', 0);
+                    $('#ses2').css('opacity', 0);
+                    $('#ses3').css('opacity', 0);
+                    $('#ses4').css('opacity', 0);
+                    $('#ses5').css('opacity', 0);
+                    switch(emonum){
+                        case "10":
+                        case "9":
+                        case "8":
+                        case "7":
+                        case "6":
+                        case "5":
+                          $('#ses5').css('opacity', 1);
+                        case "4":
+                          $('#ses1').css('opacity', 1);
+                        case "3":
+                          $('#ses4').css('opacity', 1);
+                        case "2":
+                          $('#ses2').css('opacity', 1);
+                        case "1":
+                          $('#ses3').css('opacity', 1);
+                          
+                          console.log("ababababjjhaba");
+                          console.log("emognum is " + emognum);
+                          if(emonum<6){
+                            switch(emognum){
+                              case 0:
+                                console.log("abababababa");
+                                $('#seatop').css('margin-left', "60px");
+                                break;
+                              case 1:
+                                $('#seatop').css('margin-left', "0px");
+                                break;
+                            }
+                          }
+                          $('#sea1').css('margin-top', "-265.25px");
+                          
+                    }
+                }
+                  
+              }
+            </script>
   
             </div>
 
