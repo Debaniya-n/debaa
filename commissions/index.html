@@ -668,7 +668,8 @@
               animation: animate 5s infinite;
               -webkit-background-clip: text;
               background-clip: text;
-              -webkit-text-fill-color: rgba(255, 255, 255, 0);"> ⬆️ ⬆️ ⬇️ ⬇️ ⬅️ ➡️ ⬅️ ➡️ <b>B A</b>
+              -webkit-text-fill-color: rgba(255, 255, 255, 0);
+              pointer-events: none;"> ⬆️ ⬆️ ⬇️ ⬇️ ⬅️ ➡️ ⬅️ ➡️ <b>B A</b>
                <script>
                 function onKonamiCode(cb) {
                 var input = '';
@@ -1715,7 +1716,6 @@
                     document.getElementById("emoterealprice").value = emoprice;
                     if(emorqua>5){
                       document.getElementById("emotequantity").value = 5;
-                      console.log("baba is ba")
                       document.getElementById("emoterealprice").value = 250;
                     }
                     switch(emorqua){
