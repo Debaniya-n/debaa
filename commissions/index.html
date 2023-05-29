@@ -165,6 +165,17 @@
                 }
               }
 
+              function junedonation(){
+                document.getElementById("goalslash").style.display = "inline-block";
+                document.getElementById("goals").style.display = "inline-block";
+                document.getElementById("moolah").style.display = "inline-block";
+                document.getElementById("thisisforjune").style.display = "inline-block";
+                document.getElementById("goaltext").innerHTML = "Day&nbsp;";
+                document.getElementById("goalslash").innerHTML = "&nbsp;of 30, $";
+                document.getElementById("thisisforjune").innerHTML = "&nbsp;Collected in Total!";
+                document.getElementById("goals").innerHTML = data.cards[2].desc*0.2; 
+              }
+
               switch(goalstat){
                 case "green":
                   var goalend = data.cards[1].desc;
@@ -176,6 +187,7 @@
                   document.getElementById("moolah").style.display = "inline-block";
                   goalies();
                   break;
+
                 case "red":
                   document.getElementById("goaltext").innerHTML = "There are no campaigns at the moment...";
                   document.getElementById("goalslash").style.display = "none";
@@ -184,6 +196,38 @@
                   document.getElementById("donoprogress").style.width = 100+"%";
                   
                   break;
+                case "orange":
+                  var today = new Date();
+                  var isitjune = today.getMonth();
+                  var goalprog = data.cards[2].desc*0.2;
+                  var deet = today.getDate();
+                  console.log(isitjune);
+                  if(isitjune == 5){
+                    document.getElementById("moolah").innerHTML = deet;
+                    console.log("it's june alright");
+                    document.getElementById("donoprogress").style.width = deet/30*100+"%";
+                    junedonation();
+                  }
+                  else if(isitjune > 5){
+                    document.getElementById("moolah").innerHTML = deet;
+                    console.log("it's june alright");
+                    document.getElementById("donoprogress").style.width = deet/30*100+"%";
+                    document.getElementById("bannertitle").innerHTML = "Thank you for your support!";
+                    document.getElementById("bannersubtitle").innerHTML = "A Total of $"+goalprog+" in donations is going to<br> <a class='sublink' href='https://gayanusantara.or.id/'>GAYa Nusantara</a> LGBTQ+ Support Group!<br>We couldn't have done it without you!";
+                    document.getElementById("moolah").innerHTML = 30;
+                    document.getElementById("donoprogress").style.width = 100+"%";
+                    junedonation();
+                  }
+                  else {
+                    document.getElementById("goaltext").innerHTML = "Campaign will start at June 1st";
+                    document.getElementById("goalslash").style.display = "none";
+                    document.getElementById("goals").style.display = "none";
+                    document.getElementById("moolah").style.display = "none";
+                    document.getElementById("donoprogress").style.width = 0+"%";
+                  }
+                  
+                  break;
+
                 default:
                   document.getElementById("goaltext").innerHTML = "Failed to fetch API Data..."
                   document.getElementById("goalslash").style.display = "none";
@@ -209,6 +253,7 @@
               document.getElementById("goals").style.opacity = "1";
               document.getElementById("moolah").style.opacity = "1";
               document.getElementById("goaltext").style.opacity = "1";
+              document.getElementById("thisisforjune").style.opacity = "1";
             })
           </script>
 
@@ -308,23 +353,13 @@
             style="border-color: white;border-style: solid;border-radius: 50%; position: absolute;width: 5px;height: 5px;border-width: 2px;top:-4px;right:-4px;opacity:0;" id="donoprogresscircle">
           </div>
           <div style="color: white;font-size: 7pt;position: absolute;bottom: 15px;left: 80%;white-space: nowrap;opacity:0;" id="donoprogresstext">
-            <div id="goaltext" style="display: inline-block; opacity: 0;">Current campaign progress $ </div><b style="opacity: 0;" id="moolah">550</b><div id="goalslash" style="display: inline-block;opacity: 0;"> / </div><b style="opacity: 0;" id="goals">2250</b>
+            <div id="goaltext" style="display: inline-block; opacity: 0;">Current campaign progress $ </div><b style="opacity: 0;" id="moolah">550</b><div id="goalslash" style="display: inline-block;opacity: 0;"> / </div><b style="opacity: 0;" id="goals">2250</b><div id="thisisforjune" style="display: inline-block;opacity: 0;"></div>
           </div>
         </div>
 
         <!-- <script>
           
-            var today = new Date();
-            var isitjune = today.getMonth();
-            if(isitjune == "5"){
-              var deet = today.getDate();
-              document.getElementById("date").innerHTML = deet;
-              document.getElementById("donoprogress").style.width = deet/30*100+"%";
-            }
-            else {
-              document.getElementById("date").innerHTML = 30;
-              document.getElementById("donoprogress").style.width = 100+"%";
-            }
+            
             
 
         </script> -->

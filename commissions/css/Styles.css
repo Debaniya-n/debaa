@@ -520,7 +520,7 @@ body{
   }
   
 
-#bannersubtitle, #bannertitle, #bannerbutton, #donnoprogresstext, #donnoprogresscircle, #fetchingdata, #loadinger, #donoprogress, #bannerimagefader, #goals, #goalslash, #moolah, #goaltext{
+#bannersubtitle, #bannertitle, #bannerbutton, #donnoprogresstext, #donnoprogresscircle, #fetchingdata, #loadinger, #donoprogress, #bannerimagefader, #goals, #goalslash, #moolah, #goaltext, #thisisforjune{
 	-webkit-transition: all 1s ease-in-out;
 	-moz-transition: all 1s ease-in-out;
 	-ms-transition: all 1s ease-in-out;
