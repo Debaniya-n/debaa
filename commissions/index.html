@@ -173,7 +173,7 @@
                 document.getElementById("goaltext").innerHTML = "Day&nbsp;";
                 document.getElementById("goalslash").innerHTML = "&nbsp;of 30, $";
                 document.getElementById("thisisforjune").innerHTML = "&nbsp;Collected in Total!";
-                document.getElementById("goals").innerHTML = data.cards[2].desc*0.2; 
+                document.getElementById("goals").innerHTML = (data.cards[2].desc*0.2).toFixed(2); 
               }
 
               switch(goalstat){
@@ -200,6 +200,8 @@
                   var today = new Date();
                   var isitjune = today.getMonth();
                   var goalprog = data.cards[2].desc*0.2;
+                  goalprog = goalprog.toFixed(2);
+                  console.log(goalprog);
                   var deet = today.getDate();
                   console.log(isitjune);
                   if(isitjune == 5){
