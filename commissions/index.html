@@ -692,13 +692,13 @@
 
               <div style="display: inline-block;margin-left: 20px;"> Figure: <br>
                 <input type="number" onclick="meow(this.value);damnson();" id="quantity" name="quantity" min="1" max="5"
-                  value="5">
+                  value="5" style="width:30px;">
                 <label for="quantity">Heads</label>
                 <br>
                 <br>
               </div>
               
-              <div class="konami" style="display: inline-block;margin-left: 110px;text-align: right;   font-size: 10px;
+              <div class="konami" style="display: inline-block;margin-left: 129px; text-align: right;   font-size: 10px;
               background: linear-gradient(90deg, #303332, #404443, #303332);
               background-repeat: no-repeat;
               background-size: 80%;
@@ -734,6 +734,7 @@
                     workv(3);
                     document.getElementById('lew0').checked = false;
                     document.getElementById('lew1').checked = true;
+                    illustbookmark.scrollIntoView({behavior: 'smooth',block: 'center'});
                   } else{
                     document.getElementsByClassName("konami")[0].style.display = "none";
                     document.getElementsByClassName("konami")[1].style.display = "inline-block";
@@ -1301,7 +1302,7 @@
             
 
             <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
-                <input type="number" onclick="reactno();" id="reactquantity" name="quantity" min="1" max="5" value="5">
+                <input type="number" onclick="reactno();" id="reactquantity" name="quantity" min="1" max="5" value="5" style="width:30px;">
                 <label for="reactquantity">Characters</label>
             </div>
 
@@ -1639,12 +1640,12 @@
               
   
               <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
-                  <input type="number" onclick="emoteno();" id="emotequantity" name="quantity" min="1" max="10" value="10">
+                  <input type="number" onclick="emoteno();" id="emotequantity" name="quantity" min="1" max="10" value="10" style="width:30px;">
                   <label for="quantity">Pieces</label>
               </div>
   
               <div style="display: inline-block; margin-left: 20px;">Discount: <br>
-                  <select onclick="emotediscer();" id="emotediscount" name="size">
+                  <select onclick="emotediscer();" id="emotediscount" name="size" style="width:80px;">
                       <option value=0 hidden>None</option>
                       <option value=1>Starter</option>
                       <option value=2 selected>Affiliate</option>
@@ -1654,7 +1655,7 @@
               </div>
   
               <div style="display: inline-block; margin-left: 20px;"> Type: <br>
-                <select onclick="emoteno();" name="size" id="emotepack"> 
+                <select onclick="emoteno();" name="size" id="emotepack" style="width:80px;"> 
                   <option value="1">Static</option>
                   <option value="2">Animated</option> 
                 </select>
@@ -1842,9 +1843,11 @@
                               case 1:
                                 console.log("abababababa");
                                 $('#seabottom').css('margin-left', "60px");
+                                $('#seatop').css('margin-left', "0px");
                                 break;
                               case 0:
                                 $('#seabottom').css('margin-left', "0px");
+                                $('#seatop').css('margin-left', "0px");
                                 break;
                             }
                             $('#sea1').css('margin-top', "-321px");
