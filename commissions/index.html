@@ -591,6 +591,7 @@
           <div>
             
             <!-- Artwork applet -->
+            <div style="background-color: #424644; border-radius: 6px; width: 660px;">
             <div style="background-color: #303332; border-radius: 6px; height: 360px; width: 660px;" id="warapper">
               <div
                 style="background-image:url(images/aaaa.png);height: 190px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;display: flex;"
@@ -1029,30 +1030,50 @@
                           $('#shadow2').css('opacity', 0);
                           $('#shadowF').css('opacity', 0);
                           $('#shadow0').css('opacity', 0);
+                          $('#aryacred1').css('display', 'none');
+                          $('#skywancred1').css('display', 'none');
+                          $('#noellacred1').css('display', 'none');
+                          $('#kokocred1').css('display', 'none');
                           break;
                         case "2":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 0);
                           $('#shadowF').css('opacity', 0);
                           $('#shadow0').css('opacity', 0);
+                          $('#aryacred1').css('display', 'none');
+                          $('#skywancred1').css('display', 'none');
+                          $('#noellacred1').css('display', 'none');
+                          $('#kokocred1').css('display', 'inline-block');
                           break;
                         case "3":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 1);
                           $('#shadowF').css('opacity', 0);
                           $('#shadow0').css('opacity', 0);
+                          $('#aryacred1').css('display', 'none');
+                          $('#skywancred1').css('display', 'none');
+                          $('#noellacred1').css('display', 'inline-block');
+                          $('#kokocred1').css('display', 'inline-block');
                           break;
                         case "4":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 1);
                           $('#shadowF').css('opacity', 1);
                           $('#shadow0').css('opacity', 0);
+                          $('#aryacred1').css('display', 'none');
+                          $('#skywancred1').css('display', 'inline-block');
+                          $('#noellacred1').css('display', 'inline-block');
+                          $('#kokocred1').css('display', 'inline-block');
                           break;
                         case "5":
                           $('#shadow1').css('opacity', 1);
                           $('#shadow2').css('opacity', 1);
                           $('#shadowF').css('opacity', 1);
                           $('#shadow0').css('opacity', 1);
+                          $('#aryacred1').css('display', 'inline-block');
+                          $('#skywancred1').css('display', 'inline-block');
+                          $('#noellacred1').css('display', 'inline-block');
+                          $('#kokocred1').css('display', 'inline-block');
                           break;
                       }
                       break;
@@ -1062,6 +1083,17 @@
 
               </script>
 
+            </div>
+            <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+              <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+              <div style="display: inline-block;width:451px; text-align: right;"> 
+                <div class="credited" id="aryacred1" style="color:#EEE1A2;display: inline-block;" onclick="credit(this,innerHTML)">@AryaOzeroCH</div>
+                <div class="credited" id="noellacred1" style="color:#DDB1ED;display: inline-block;" onclick="credit(this,innerHTML)">@NoellaCH</div>
+                <div class="credited" id="babacred1" style="color:#648F6B;display: inline-block;" onclick="credit(this,innerHTML)">@debaa_nyan</div>
+                <div class="credited" id="kokocred1" style="color:#FFE1AC;display: inline-block;" onclick="credit(this,innerHTML)">@Konchjaz</div>
+                <div class="credited" id="skywancred1" style="color:#A9CEF5;display: inline-block;" onclick="credit(this,innerHTML)">@SkyRocketDog</div>
+              </div>
+            </div>
             </div>
             <h2 id="illustbookmark">Illustrations</h2>
             <b style="font-size: 10pt;">A typical illustration commission, Size and coloring types listed above.
@@ -1079,6 +1111,7 @@
           <div>
 
             <!-- Live2D applet -->
+            <div div style="background-color: #424644; border-radius: 6px; width: 660px;">
             <div id="l2dwrap" style="background-color: #303332; border-radius: 6px; width: 660px; height:421px">
               
               <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: 300px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
@@ -1252,6 +1285,13 @@
               </div>
               <img src="images/Maipoint.png" style="height: 250px;margin-top: -525px; margin-left: 425px;">
             </div>
+            <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+              <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+              <div style="display: inline-block;width:451px; text-align: right;">
+                <div class="credited" style="color:#BDC0F0;display: inline-block;" onclick="credit(this,innerHTML)">@YummyMaichi</div>
+              </div>
+            </div>
+            </div>
             
             <h2 id="l2dbookmark">Live2D Models</h2>
             <b style="font-size: 10pt;">Fully rigged and ready to use Live2D model! Price listed per size above.
@@ -1266,6 +1306,7 @@
           </div>
 
           <!-- Reactive applet -->
+          <div style="background-color: #424644; border-radius: 6px; width: 660px;">
           <div style="background-color: #303332; border-radius: 6px; width: 660px; height:332px">
 
             <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;" class="reactor">
@@ -1332,6 +1373,10 @@
               }
               switch (reactquant){
                 case "1":
+                  $('#aryacred3').css('display', 'none');
+                  $('#skywancred3').css('display', 'none');
+                  $('#noellacred3').css('display', 'none');
+                  $('#kokocred3').css('display', 'none');
                   $('#babar').css('opacity', 1);
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 0);
@@ -1373,6 +1418,10 @@
                   document.getElementById("reactivetitle").innerHTML = "Single Pack!";
                   break;
                 case "2":
+                  $('#aryacred3').css('display', 'none');
+                  $('#skywancred3').css('display', 'none');
+                  $('#noellacred3').css('display', 'none');
+                  $('#kokocred3').css('display', 'inline-block');
                   $('#babar').css('opacity', 1);
                   $('#mydir').css('opacity', 1);
                   $('#koncr').css('opacity', 0);
@@ -1415,6 +1464,10 @@
                   document.getElementById("reactivetitle").innerHTML = "Couple Pack!";
                   break;
                 case "3":
+                  $('#aryacred3').css('display', 'none');
+                  $('#skywancred3').css('display', 'none');
+                  $('#noellacred3').css('display', 'inline-block');
+                  $('#kokocred3').css('display', 'inline-block');
                   $('#babar').css('opacity', 1);
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
@@ -1457,6 +1510,10 @@
                   document.getElementById("reactivetitle").innerHTML = "Collab Pack!";
                 break;
                 case "4":
+                  $('#aryacred3').css('display', 'none');
+                  $('#skywancred3').css('display', 'inline-block');
+                  $('#noellacred3').css('display', 'inline-block');
+                  $('#kokocred3').css('display', 'inline-block');
                   $('#babar').css('opacity', 1);
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
@@ -1499,6 +1556,10 @@
                   document.getElementById("reactivetitle").innerHTML = "Collab Pack! +1";
                 break;
                 case "5":
+                  $('#aryacred3').css('display', 'inline-block');
+                  $('#skywancred3').css('display', 'inline-block');
+                  $('#noellacred3').css('display', 'inline-block');
+                  $('#kokocred3').css('display', 'noinline-blockne');
                   $('#babar').css('opacity', 1);
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
@@ -1541,6 +1602,10 @@
                   document.getElementById("reactivetitle").innerHTML = "Party Pack!";
                 break;
                 default:
+                  $('#aryacred3').css('display', 'none');
+                  $('#skywancred3').css('display', 'none');
+                  $('#noellacred3').css('display', 'none');
+                  $('#kokocred3').css('display', 'none');
                   $('#babar').css('opacity', 1);
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
@@ -1589,6 +1654,17 @@
             
 
           </div>
+          <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+            <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+            <div style="display: inline-block;width:451px; text-align: right;">
+              <div class="credited" id="aryacred3" style="color:#EEE1A2;display: inline-block;" onclick="credit(this,innerHTML)">@AryaOzeroCH</div>
+              <div class="credited" id="noellacred3" style="color:#DDB1ED;display: inline-block;" onclick="credit(this,innerHTML)">@NoellaCH</div>
+              <div class="credited" id="babacred3" style="color:#648F6B;display: inline-block;" onclick="credit(this,innerHTML)">@debaa_nyan</div>
+              <div class="credited" id="kokocred3" style="color:#FFE1AC;display: inline-block;" onclick="credit(this,innerHTML)">@Konchjaz</div>
+              <div class="credited" id="skywancred3" style="color:#A9CEF5;display: inline-block;" onclick="credit(this,innerHTML)">@SkyRocketDog</div>
+            </div>
+          </div>
+          </div>
           <h2 id="reactbookmark">Reactive Images</h2>
           <b style="font-size: 10pt;">Reactive images with blinking and breathing animations, uniformed for collabs!
           <br>Priced at $60 each, and $30 per alternate clothing. Custom animations/effects are negotiable.
@@ -1601,6 +1677,7 @@
           <br>
           
           <!-- Emote applet -->
+          <div style="background-color: #424644; border-radius: 6px; width: 660px;">
           <div style="background-color: #303332; border-radius: 6px; width: 660px; height:360px">
             <div style="background-image:url(images/aaaa.png);height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
               <div style="height: 291px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
@@ -1787,6 +1864,8 @@
                 console.log("i am called too!")
                 switch(emoty){
                   case "1":
+                    $('#seadog4').css('display', 'inline-block');
+                    $('#mydia4').css('display', 'none');
                     $('#sea1').css('opacity', 0);
                     $('#sea2').css('opacity', 0);
                     $('#sea3').css('opacity', 0);
@@ -1855,6 +1934,8 @@
                       }
                     break;
                   case "2":
+                    $('#seadog4').css('display', 'none');
+                    $('#mydia4').css('display', 'inline-block');
                     $('#sea1').css('opacity', 0);
                     $('#sea2').css('opacity', 0);
                     $('#sea3').css('opacity', 0);
@@ -1911,6 +1992,14 @@
             </div>
 
           </div>
+          <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+            <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+            <div style="display: inline-block;width:451px; text-align: right;">
+              <div class="credited" id="seadog4" style="color:#A2CE6D;display: inline-block;" onclick="credit(this,innerHTML)">@7SeasDogWater</div>
+              <div class="credited" id="mydia4" style="color:#A9CEF5;display: none;" onclick="credit(this,innerHTML)">@MydiaStardream</div>
+            </div>
+          </div>
+          </div>
 
           <h2 id="emotebookmark">Emote Packs</h2>
           <b style="font-size: 10pt;">Cute emotes for your Twitch channel or/and Discord server!
@@ -1924,6 +2013,7 @@
           <br>
 
           <!-- Stinger applet -->
+          <div style="background-color: #424644; border-radius: 6px; width: 660px;">
           <div style="background-color: #303332; border-radius: 6px; width: 660px; height:431px">
             <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
               <div style="height: 371px; width: 660px; border-radius: 6px;overflow: hidden;;">
@@ -1943,6 +2033,16 @@
             </div>
 
           </div>
+          <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+            <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+            <div style="display: inline-block;width:451px; text-align: right;">
+              <div class="credited" style="color:#DDB1ED;display: inline-block;" onclick="credit(this,innerHTML)">@NoellaCH</div>
+              <div class="credited" style="color:#648F6B;display: inline-block;" onclick="credit(this,innerHTML)">@debaa_nyan</div>
+              <div class="credited" style="color:#FFE1AC;display: inline-block;" onclick="credit(this,innerHTML)">@Konchjaz</div>
+              <div class="credited" style="color:#A9CEF5;display: inline-block;" onclick="credit(this,innerHTML)">@MydiaStardream</div>
+            </div>
+          </div>
+          </div>
 
           <h2 id="stingerbookmark">Stingers</h2>
           <b style="font-size: 10pt;">Custom animations for your Scene-to-scene Transitions!
@@ -1957,6 +2057,7 @@
           <br>
 
           <!-- Alert applet -->
+          <div style="background-color: #424644; border-radius: 6px; width: 660px;">
           <div style="background-color: #303332; border-radius: 6px; width: 660px; height:312px">
             <div style="background-image:url(images/aaaa.png);height: 252px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
               <div style="background-image:url(images/babalert.png);height: 252px; width: 660px;margin-bottom: 30px;border-radius: 6px;"> </div>
@@ -1971,6 +2072,13 @@
               </div>
             </div>
           </div>
+          <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+            <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+            <div style="display: inline-block;width:451px; text-align: right;">
+              <div class="credited" style="color:#648F6B;display: inline-block;" onclick="credit(this,innerHTML)">@debaa_nyan</div>
+            </div>
+          </div>
+          </div>
 
           <h2 id="alertbookmark">Alert Packs</h2>
           <b style="font-size: 10pt;">Cute alert stickers for your streams!
@@ -1984,6 +2092,7 @@
           <br>
 
           <!-- Animate applet -->
+          <div style="background-color: #424644; border-radius: 6px; width: 660px;">
           <div style="background-color: #303332; border-radius: 6px; width: 660px; height:431px">
             <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
               <div style="height: 371px; width: 660px; border-radius: 6px;overflow: hidden;;">
@@ -2003,6 +2112,14 @@
             </div>
 
           </div>
+          <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+              <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+              <div style="display: inline-block;width:451px; text-align: right;">
+                <div class="credited" style="color:#FFE1AC;display: inline-block;" onclick="credit(this,innerHTML)">@Konchjaz</div>
+              </div>
+            </div>
+          </div>
+
           <h2 id="animbookmark">Animations</h2>
           <b style="font-size: 10pt;">Animated illustrations for your waiting or intermission screen background!
           <br>Pricing depends on the price of your base illustration plus the base price of your animation type.
@@ -2014,7 +2131,15 @@
           <br><br><br>
           
           <!-- Pack applet -->
-          <div style="background-image:url(images/packupscale.png);height: 283px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
+          <div style="background-color: #424644; border-radius: 6px; width: 660px;">
+          <div style="background-image:url(images/packupscale.png);height: 283px; width: 660px;border-radius: 6px;">
+          </div>
+          <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
+            <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
+            <div style="display: inline-block;width:451px; text-align: right;">
+              <div class="credited" style="color:#648F6B;display: inline-block;" onclick="credit(this,innerHTML)">@debaa_nyan</div>
+            </div>
+          </div>
           </div>
           <h2 id="packbookmark">Indie V-Tuber Pack</h2><b style="font-size: 10pt;">An all-in-one "Starter Pack" for new and aspiring Vtubers!
           <br>The pack contains a Live2D Model, Reactive images, Emote and Alert packs, Stingers,
@@ -2025,6 +2150,19 @@
           <!-- <div style="width:760px; background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,1)); height: 650px;position: absolute; margin-left: -40px; margin-top: -620px;"></div> -->
         </div>
       </div>
+
+
+      <script>
+        function credit(asdf,linkedht){
+          console.log(linkedht);
+          window.open("https://twitch.tv/"+linkedht.slice(1), "_blank"); 
+        }
+      </script>
+
+
+
+
+
     </div><br><img style="width:200px" src="images/baba.png">
     <div style="background-color: #8ce967; height: 5px;margin-top:-4px"></div>
     <div class="footer">

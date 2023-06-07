@@ -568,6 +568,11 @@ body{
 	cursor: pointer;
 }
 
+.credited:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 /** nyerah ku sama ini
 a.twitter-timeline {
 	font-family: "UD Digi Kyokasho NK-B"
