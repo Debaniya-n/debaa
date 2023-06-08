@@ -1311,14 +1311,14 @@
 
           <!-- Reactive applet -->
           <div style="background-color: #424644; border-radius: 6px; width: 660px;">
-          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:332px">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:332px" id="reactcanvaswrapper" class="reactor">
 
-            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;" class="reactor">
+            <div style="background-image:url(images/aaaa.png);height: 260px; width: 660px;margin-bottom: 30px;border-radius: 6px;overflow: hidden;" class="reactor" id="reactcanvas">
               <div id="nocostume">
                 <div id="aryar" class="reactor" style="background-image: url(images/AryawebC.gif);     background-size: contain;height: 300px;width: 226px;                    margin-left: -9px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.7s;"></div>
                 <div id="noelr" class="reactor" style="background-image: url(images/Noellawebc2.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 104px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
-                <div id="babar" class="reactor" style="background-image: url(images/Babawebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div>
-                <div id="mydir" class="reactor" style="background-image: url(images/Mydiawebc.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;"></div>
+                <div id="babar" class="reactor" style="background-image: url(images/Babawebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div> 
+                <div id="mydir" class="reactor" style="background-image: url(images/Mydiawebc.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;pointer-events: none;"></div>
                 <div id="koncr" class="reactor" style="background-image: url(images/Konchiewebc.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
                 <div id="dogyr" class="reactor" style="background-image: url(images/Dogywebc.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 443px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2.2s;"></div>
               </div>
@@ -1326,14 +1326,22 @@
                 <div id="aryars" class="reactor" style="background-image: url(images/SailorAryaC.gif);     background-size: contain;height: 300px;width: 226px;                    margin-left: -9px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.7s;"></div>
                 <div id="noelrs" class="reactor" style="background-image: url(images/SailorNoellaC.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 104px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1.5s;"></div>
                 <div id="babars" class="reactor" style="background-image: url(images/SailorBabaC.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;"></div>
-                <div id="mydirs" class="reactor" style="background-image: url(images/SailorMydiaC.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;"></div>
+                <div id="mydirs" class="reactor" style="background-image: url(images/SailorMydiaC.gif);    background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 217px;position:relative;animation: mover 4s infinite  alternate;animation-delay:1s;opacity: 0;pointer-events: none;"></div>
                 <div id="koncrs" class="reactor" style="background-image: url(images/SailorKonchieC.gif);  background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 330px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2s;"></div>
                 <div id="dogyrs" class="reactor" style="background-image: url(images/SailorDogC.gif);     background-size: contain;height: 300px;width: 226px; margin-top: -300px;margin-left: 443px;position:relative;animation: mover 4s infinite  alternate;animation-delay:2.2s;"></div>
               </div>
-              <div style="color: white;margin-top: -280px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;" id="reactivetitle">Party Pack!</div>
+              <div id="kokonono" style="margin-top: -300px; opacity: 0;pointer-events : none;">
+                <div style="height: 500px;width: 500px;margin-left: 80px;position:relative;"></div>
+                <div class="kokononobouncer" style="position:relative;pointer-events: none;">
+                  <div id="kokononobase" class="reactor" style="background-image: url(images/KokoNonoBase.gif);     background-size: contain;height: 500px;width: 500px; margin-top: -500px;margin-left: 80px;position:relative;animation: mover 4s infinite  alternate;"></div>
+                  <div class="kokononotrigger" id="kokononono" style="background-image: url();         background-size: contain;height: 500px;width: 250px; margin-top: -500px;margin-left: 80px;position:relative;animation: mover 4s infinite  alternate;pointer-events: none;"></div>
+                  <div class="kokononotrigger" id="kokononoko" style="background-image: url();      background-size: contain;height: 500px;width: 250px; margin-top: -500px;margin-left: 342px;position:relative;animation: mover 4s infinite  alternate;pointer-events: none;"></div>
+                </div>
+              </div>
+              <div style="color: white;margin-top: -480px;width: 660px;text-align: center;font-size: 25px;position: relative;text-shadow: 0 0 5px #000;" id="reactivetitle">Party Pack!</div>
             </div>
 
-            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -100px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="reactprice">
+            <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -100px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;pointer-events: none;" id="reactprice">
               Price: <br>
               <div style="font-size: 20pt;position: absolute;">$<input
                   style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
@@ -1346,20 +1354,58 @@
             
             
 
-            <div style="display: inline-block;margin-left: 20px;">Quantity: <br>
+            <div id="reactnodisabler" style="display: inline-block;margin-left: 20px;">Quantity: <br>
                 <input type="number" onclick="reactno();" id="reactquantity" name="quantity" min="1" max="5" value="5" style="width:30px;">
                 <label for="reactquantity">Characters</label>
             </div>
 
-            <div style="display: inline-block; margin-left: 20px;"> Extras: <br>
+            <div id="reactnodisabler2" style="display: inline-block; margin-left: 20px;"> Extras: <br>
                 <input type="checkbox" onclick="reactno();" id="reactunif" name="size" value="0">
                 <label for="reactunif">Extra Uniform</label>
+            </div>
+
+            <div id="reactsecret" style="display: inline-block; margin-left: 20px; opacity: 0;"> Sekrit Option: <br>
+              <input type="checkbox" onclick="reactsekrit();" id="reactcouple" name="size" value="0">
+              <label for="reactcouple">Couple's Special</label>
             </div>
 
 
             </div>
 
             <script>
+            function reactsekrit(){
+              if (document.getElementById("reactcouple").checked){
+                document.getElementById("reactivetitle").innerHTML = "Couple's Special!";
+                document.getElementById("reactrealprice").value = "200";
+                document.getElementById("reactunif").checked = false;
+                document.getElementById("reactunif").disabled = true;
+                document.getElementById("reactquantity").disabled = true;
+                $('#reactcanvas').css('height', 400+"px");
+                $('#reactcanvaswrapper').css('height', 472+"px");
+                $('#nocostume').css('opacity', 0);
+                $('#sailorcostume').css('opacity', 0);
+                $('#kokonono').css('opacity', 1);
+                $('#kokonono').css('pointer-events', "auto");
+                $('#kokononoko').css('pointer-events', "auto");
+                $('#kokononono').css('pointer-events', "auto");
+              }
+              else{
+                document.getElementById("reactivetitle").innerHTML = "Couple Pack!";
+                document.getElementById("reactrealprice").value = "117.5";
+                document.getElementById("reactunif").checked = false;
+                document.getElementById("reactunif").disabled = false;
+                document.getElementById("reactquantity").disabled = false;
+                $('#reactcanvas').css('height', 260+"px");
+                $('#reactcanvaswrapper').css('height', 332+"px");
+                $('#nocostume').css('opacity', 1);
+                $('#sailorcostume').css('opacity', 0);
+                $('#kokonono').css('opacity', 0);
+                $('#kokonono').css('pointer-events', "none");
+                $('.kokononoko').css('pointer-events', "none"); 
+                $('.kokononono').css('pointer-events', "none");
+              }
+            }
+
             function reactno(){
               var reactquant = document.getElementById("reactquantity").value;
               var uni
@@ -1377,23 +1423,28 @@
               }
               switch (reactquant){
                 case "1":
+                  $('#babacred3').css('display', 'inline-block');
                   $('#aryacred3').css('display', 'none');
                   $('#skywancred3').css('display', 'none');
                   $('#noellacred3').css('display', 'none');
                   $('#kokocred3').css('display', 'none');
                   $('#babar').css('opacity', 1);
+                  $('#reactsecret').css('opacity', 0);
+                  $('#reactsecret').css('pointer-events', "none");
+                  document.getElementById("reactcouple").checked = false;
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 0);
                   $('#noelr').css('opacity', 0);
                   $('#dogyr').css('opacity', 0);
                   $('#aryar').css('opacity', 0);
                   $('#babar').css('margin-left', 217 + "px");
-                  $('#mydir').css('margin-left', 330 + "px");
-                  $('#koncr').css('margin-left', 330 + "px");
+                  $('#mydir').css('margin-left', 217 + "px");
+                  $('#koncr').css('margin-left', 273.5 + "px");
+                  $('#babar').css('pointer-events', "auto");
                   $('#mydir').css('pointer-events', "none");
                   $('#koncr').css('pointer-events', "none");
                   $('#dogyr').css('pointer-events', "none");
-                  $('#noelr').css('margin-left', 104 + "px");
+                  $('#noelr').css('margin-left', 160.5 + "px");
                   $('#dogyr').css('margin-left', 443 + "px");
                   $('#aryar').css('margin-left', -9 + "px");
                   $('#babars').css('opacity', 1);
@@ -1403,17 +1454,19 @@
                   $('#dogyrs').css('opacity', 0);
                   $('#aryars').css('opacity', 0);
                   $('#babars').css('margin-left', 217 + "px");
-                  $('#mydirs').css('margin-left', 330 + "px");
-                  $('#koncrs').css('margin-left', 330 + "px");
-                  $('#noelrs').css('margin-left', 104 + "px");
+                  $('#mydirs').css('margin-left', 217 + "px");
+                  $('#koncrs').css('margin-left', 273.5 + "px");
+                  $('#noelrs').css('margin-left', 160.5 + "px");
                   $('#dogyrs').css('margin-left', 443 + "px");
                   $('#aryars').css('margin-left', -9 + "px");
                   if (document.getElementById("reactunif").checked){
+                    $('#babars').css('pointer-events', "auto");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
                   }
                   else{
+                    $('#babars').css('pointer-events', "none");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
@@ -1422,44 +1475,51 @@
                   document.getElementById("reactivetitle").innerHTML = "Single Pack!";
                   break;
                 case "2":
+                  $('#babacred3').css('display', 'none');
                   $('#aryacred3').css('display', 'none');
                   $('#skywancred3').css('display', 'none');
-                  $('#noellacred3').css('display', 'none');
+                  $('#noellacred3').css('display', 'inline-block');
                   $('#kokocred3').css('display', 'inline-block');
-                  $('#babar').css('opacity', 1);
-                  $('#mydir').css('opacity', 1);
-                  $('#koncr').css('opacity', 0);
-                  $('#noelr').css('opacity', 0);
+                  $('#babar').css('opacity', 0);
+                  $('#reactsecret').css('opacity', 1);
+                  $('#reactsecret').css('pointer-events', "auto");
+                  document.getElementById("reactcouple").checked = false;
+                  $('#mydir').css('opacity', 0);
+                  $('#koncr').css('opacity', 1);
+                  $('#noelr').css('opacity', 1);
                   $('#dogyr').css('opacity', 0);
                   $('#aryar').css('opacity', 0);
-                  $('#babar').css('margin-left', 160.5 + "px");
-                  $('#mydir').css('margin-left', 273.5 + "px");
+                  $('#babar').css('margin-left', 217 + "px");
+                  $('#mydir').css('margin-left', 160.5 + "px");
                   $('#koncr').css('margin-left', 273.5 + "px");
-                  $('#mydir').css('pointer-events', "auto");
-                  $('#koncr').css('pointer-events', "none");
+                  $('#babar').css('pointer-events', "none");
+                  $('#mydir').css('pointer-events', "none");
+                  $('#koncr').css('pointer-events', "auto");
                   $('#dogyr').css('pointer-events', "none");
-                  $('#noelr').css('margin-left', 47.5 + "px");
+                  $('#noelr').css('margin-left', 160.5 + "px");
                   $('#dogyr').css('margin-left', 386.5 + "px");
                   $('#aryar').css('margin-left', -74.5 + "px");
-                  $('#babars').css('opacity', 1);
-                  $('#mydirs').css('opacity', 1);
-                  $('#koncrs').css('opacity', 0);
-                  $('#noelrs').css('opacity', 0);
+                  $('#babars').css('opacity', 0);
+                  $('#mydirs').css('opacity', 0);
+                  $('#koncrs').css('opacity', 1);
+                  $('#noelrs').css('opacity', 1);
                   $('#dogyrs').css('opacity', 0);
                   $('#aryars').css('opacity', 0);
-                  $('#babars').css('margin-left', 160.5 + "px");
-                  $('#mydirs').css('margin-left', 273.5 + "px");
+                  $('#babars').css('margin-left', 217 + "px");
+                  $('#mydirs').css('margin-left', 160.5 + "px");
                   $('#koncrs').css('margin-left', 273.5 + "px");
-                  $('#koncrs').css('pointer-events', "none");
-                  $('#noelrs').css('margin-left', 47.5 + "px");
+                  $('#koncrs').css('pointer-events', "auto");
+                  $('#noelrs').css('margin-left', 160.5 + "px");
                   $('#dogyrs').css('margin-left', 386.5 + "px");
                   $('#aryars').css('margin-left', -74.5 + "px");
                   if (document.getElementById("reactunif").checked){
-                    $('#koncrs').css('pointer-events', "none");
+                    $('#babars').css('pointer-events', "none");
+                    $('#koncrs').css('pointer-events', "auto");
                     $('#dogyrs').css('pointer-events', "none");
-                    $('#mydirs').css('pointer-events', "auto");
+                    $('#mydirs').css('pointer-events', "none");
                   }
                   else{
+                    $('#babars').css('pointer-events', "none");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
@@ -1468,19 +1528,24 @@
                   document.getElementById("reactivetitle").innerHTML = "Couple Pack!";
                   break;
                 case "3":
+                  $('#babacred3').css('display', 'inline-block');
                   $('#aryacred3').css('display', 'none');
                   $('#skywancred3').css('display', 'none');
                   $('#noellacred3').css('display', 'inline-block');
                   $('#kokocred3').css('display', 'inline-block');
                   $('#babar').css('opacity', 1);
+                  $('#reactsecret').css('opacity', 0);
+                  $('#reactsecret').css('pointer-events', "none");
+                  document.getElementById("reactcouple").checked = false;
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
                   $('#noelr').css('opacity', 1);
                   $('#dogyr').css('opacity', 0);
                   $('#aryar').css('opacity', 0);
                   $('#babar').css('margin-left', 217 + "px");
-                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#mydir').css('margin-left', 217 + "px");
                   $('#koncr').css('margin-left', 330 + "px");
+                  $('#babar').css('pointer-events', "auto");
                   $('#mydir').css('pointer-events', "none");
                   $('#koncr').css('pointer-events', "auto");
                   $('#dogyr').css('pointer-events', "none");
@@ -1494,18 +1559,20 @@
                   $('#dogyrs').css('opacity', 0);
                   $('#aryars').css('opacity', 0);
                   $('#babars').css('margin-left', 217 + "px");
-                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#mydirs').css('margin-left', 217 + "px");
                   $('#koncrs').css('margin-left', 330 + "px");
                   $('#koncrs').css('pointer-events', "auto");
                   $('#noelrs').css('margin-left', 104 + "px");
                   $('#dogyrs').css('margin-left', 443 + "px");
                   $('#aryars').css('margin-left', -9 + "px");
                   if (document.getElementById("reactunif").checked){
+                    $('#babars').css('pointer-events', "auto");
                     $('#koncrs').css('pointer-events', "auto");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
                   }
                   else{
+                    $('#babars').css('pointer-events', "none");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
@@ -1514,19 +1581,24 @@
                   document.getElementById("reactivetitle").innerHTML = "Collab Pack!";
                 break;
                 case "4":
+                  $('#babacred3').css('display', 'inline-block');
                   $('#aryacred3').css('display', 'none');
                   $('#skywancred3').css('display', 'inline-block');
                   $('#noellacred3').css('display', 'inline-block');
                   $('#kokocred3').css('display', 'inline-block');
                   $('#babar').css('opacity', 1);
+                  $('#reactsecret').css('opacity', 0);
+                  $('#reactsecret').css('pointer-events', "none");
+                  document.getElementById("reactcouple").checked = false;
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
                   $('#noelr').css('opacity', 1);
                   $('#dogyr').css('opacity', 1);
                   $('#aryar').css('opacity', 0);
                   $('#babar').css('margin-left', 160.5 + "px");
-                  $('#mydir').css('margin-left', 273.5 + "px");
+                  $('#mydir').css('margin-left', 160.5 + "px");
                   $('#koncr').css('margin-left', 273.5 + "px");
+                  $('#babar').css('pointer-events', "auto");
                   $('#mydir').css('pointer-events', "none");
                   $('#koncr').css('pointer-events', "auto");
                   $('#dogyr').css('pointer-events', "auto");
@@ -1540,18 +1612,20 @@
                   $('#dogyrs').css('opacity', 1);
                   $('#aryars').css('opacity', 0);
                   $('#babars').css('margin-left', 160.5 + "px");
-                  $('#mydirs').css('margin-left', 273.5 + "px");
+                  $('#mydirs').css('margin-left', 160.5 + "px");
                   $('#koncrs').css('margin-left', 273.5 + "px");
                   $('#koncrs').css('pointer-events', "auto");
                   $('#noelrs').css('margin-left', 47.5 + "px");
                   $('#dogyrs').css('margin-left', 386.5 + "px");
                   $('#aryars').css('margin-left', -74.5 + "px");
                   if (document.getElementById("reactunif").checked){
+                    $('#babars').css('pointer-events', "auto");
                     $('#koncrs').css('pointer-events', "auto");
                     $('#dogyrs').css('pointer-events', "auto");
                     $('#mydirs').css('pointer-events', "none");
                   }
                   else{
+                    $('#babars').css('pointer-events', "none");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
@@ -1560,19 +1634,24 @@
                   document.getElementById("reactivetitle").innerHTML = "Collab Pack! +1";
                 break;
                 case "5":
+                  $('#babacred3').css('display', 'inline-block');
                   $('#aryacred3').css('display', 'inline-block');
                   $('#skywancred3').css('display', 'inline-block');
                   $('#noellacred3').css('display', 'inline-block');
                   $('#kokocred3').css('display', 'noinline-blockne');
                   $('#babar').css('opacity', 1);
+                  $('#reactsecret').css('opacity', 0);
+                  $('#reactsecret').css('pointer-events', "none");
+                  document.getElementById("reactcouple").checked = false;
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
                   $('#noelr').css('opacity', 1);
                   $('#dogyr').css('opacity', 1);
                   $('#aryar').css('opacity', 1);
                   $('#babar').css('margin-left', 217 + "px");
-                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#mydir').css('margin-left', 217 + "px");
                   $('#koncr').css('margin-left', 330 + "px");
+                  $('#babar').css('pointer-events', "auto");
                   $('#mydir').css('pointer-events', "none");
                   $('#koncr').css('pointer-events', "auto");
                   $('#dogyr').css('pointer-events', "auto");
@@ -1586,18 +1665,20 @@
                   $('#dogyrs').css('opacity', 1);
                   $('#aryars').css('opacity', 1);
                   $('#babars').css('margin-left', 217 + "px");
-                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#mydirs').css('margin-left', 217 + "px");
                   $('#koncrs').css('margin-left', 330 + "px");
                   $('#koncrs').css('pointer-events', "auto");
                   $('#noelrs').css('margin-left', 104 + "px");
                   $('#dogyrs').css('margin-left', 443 + "px");
                   $('#aryars').css('margin-left', -9 + "px");
                   if (document.getElementById("reactunif").checked){
+                    $('#babars').css('pointer-events', "auto");
                     $('#koncrs').css('pointer-events', "auto");
                     $('#dogyrs').css('pointer-events', "auto");
                     $('#mydirs').css('pointer-events', "none");
                   }
                   else{
+                    $('#babars').css('pointer-events', "none");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
@@ -1606,19 +1687,24 @@
                   document.getElementById("reactivetitle").innerHTML = "Party Pack!";
                 break;
                 default:
-                  $('#aryacred3').css('display', 'none');
-                  $('#skywancred3').css('display', 'none');
-                  $('#noellacred3').css('display', 'none');
-                  $('#kokocred3').css('display', 'none');
+                  $('#babacred3').css('display', 'inline-block');
+                  $('#aryacred3').css('display', 'inline-block');
+                  $('#skywancred3').css('display', 'inline-block');
+                  $('#noellacred3').css('display', 'inline-block');
+                  $('#kokocred3').css('display', 'inline-block');
                   $('#babar').css('opacity', 1);
+                  $('#reactsecret').css('opacity', 0);
+                  $('#reactsecret').css('pointer-events', "none");
+                  document.getElementById("reactcouple").checked = false;
                   $('#mydir').css('opacity', 0);
                   $('#koncr').css('opacity', 1);
                   $('#noelr').css('opacity', 1);
                   $('#dogyr').css('opacity', 1);
                   $('#aryar').css('opacity', 1);
                   $('#babar').css('margin-left', 217 + "px");
-                  $('#mydir').css('margin-left', 330 + "px");
+                  $('#mydir').css('margin-left', 217 + "px");
                   $('#koncr').css('margin-left', 330 + "px");
+                  $('#babar').css('pointer-events', "auto");
                   $('#mydir').css('pointer-events', "none");
                   $('#koncr').css('pointer-events', "auto");
                   $('#dogyr').css('pointer-events', "auto");
@@ -1632,18 +1718,20 @@
                   $('#dogyrs').css('opacity', 1);
                   $('#aryars').css('opacity', 1);
                   $('#babars').css('margin-left', 217 + "px");
-                  $('#mydirs').css('margin-left', 330 + "px");
+                  $('#mydirs').css('margin-left', 217 + "px");
                   $('#koncrs').css('margin-left', 330 + "px");
                   $('#koncrs').css('pointer-events', "auto");
                   $('#noelrs').css('margin-left', 104 + "px");
                   $('#dogyrs').css('margin-left', 443 + "px");
                   $('#aryars').css('margin-left', -9 + "px");
                   if (document.getElementById("reactunif").checked){
+                    $('#babars').css('pointer-events', "auto");
                     $('#koncrs').css('pointer-events', "auto");
                     $('#dogyrs').css('pointer-events', "auto");
                     $('#mydirs').css('pointer-events', "none");
                   }
                   else{
+                    $('#babars').css('pointer-events', "none");
                     $('#koncrs').css('pointer-events', "none");
                     $('#dogyrs').css('pointer-events', "none");
                     $('#mydirs').css('pointer-events', "none");
