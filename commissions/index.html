@@ -31,16 +31,52 @@
 </head>
 
 <body style="background-color: #202420;overflow-y:hidden">
-  <div id="fadeMe" style="
-  opacity:    0.9; 
-  background: #000; 
-  width:      100%;
-  height:     100%; 
-  z-index:    100;
-  top:        0; 
-  left:       0; 
-  position:   fixed; 
-  display:none;"></div>
+  <div>
+    <div id="fadeMe" style="
+    opacity:    0.9; 
+    background: #000; 
+    width:      100%;
+    height:     100%; 
+    z-index:    100;
+    top:        0; 
+    left:       0; 
+    position:   fixed; 
+    display:block;">
+    </div>
+    <div id="firerelief" style="opacity: 1;position: absolute;z-index: 101;text-align: center;width: 100%;">
+      <div style="height: 2vw;"></div>
+      <h1 style="color: white;">Notice</h1>
+      <img src="images/fire.png" style="height: 450px;">
+      <div style="z-index: 101; color: white;">
+        <h1 style="color: orange;">Fire Relief!</h1>
+        <h2>Our community members needs help!</h2>
+        <h3><b style="color: skyblue;" onclick="credit(this,innerHTML)" class="credited">@MintyYukime</b> <b style="color: lightcoral;" onclick="credit(this,innerHTML)" class="credited">@MomokaVT</b> <b style="color: #e798ff;" onclick="credit(this,innerHTML)" class="credited">@PriscillaVTuber</b> <b style="color: rgb(80, 200, 255);" onclick="credit(this,innerHTML)" class="credited">@LuckyLukoa</b> and <b  onclick="credit(this,innerHTML)" class="credited">@TheTealBomber</b></h3>
+        Recently, at June 8th our beloved friends unfortunately<br>
+        lost their home in a fire and lost a lot of their belongings.<br> 
+        A lot of sentimentals were lost, and a lot of work was burned as well.<br>
+        <br>
+        If you can donate to help them out please click the link provided in this notice<br>
+        any amount would help a long way as well just spreading the word!<br>
+        <br>
+        You can help them by donating to their GoFundMe below!
+        <br>
+        <br>
+        <a href="https://www.gofundme.com/f/umedf2-friends-apartment-burned-down" style="color: green;">https://www.gofundme.com/f/umedf2-friends-apartment-burned-down</a>
+        <br>
+        <br>
+        <br>
+        <h3 style="color: #8ce967; cursor: pointer;" onclick="fireclose()">Click here to dismiss</h3>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function fireclose(){
+      document.getElementById("firerelief").style.display = "none";
+      document.getElementById("fadeMe").style.display = "none";
+    }
+  </script>
+
   <div class="header">
     <div>
       <div style="display: inline-block;padding: 10px 10px 12.5px 0px;">
