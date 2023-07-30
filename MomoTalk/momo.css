@@ -4,8 +4,11 @@
 
 
 img[src*="109294441826635776"] {content:url(https://media.discordapp.net/stickers/871920943969222737.png?size=320);}
+
+/* If you wanna hide a server folder, just name it Catfolder*/
 .wrapper-38slSD:has(>div>div[data-dnd-name="Catfolder"]){display:none;}
 
+/* Title Bar momofication START*/
 .typeWindows-2-g3UY.withFrame-2dL45i.titleBar-1it3bQ{
     background-color: #FC98A9;
     height: 50px;
@@ -40,6 +43,24 @@ img[src*="109294441826635776"] {content:url(https://media.discordapp.net/sticker
     top:0px;
 }
 
+/* Title Bar momofication END*/
+
+/*Start logo screen and window pinkification*/
+
+[class^="problemsText-"]{
+    color: white;
+}
+
+[class^="problems-"] > div > a{
+    color: white;
+}
+[class^="problems-"] > div > a svg{
+    color: white;
+}
+.content-3AIQZv{
+    content:url(https://i.ibb.co/z46yn0T/momologoanim.png);
+}
+
 #app-mount{
     border-radius: 10px;
     overflow: hidden;
@@ -47,18 +68,30 @@ img[src*="109294441826635776"] {content:url(https://media.discordapp.net/sticker
     background: #FC98A9;
 }
 
+.container-2RRFHK{
+    background-color: #FC98A9;
+}
+
+
 body{
     background-color: rgba(0, 0, 0, 0);
 }
 
+/*Server List Greyification*/
 .tree-3agP2X{
     background-color: #4C5B6F;
 }
 
-[class^="pill-"] > span{
+[class^="pill-"] > span{ /*Unread Pill*/
     background: white !important;
 }
 
+[class^="expandedFolderBackground-"]{
+    background: #434a57;
+}
+
+
+/*Make folder and server icon background Transparent*/
 [class^="childWrapper-"]{
     background: rgba(0, 0, 0, 0) !important;
     color:white;
@@ -69,10 +102,12 @@ body{
     
 }
 
+/*Codeblock BG Color*/
 .shiki-container{
     background-color: #4C5B6F;
 }
 
+/*chat bubble*/
 [id^="message-content-"]{
     color: white;
     background-color: #4C5B6F;
@@ -89,27 +124,6 @@ h3[aria-labelledby^="message-username"]{
     overflow: visible !important;
 }
 
-[class^="expandedFolderBackground-"]{
-    background: #434a57;
-}
-
-.container-2RRFHK{
-    background-color: #FC98A9;
-}
-
-[class^="problemsText-"]{
-    color: white;
-}
-
-[class^="problems-"] > div > a{
-    color: white;
-}
-[class^="problems-"] > div > a svg{
-    color: white;
-}
-.content-3AIQZv{
-    content:url(https://i.ibb.co/z46yn0T/momologoanim.png);
-}
 
 [class^="childWrapper-"]:has(svg[class^="homeIcon-"])::after{
     content: url(https://media.discordapp.net/attachments/832968745362128916/1134869728897286334/StudentIcon.png) !important;
@@ -145,6 +159,8 @@ svg:has(g > path[d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,
     position: absolute;
 }
 
+
+/*give replies bubble, and blue hover*/
 [class^="repliedTextPreview-"]{
     border-radius: 8px;
     color: white;
@@ -154,6 +170,7 @@ svg:has(g > path[d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,
     border-radius: 8px;
     color: rgb(193, 200, 207) !important;
 }
+
 
 [class^="privateChannelsHeaderContainer-"]{
     display: none;
@@ -176,10 +193,13 @@ svg:has(g > path[d="M0.5,0 L0.5,1.5 C0.5,5.65 2.71,9.28 6,11.3 L6,16 L21,16 L21,
     color:white !important;
 }
 
+/*Makes all link and link icons pink*/
 a[href^="http"]{
     color:#FC98A9;
 }
 
+
+/*Moves ping badge to top right and makes it square-er*/
 [class^="numberBadge-"]{
     opacity: 1 !important;
     transform: translateY(-35px) !important;
@@ -190,14 +210,17 @@ a[href^="http"]{
     display: none !important;
 }
 
+/*un-squares active server/dm icon*/
 [class^="icon-"]{
     border-radius: 50%;
 }
 
+/*black usernames because i crave chaos*/
 [class^="username-"]{
     color: black !important;
 }
 
+/*Gives white *photo* borders to all attachments*/
 [id^="message-accessories-"]{
     border-radius: 5px;
     border-width: 10px;
@@ -211,6 +234,7 @@ a[href^="http"]{
     margin-left: 0px !important;
 }
 
+/*well, all attachments except Stickers*/
 [id^="message-accessories-"]:has(span[class^="clickableSticker"]){
     border-radius: 5px;
     border-width: 10px;
@@ -224,6 +248,7 @@ a[href^="http"]{
     background-color: #4C5B6F;
 }
 
+/*balloon tails initiate (shit's so hard to get right, if you have any suggestions just lmk)*/
 div[class*="groupStart-"]:has(div[class^="contents"]>div[id^="message-content"]>span)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -231,6 +256,7 @@ div[class*="groupStart-"]:has(div[class^="contents"]>div[id^="message-content"]>
     margin-top: 28px;
 }
 
+/*if it had replies tail no longer float above*/
 div[class*="groupStart-"][class*="hasReply-"]:has(div[class^="contents"]>div[id^="message-content"]>span)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -238,6 +264,7 @@ div[class*="groupStart-"][class*="hasReply-"]:has(div[class^="contents"]>div[id^
     margin-top: 63px;
 }
 
+/*if it had mentioned you tail no longer stray to the left*/
 div[class*="groupStart-"][class*="mentioned-"]:has(div[class^="contents"]>div[id^="message-content"]>span)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -246,12 +273,31 @@ div[class*="groupStart-"][class*="mentioned-"]:has(div[class^="contents"]>div[id
     width:0;
 }
 
+/*if you're replying to someone it no longer stray to the left as well*/
+div[class*="groupStart-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>span)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-left: 66px;
+    margin-top: 28px;
+    width:0;
+}
+
+
+/*combination of both above*/
 div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[class^="contents"]>div[id^="message-content"]>span)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
     margin-top: 63px;
 }
 
+div[class*="groupStart-"][class*="hasReply-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>span)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-top: 63px;
+}
+
+
+/*now do it all over for italics*/
 div[class*="groupStart-"]:has(div[class^="contents"]>div[id^="message-content"]>em)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -280,6 +326,20 @@ div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[class
     margin-top: 63px;
 }
 
+div[class*="groupStart-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>em)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-left: 66px;
+    margin-top: 28px;
+    width:0;
+}
+div[class*="groupStart-"][class*="hasReply-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>em)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-top: 63px;
+}
+
+/*and bold*/
 div[class*="groupStart-"]:has(div[class^="contents"]>div[id^="message-content"]>strong)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -308,6 +368,20 @@ div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[class
     margin-top: 63px;
 }
 
+div[class*="groupStart-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>strong)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-left: 66px;
+    margin-top: 28px;
+    width:0;
+}
+div[class*="groupStart-"][class*="hasReply-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>strong)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-top: 63px;
+}
+
+/*and of course inline codes...*/
 div[class*="groupStart-"]:has(div[class^="contents"]>div[id^="message-content"]>code)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -336,6 +410,22 @@ div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[class
     margin-top: 63px;
 }
 
+div[class*="groupStart-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>code)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-left: 66px;
+    margin-top: 28px;
+    width:0;
+}
+
+div[class*="groupStart-"][class*="hasReply-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>code)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-top: 63px;
+}
+
+
+/*dont forget links as well...*/
 div[class*="groupStart-"]:has(div[class^="contents"]>div[id^="message-content"]>a)::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -364,7 +454,21 @@ div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[class
     margin-top: 63px;
 }
 
+div[class*="groupStart-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>a)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-left: 66px;
+    margin-top: 28px;
+    width:0;
+}
+div[class*="groupStart-"][class*="hasReply-"][class*="replying-"]:has(div[class^="contents"]>div[id^="message-content"]>a)::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-top: 63px;
+}
 
+
+/*and stickers because of course i'm giving them balloon tails*/
 div[class*="groupStart-"]:has(div[id^="message-accessories-"]>span[class^="clickableSticker"])::before{
     content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
     position: absolute;
@@ -387,7 +491,21 @@ div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[id^="
     margin-top: 63px;
 }
 
+div[class*="groupStart-"][class*="replying-"]:has(div[id^="message-accessories-"]>span[class^="clickableSticker"])::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-left: 66px;
+    margin-top: 28px;
+    width:0;
+}
+div[class*="groupStart-"][class*="hasReply-"][class*="replying-"]:has(div[id^="message-accessories-"]>span[class^="clickableSticker"])::before{
+    content: url(https://cdn.discordapp.com/attachments/832968745362128916/1134600571203104901/balloontail.png);
+    position: absolute;
+    margin-top: 63px;
+}
 
+
+/*makes default mention color pink*/
 .mention{
     color: #FC98A9;
 }
@@ -396,10 +514,12 @@ div[class*="groupStart-"][class*="hasReply-"][class*="mentioned-"]:has(div[id^="
     color: #FC98A9;
 }
 
+/*balloon tail troubleshooting (end me pls)*/
 [id^="message-reply-context-"]{
     height: 30px !important;
 }
 
+/*more pinkified links*/
 a[title^="http"]{
     color: #FC98A9;
 }
@@ -408,18 +528,22 @@ a[title^="http"]{
     color: #FC98A9;
 }
 
+/*header markdowns aren't white for some reason*/
 [id^="message-content-"] > h1, h2, h3 > span > span{
     color:white !important;
 }
 
+/*gives inline code a bit of shade*/
 .inline{
     background: rgba(50,50,50,0.3) !important;
 }
 
+/*the edited tags are now pink*/
 [class^="edited"]{
     color: #FC98A9;
 }
 
+/*more balloon tails (this time for reply preview)*/
 div[class^="repliedTextPreview"]:has(div[id^="message-content-"])::before{
     content: url(https://media.discordapp.net/attachments/832968745362128916/1134951378066870322/balloontailblue.png);
     position: absolute;
@@ -441,6 +565,7 @@ div[class^="repliedTextPreview"] > div[id^="message-content-"]{
     opacity: 1 !important;
 }
 
+/*this fucks up balloon tails for some reason*/
 [class^="backgroundFlash"]::before{
     position: absolute;
     display: none;
