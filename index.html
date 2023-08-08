@@ -94,7 +94,6 @@
             
             <div style="width:50%;display: inline-block;">
                 <img src="images/SlideSquare.webp" id="imageslide" style="display: none;">
-                <img src="images/placeholder.png" id="imageslide1" style="display: none;opacity: 0.25;position: absolute;margin-left: -492px;">
                 <style>
                     .slick-arrow{
                         display: none !important;
@@ -113,17 +112,18 @@
                         </div> 
                     </div>
                 </div>
+                <img src="images/placeholder.png" id="imageslide1" style="display: none;opacity: 0.25;position: absolute;margin-left: -492px;pointer-events: none;">
             </div>
             <div id="detectore" style="width: 5vw;display: inline-block;"></div>
         </div>
 
         <style>
-            #imageslide:has(+ #imageslide1:hover){
-                opacity: 0.5 !important;
+            #lazer:hover + #imageslide1{
+                opacity: 1 !important;
             }
 
-            #imageslide1:hover{
-                opacity: 1 !important;
+            #lazer:hover{
+                opacity: 0.5 !important;
             }
         </style>
         <script>
@@ -134,13 +134,13 @@
                 console.log(width);
                 if(width <= 64){
                     document.getElementById('awawa').style.display = "none";
-                    document.getElementsByClassNames('lazer').style.display = "none";
+                    document.getElementById('lazer').style.display = "none";
                     document.getElementById('imageslide1').style.display = "none";
                     document.getElementById('centererer').style.textAlign = "center";
                 }
                 else{
                     document.getElementById('awawa').style.display = "inline-block";
-                    document.getElementsByClassNames('lazer').style.display = "inline-block";
+                    document.getElementById('lazer').style.display = "inline-block";
                     document.getElementById('imageslide1').style.display = "inline-block";
                     document.getElementById('centererer').style.textAlign = "Left";
                 }
