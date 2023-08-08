@@ -58,7 +58,7 @@ img[src*="109294441826635776"] {content:url(https://media.discordapp.net/sticker
     color: white;
 }
 .content-3AIQZv{
-    content:url(https://i.ibb.co/z46yn0T/momologoanim.png);
+    content:url(https://i.ibb.co/syjHkVH/momologoanim.png);
 }
 
 #app-mount{
@@ -539,8 +539,9 @@ a[title^="http"]{
 }
 
 /*the edited tags are now pink*/
-[class^="edited"]{
+[class^="timestamp-"]:has(time > [class^="edited"]){
     color: #FC98A9;
+    opacity: 1 !important;
 }
 
 /*more balloon tails (this time for reply preview)*/
@@ -571,4 +572,24 @@ div[class^="repliedTextPreview"] > div[id^="message-content-"]{
     display: none;
     margin-left: -6px;
     margin-top: 28px;
+}
+
+[class^="timestamp-"]{
+    opacity:0;
+}
+
+[class^="timestamp-"]:hover{
+    opacity:1;
+}
+
+.mentioned-Tre-dv{
+    background-color: rgba(252, 152, 169, 0.1);
+}
+
+.mentioned-Tre-dv:hover{
+    background-color: rgba(252, 152, 169, 0.2) !important;
+}
+
+[class^="channelInfo-"] > [class^="mentionsBadge-"] > div{
+    transform: translateY(-0px) !important;
 }
