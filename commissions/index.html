@@ -1339,7 +1339,7 @@
             <br>Comes with 1 wave motion, and 4 toggleable face expressions: Neutral, Happy, Angry and Sad.
             <br>Pricing also goes up along with mesh count, and complexity and are negotiable!
             <br>Custom motions/expressions are $20 each. For pre-production or as an Addon.
-            <br>Typical working period varies between 2 to 6 months.
+            <br>Typical working period varies between 5 to 15 months.
             <br><br>Includes free post-purchase support/troubleshooting!</b>
             <br>
             <br>
@@ -1417,6 +1417,8 @@
                 document.getElementById("reactunif").checked = false;
                 document.getElementById("reactunif").disabled = true;
                 document.getElementById("reactquantity").disabled = true;
+                $('#fugicssava').css('display', "none");
+                $('#fugicssnot').css('display', "block");
                 $('#reactcanvas').css('height', 400+"px");
                 $('#reactcanvaswrapper').css('height', 472+"px");
                 $('#nocostume').css('opacity', 0);
@@ -1432,14 +1434,16 @@
                 document.getElementById("reactunif").checked = false;
                 document.getElementById("reactunif").disabled = false;
                 document.getElementById("reactquantity").disabled = false;
+                $('#fugicssava').css('display', "block");
+                $('#fugicssnot').css('display', "none");
                 $('#reactcanvas').css('height', 260+"px");
                 $('#reactcanvaswrapper').css('height', 332+"px");
                 $('#nocostume').css('opacity', 1);
                 $('#sailorcostume').css('opacity', 0);
                 $('#kokonono').css('opacity', 0);
                 $('#kokonono').css('pointer-events', "none");
-                $('.kokononoko').css('pointer-events', "none"); 
-                $('.kokononono').css('pointer-events', "none");
+                $('#kokononoko').css('pointer-events', "none"); 
+                $('#kokononono').css('pointer-events', "none");
               }
             }
 
@@ -1800,9 +1804,16 @@
           <b style="font-size: 10pt;">Reactive images with blinking and breathing animations, uniformed for collabs!
           <br>Priced at $60 each, and $30 per alternate clothing. Custom animations/effects are negotiable.
           <br>Final package includes 2 .gif images, and 1 custom .css file compatible for Discord Streamkit.
-          <br>Typical working period varies between 2 to 15 days.
           <br>
-          <br>Fugi-compatible .css file also available upon demand.</b>
+          <a id="fugicssava">Typical working period varies between 2 to 15 days.
+          <br>
+          <br>Fugi-compatible .css file also available upon demand.</a>
+          <a id="fugicssnot" style="display: none;">Typical working period varies between 2 to 3 weeks.
+          <br>
+          <br>Fugi-compatible .css file is currently unavailable for couple's special.<br>
+          Also, due to limitations of  CEF Version 103 OBS Browser plugin was based on,<br>
+          The :has selector "bounce" animation uses won't work until it's updated to Version 105<br><br>
+          In the meantime, external workarounds are available upon request.<br></a></b>
           <br>
           <br>
           <br>
