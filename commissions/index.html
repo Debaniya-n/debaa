@@ -162,9 +162,9 @@
                   break;
                 case "yellow":
                   //custom commissions banner and stuff codeblock 
-                  var banner = data.cards[4].attachments[0].url;
-                  var title = data.cards[4].name;
-                  var subtitle = data.cards[4].desc;
+                  var banner = data.cards[5].attachments[0].url;
+                  var title = data.cards[5].name;
+                  var subtitle = data.cards[5].desc;
                   //replace the linebreaks with <br>
                   subtitle = subtitle.replace(/(?:\r\n|\r|\n)/g, '<br>');
                   //check for links [text](url)
@@ -213,6 +213,19 @@
                 document.getElementById("goals").innerHTML = (data.cards[2].desc*0.2).toFixed(2); 
               }
 
+              function customtext(){
+                var custgoalbool = data.cards[3].cover.color;
+                var custgoaltext = data.cards[3].desc;
+                console.log("i was called i guess");
+                switch(custgoalbool){
+                  case "green":
+                    document.getElementById("goaltext").innerHTML = custgoaltext + " $";
+                  case "red": 
+                    break;
+                }
+
+              }
+
               switch(goalstat){
                 case "green":
                   var goalend = data.cards[1].desc;
@@ -223,6 +236,7 @@
                   document.getElementById("goals").style.display = "inline-block";
                   document.getElementById("moolah").style.display = "inline-block";
                   goalies();
+                  customtext();
                   break;
 
                 case "red":
