@@ -2247,33 +2247,75 @@
 
           <!-- Animate applet -->
           <div style="background-color: #424644; border-radius: 6px; width: 660px;">
-          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:431px">
+          <div style="background-color: #303332; border-radius: 6px; width: 660px; height:420px">
             <div style="background-image:url(images/aaaa.png);height: 371px; width: 660px;margin-bottom: 30px;border-radius: 6px;">
               <div style="height: 371px; width: 660px; border-radius: 6px;overflow: hidden;;">
-                <video autoplay muted loop>
+                <video autoplay muted loop id="animevideo1" style="display:block;">
                   <source src=images/konblonk.mp4 type="video/mp4">
+                </video>
+                <video autoplay muted loop id="animevideo2" style="display:block;margin-top:-370px; width:663px;margin-left: -2px;opacity:0;">
+                  <source src=images/CalciferLoop.mp4 type="video/mp4">
                 </video>
               </div>
             </div>
-            <div style="margin-left: 20px;margin-top: -7px;">Applet Work in Progress</div>
 
             <div style="position: absolute;width: 660px;margin: 20px;margin-left: 20px;margin-top: -110px;padding: 8px;text-shadow:0 0 5px #000 ;color: #8ce967;" id="l2dmoveprice">
-              Price: <br>
+              Price Range: <br>
               <div style="font-size: 20pt;position: absolute;">$<input
                   style="font-family:'UD Digi Kyokasho NK-B';color: #8ce967;background:none;outline: none;border: none;font-size: 20pt; text-shadow:0 0 5px #000 ;"
-                  type="text" id="animrealprice" value="180 - 1900" disabled>
+                  type="text" id="animrealprice" value="175 - 2000+" disabled>
               </div>
             </div>
+
+            <div style="width: 660px; height:421px;color: white;">
+              <br>
+              <br>
+              <div id="animeopt" style="height:30px; margin-left: 20px;margin-top: -50px;">Animation Types:
+              
+                <input type="radio" onclick="animetype(this.value);" name="animetype" value="1"checked>
+                <label for="animetype1">Traditional</label>
+              
+                <input type="radio" onclick="animetype(this.value);" name="animetype" value="2">
+                <label for="animetype2">Live2d</label>
+              </div>
+            </div>
+
+            <script>
+              function animetype(animevalue){
+                console.log("i was called and animevalue was " + animevalue);
+                switch(animevalue){
+                  case "1":
+                  $('#animevideo2').css('opacity', "0");
+                  $('#animecredit1').css('display', "inline-block");
+                  $('#animecredit2').css('display', "none");
+                  $('#animedesc2').css('display', "none");
+                  $('#animedesc1').css('display', "block");
+                  document.getElementById("animrealprice").value = "175 - 2000+";
+                  break;
+                  case "2":
+                  $('#animevideo2').css('opacity', "100");
+                  $('#animecredit1').css('display', "none");
+                  $('#animecredit2').css('display', "inline-block");
+                  $('#animedesc2').css('display', "block");
+                  $('#animedesc1').css('display', "none");
+                  document.getElementById("animrealprice").value = "180 - 2000+";
+                }
+              }
+
+            </script>
 
           </div>
           <div style="font-size: 10px;padding: 5px;padding-left: 20px;padding-right:20px">
               <div style="display: inline-block;width:165px;">Credits for Characters Shown:&nbsp;</div>
               <div style="position:absolute;margin-top: -12px;width:620px;text-align: right;">
-              <div style="display: inline-block;width:451px; text-align: right;">
+              <div id="animecredit1" style="display: inline-block;width:451px; text-align: right;">
                 <div class="credited" style="color:#648F6B;display: inline-block;" onclick="credit(this,innerHTML)">@debaa_nyan</div>
                 <div class="credited" style="color:#FFE1AC;display: inline-block;" onclick="credit(this,innerHTML)">@Gorrororor</div>
                 <div class="credited" style="color:#FFE1AC;display: inline-block;" onclick="credit(this,innerHTML)">@Konchjaz</div>
                 <div class="credited" style="color:#DDB1ED;display: inline-block;" onclick="credit(this,innerHTML)">@NoellaCH</div>
+              </div>
+              <div id="animecredit2" style="display: none;width:451px; text-align: right;">
+                <div class="credited" style="color:#af78e4;display: inline-block;" onclick="credit(this,innerHTML)">@Calcifer_Stormwind</div>
               </div>
             </div>
             </div>
@@ -2282,10 +2324,19 @@
           <h2 id="animbookmark">Animations</h2>
           <b style="font-size: 10pt;">Animated illustrations for your waiting or intermission screen background!
           <br>Pricing depends on the price of your base illustration plus the base price of your animation type.
-          <br>With traditional starting at $75 plus $10 per frame after the 8th frame (non-duplicate),
-          <br>and Live2D starting at $35 plus $25 per moving part at $10 per 5 second after the 5th.
-          <br>Typical working period varies between 2 to 5 months.
           <br>
+          <div id="animedesc1">
+          <br>Traditional Animating fee Starting at $75 per character/object
+          <br>with an extra $5 per frame after the 8th non-duplicate frame.
+          <br>Duplicate looping frames are exempt from the extra charge.
+          <br>Typical working period varies between 4 to 12 months. 
+          </div>
+          <div id="animedesc2" style="display:none;">
+          <br>Live2d Animating fee Starting at $80 per character/object plus $25 per their intricacy level 
+          <br>(How many moving parts per character/object) with an extra $10 per 5 second after the 5th.
+          <br>Duplicate animation loops are exempt from the extra charge. 
+          <br>Typical working period varies between 2 to 6 months.
+          </div>
           <br>Simple sticker animations are available with negotiable prices!</b>
           <br><br><br>
           
