@@ -33,7 +33,7 @@
 <body style="background-color: #202420;overflow-y:hidden">
   <div>
     <div id="fadeMe" style="
-    opacity:    0.9; 
+    opacity:    0.0; 
     background: #000; 
     width:      100%;
     height:     100%; 
@@ -41,7 +41,68 @@
     top:        0; 
     left:       0; 
     position:   fixed; 
-    display:none;">
+    pointer-events: none;
+    display:block;" onclick="termsclose">
+    </div>
+    <div id="terms" style="position: absolute; text-align: center;width: 100vw;height: 100px;top:100%">
+      <div style="background-color:white;width:823px;Height:90vh; z-index: 1010; position: fixed;margin-left:calc(50vw - 411.5px);margin-top: 5vh;border-radius: 15px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+       <H1 style="font-size: 3vh; margin-bottom: 0;">GENERAL POLICY</H1>
+       <div style="font-size: 1.2vh; margin-bottom: 2vh;">Published Jun 24, 2023 at 9:06am</div>
+       <div style="text-align: left; font-size: 1.5vh; width:727px;background-color: #f3f2f3;display: inline-block;padding: 15px;color: #3b373b;border-radius: 10px;height: 69vh;overflow-y: scroll;">
+        <h2 style="margin-bottom: 0;">PAYMENTS</h2>
+        Orders made through VGen may only be Paid via VGen's payment portals only.<br>
+        Payments are generally done by 60% upfront and 40% on finish basis.<br>
+        Other payment methods include:
+        <ul style="margin:0">
+          <li>Paypal (https://paypal.com/paypalme/debaniyan)</li>
+          <li>Ko-fi (https://ko-fi.com/debaa_nyan)</li>
+          <li>StreamElements (https://streamelements/tip/debaa_nyan)</li>
+          <li>Mabinogi Exchange (GLOBAL Version, Erinn Server)</li>
+        </ul>
+        Payments via Mabinogi are done by in game Exchanges to the player Debaba On Erinn Ch4's Dunbarton Moon Gate.
+        <h2 style="margin-bottom: 0;">REVISIONS</h2>
+        First revisions are generally free. The second and after are 20USD Each.<br>
+        In case of General Overhaul, you may apply for a partial refund and order a new one.<br>
+        Revisions on behalf of my errors (eg: missing something from the reference list) are free of charge.<br>
+        <h2 style="margin-bottom: 0;">DEADLINES AND DELIVERY</h2> 
+        Depending on the waitlist:<br>
+        Regular artworks are typically done within 2-3 weeks.<br>
+        PNGs are usually 1 week or less.<br>
+        Others will be disclosed if available.<br>
+        <h2 style="margin-bottom: 0;">USE</h2>
+        You are generally allowed to use my graphics for personal use.<br>
+        You may use my graphics as promotional material in your social medias, and as stream assets.<br>
+        You may NOT use my graphics on morally grey areas such as Crypto Tokens and NFTs.<br>
+        You may also NOT use my graphics in affiliation with Hate Speech, LGBT-phobias, and such.<br>
+        You are NOT allowed to use my graphics for Political purposes.<br>
+        <h2 style="margin-bottom: 0;">INTELLECTUAL PROPERTY RIGHTS</h2>
+        You are free to use my graphics for any purpose unless stated above.<br>
+        And I deserve the right to issue a takedown if any misuse is present.<br>
+        <h2 style="margin-bottom: 0;">REFUNDS</h2>
+        If your commission hasn't moved from the to-do list, you may issue a Full Refund.<br>
+        Otherwise, you may only be able to refund partially depending on the stage of the progress.<br>
+        Refunds for orders paid through Mabinogi Items are as follows:
+        <ul style="margin:0">
+          <li>If said item has been consumed or has perished, The refund will be done via in-game Currency at the monthly average value of the item as seen in the Auction House</li>
+          <li>If said item has been trade unlocked, client must provide half of the fees required to get a trade unlock potion from the Auction House, or the Potion itself.</li>
+          <li>If said item was an Enchant Scroll that had expired while in my possesion, The scroll will be returned as is.</li>
+          <li>If said item had exceeded the trade unlock limit, Client are to provide a Trade unlock limit Letter of Guarantee.</li>
+          <li>For a partial refund, Return of the item is not possible. instead, Client are to receive a percentage of The item's average monthly value as seen in the Auction House in In-Game Currency, depending on the state of the Commission.</li>
+        </ul>
+        <h2 style="margin-bottom: 0;">COMMUNICATION</h2>
+        Communication may be done through one of the methods listed below<br>
+        Discord: @debaa (Prerferred)<br>
+        Twitter: @debaa_nyan<br>
+        Email: debaa@macchako.moe<br>
+
+       </div>
+       <div>
+        <div class="butt" 
+          style="color:white;background-color: #375929;height: 4.5vh;width: 10vh; border-radius: 5px;box-shadow: 0px 0px 2px #000;position: relative;cursor: pointer;margin-top: 0.9vh;margin-left:4%;" onclick="termsclose()">
+          <div style="position: absolute;top: 25%;left: 13%;font-size: 2vh;cursor: pointer;font-family: UD Digi Kyokasho NK-B;">Return</div>
+        </div>
+      </div>
+      </div>
     </div>
     <div id="firerelief" style="opacity: 1;position: absolute;z-index: 101;text-align: center;width: 100%;display:none;">
       <div style="height: 2vw;"></div>
@@ -74,6 +135,20 @@
     function fireclose(){
       document.getElementById("firerelief").style.display = "none";
       document.getElementById("fadeMe").style.display = "none";
+    }
+  </script>
+
+  <script>
+    function termsclose(){
+      document.getElementById("terms").style.top = "100%";
+      document.getElementById("fadeMe").style.opacity = "0";
+      document.getElementById("fadeMe").style.pointerEvents = "none";
+    }
+
+    function terms(){
+      document.getElementById("terms").style.top = "0%";
+      document.getElementById("fadeMe").style.opacity = "0.9";
+      document.getElementById("fadeMe").style.pointerEvents = "auto";
     }
   </script>
 
@@ -591,6 +666,10 @@
             <br>
             <br>
             <div style="font-size: 12pt;">Terms of Service</div>
+            <br> 
+            <div style="color: #8ce967;">
+              <div class="submenuwu" onclick="terms()">General Policy</div>
+            </div>
           </div>
         </div>
 
@@ -768,7 +847,7 @@
                   }
 
                 onKonamiCode(function () {
-                  document.getElementById("fadeMe").style.display = "block";
+                  document.getElementById("fadeMe").style.opacity = "0.9";
                   setTimeout(function() {
                   if (confirm('By pressing OK, You confirm that you are at least 18 years of age')==true){
                     document.getElementsByClassName("konami")[0].style.display = "inline-block";
@@ -776,7 +855,7 @@
                     document.getElementsByClassName("konami")[2].style.display = "inline-block";
                     document.getElementsByClassName("konami")[3].style.display = "none";
                     document.getElementsByClassName("konami")[4].style.display = "inline-block"; 
-                    document.getElementById("fadeMe").style.display = "none";
+                    document.getElementById("fadeMe").style.opacity = "0";
                     workv(3);
                     document.getElementById('lew0').checked = false;
                     document.getElementById('lew1').checked = true;
@@ -787,7 +866,7 @@
                     document.getElementsByClassName("konami")[2].style.display = "none";
                     document.getElementsByClassName("konami")[3].style.display = "block";
                     document.getElementsByClassName("konami")[4].style.display = "none"; 
-                    document.getElementById("fadeMe").style.display = "none";
+                    document.getElementById("fadeMe").style.opacity = "0";
                     workv(1);
                     document.getElementById('lew0').checked = true;
                     document.getElementById('lew1').checked = false;
