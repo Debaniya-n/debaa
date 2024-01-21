@@ -846,6 +846,26 @@
               background-clip: text;
               -webkit-text-fill-color: rgba(255, 255, 255, 0);
               pointer-events: none;"> ⬆️ ⬆️ ⬇️ ⬇️ ⬅️ ➡️ ⬅️ ➡️ <b>B A</b>
+                <script>
+                  const params = new Proxy(new URLSearchParams(window.location.search), {
+                  get: (searchParams, prop) => searchParams.get(prop),});
+                  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+                  let paramvalue = params.nstoggle; // "some_value"
+                  console.log(paramvalue)
+                  if(paramvalue == "true"){
+                    console.log("nstoggle was true and called")
+                    document.getElementsByClassName("konami")[0].style.display = "inline-block";
+                    document.getElementsByClassName("konami")[1].style.display = "none";
+                    document.getElementsByClassName("konami")[2].style.display = "inline-block";
+                    document.getElementsByClassName("konami")[3].style.display = "none";
+                    document.getElementsByClassName("konami")[4].style.display = "inline-block"; 
+                    document.getElementById("fadeMe").style.opacity = "0";
+                    workv(3);
+                  }
+                  else{
+                    
+                  }
+                </script>
                <script>
                 function onKonamiCode(cb) {
                 var input = '';
