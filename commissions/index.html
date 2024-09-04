@@ -241,6 +241,7 @@
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = "Commissions are Open!";
                   document.getElementById("bannersubtitle").innerHTML = "Debaa is accepting new requests!<br>Check Queues below to view progress, Scroll down for pricing.<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> for inquiries.";
+                  Bannertextcenterer()
                   break;
                 case "red":
                   //commissions closed codeblock
@@ -248,6 +249,7 @@
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = "Commissions are Closed...";
                   document.getElementById("bannersubtitle").innerHTML = "Debaa is currently not taking new requests,<br>We'll be opening again soon, Check again later!<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> for inquiries.";
+                  Bannertextcenterer()
                   break;
                 case "yellow":
                   //custom commissions banner and stuff codeblock 
@@ -269,6 +271,7 @@
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = title;
                   document.getElementById("bannersubtitle").innerHTML = subtitle;
+                  Bannertextcenterer()
                   break;
                 default:
                   //API error codeblock
@@ -276,6 +279,7 @@
                   document.getElementById("bannerimage").backgroundSize = "contain";
                   document.getElementById("bannertitle").innerHTML = "API Error.";
                   document.getElementById("bannersubtitle").innerHTML = "Failed to fetch commission status,<br>If you're seeing this, please contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a>.<br>You can still check queue and prices below.";
+                  Bannertextcenterer()
                   break;
               }
               var goalstat = data.cards[1].cover.color;
@@ -423,6 +427,7 @@
               document.getElementById("goaltext").style.opacity = "1";
               document.getElementById("thisisforjune").style.opacity = "1";
             })
+
           </script>
 
 
@@ -498,7 +503,7 @@
             <div style="position: absolute; margin-top: 30px;margin-left:85px;font-size: 15pt;white-space: nowrap;">Checking commission status...</div>
           </div>
           
-          <div id="bannertitle" style="font-size: 15pt;margin-top: 210px; opacity: 0;"><!--Commissions are Open!-->Commissions are Closed...</div>
+          <div id="bannertitle" style="font-size: 15pt; margin-top:210px; opacity: 0;"><!--Commissions are Open!-->Commissions are Closed...</div>
           <div id="bannersubtitle" style="color: #8ce967;font-size: 11pt; opacity: 0;"><!--Debaa is accepting new requests!-->Debaa is currently not taking new requests,<br><!--Check Queues below to view progress, Scroll down for pricing.-->We'll be opening again soon, Check again later!<br>You may contact <a class=sublink href=discord://-/users/428082145899315202>Debaa</a> or <a class=sublink href=discord://-/users/109294441826635776>Mydia</a> for inquiries.</div>
           <br>
           <div id="bannerbutton" style="opacity: 0; ">
@@ -513,6 +518,12 @@
           function NewTab() {
               window.open(
                 "https://trello.com/b/pHtqWzR2/commissions", "_blank");
+          }
+          function Bannertextcenterer(){
+            var thatheight = 553 - document.getElementById("bannersubtitle").offsetHeight - 24-18-50-28  ;   
+            console.log(thatheight + "is the height") 
+            var afterheight = thatheight/2; 
+            document.getElementById("bannertitle").style.marginTop = afterheight+"px"; 
           }
         </script>
 
