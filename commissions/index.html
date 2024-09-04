@@ -370,6 +370,32 @@
                   
                   break;
 
+                case "yellow":
+                  var strt = data.cards[1].start.substring(0,10).replaceAll("-","/").replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3/$1/$2");
+                  var duedt = data.cards[1].due.substring(0,10).replaceAll("-","/").replace(/(\d\d)\/(\d\d)\/(\d{4})/, "$3/$1/$2");
+                  date1 = new Date(strt);  
+                  date2 = new Date(duedt);
+                  datenow = new Date();
+                  var totaldays = date2.getTime() - date1.getTime();  
+                  var elapsedtime = datenow.getTime() - date1.getTime();
+                  var totaldaysp = totaldays / (1000 * 60 * 60 * 24);
+                  var elapseddaysp = elapsedtime / (1000 * 60 * 60 * 24);
+                  console.log("date1 to date2 is " + totaldaysp + " days"); 
+                  console.log("it's been " + elapseddaysp + " days since date1");  
+                  document.getElementById("goaltext").innerHTML = Math.floor(totaldaysp - elapseddaysp) + " days left until event ends.";
+                  document.getElementById("goalslash").style.display = "none";
+                  document.getElementById("goals").style.display = "none";
+                  document.getElementById("moolah").style.display = "none";
+                  document.getElementById("donoprogress").style.width = elapseddaysp/totaldaysp*100+"%";
+
+                  
+                  if(document.getElementById("donoprogress").style.width = elapseddaysp/totaldaysp*100 > 100){
+                    document.getElementById("donoprogress").style.width = 100+"%"
+                    document.getElementById("goaltext").innerHTML = "Event concluded, Thank you very much!"; 
+                  }
+                  
+                  break;
+
                 default:
                   document.getElementById("goaltext").innerHTML = "Failed to fetch API Data..."
                   document.getElementById("goalslash").style.display = "none";
