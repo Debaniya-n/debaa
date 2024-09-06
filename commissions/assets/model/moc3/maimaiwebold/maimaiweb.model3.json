@@ -3,7 +3,7 @@
 	"FileReferences": {
 		"Moc": "maimaiweb.moc3",
 		"Textures": [
-			"maimaiweb.4096/texture_00.png"
+			"maimaiweb.1024/texture_00.png"
 		],
 		"Physics": "maimaiweb.physics3.json",
 		"DisplayInfo": "maimaiweb.cdi3.json",

@@ -2,79 +2,99 @@
 	"Version": 3,
 	"Parameters": [
 		{
-			"Id": "Param",
-			"GroupId": "ParamGroup",
-			"Name": "Antennae Physics L"
-		},
-		{
-			"Id": "Param2",
-			"GroupId": "ParamGroup",
-			"Name": "Antennae Physics R"
-		},
-		{
 			"Id": "ParamAngleX",
-			"GroupId": "",
+			"GroupId": "ParamGroup",
 			"Name": "Angle X"
 		},
 		{
 			"Id": "ParamAngleY",
-			"GroupId": "",
+			"GroupId": "ParamGroup",
 			"Name": "Angle Y"
 		},
 		{
 			"Id": "ParamAngleZ",
-			"GroupId": "",
+			"GroupId": "ParamGroup",
 			"Name": "Angle Z"
 		},
 		{
-			"Id": "ParamEyeLOpen",
-			"GroupId": "",
-			"Name": "EyeL Open"
-		},
-		{
-			"Id": "ParamEyeLSmile",
-			"GroupId": "",
-			"Name": "EyeL Smile"
-		},
-		{
-			"Id": "ParamEyeROpen",
-			"GroupId": "",
-			"Name": "EyeR Open"
-		},
-		{
-			"Id": "ParamEyeRSmile",
-			"GroupId": "",
-			"Name": "EyeR Smile"
-		},
-		{
-			"Id": "ParamEyeBallX",
-			"GroupId": "",
-			"Name": "Eyeball X"
-		},
-		{
-			"Id": "ParamEyeBallY",
-			"GroupId": "",
-			"Name": "Eyeball Y"
-		},
-		{
-			"Id": "ParamBrowLForm",
-			"GroupId": "",
-			"Name": "BrowL Form"
-		},
-		{
-			"Id": "ParamBrowRForm",
-			"GroupId": "",
-			"Name": "BrowR Form"
-		},
-		{
 			"Id": "ParamMouthForm",
-			"GroupId": "",
+			"GroupId": "ParamGroup2",
 			"Name": "Mouth Form"
 		},
 		{
 			"Id": "ParamMouthOpenY",
-			"GroupId": "",
+			"GroupId": "ParamGroup2",
 			"Name": "Mouth Open"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeR Open"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeR Smile"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "ParamGroup2",
+			"Name": "EyeL Smile"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroup2",
+			"Name": "Eyeball X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroup2",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowL Angle"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowR Angle"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowL Form"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowR Form"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowL Y"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowR Y"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowL X"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "ParamGroup2",
+			"Name": "BrowR X"
 		},
 		{
 			"Id": "ParamCheek",
@@ -85,16 +105,6 @@
 			"Id": "ParamBodyAngleX",
 			"GroupId": "",
 			"Name": "Body X"
-		},
-		{
-			"Id": "Param5",
-			"GroupId": "",
-			"Name": "BoobyX"
-		},
-		{
-			"Id": "Param6",
-			"GroupId": "",
-			"Name": "BoobyY"
 		},
 		{
 			"Id": "ParamBodyAngleY",
@@ -122,95 +132,965 @@
 			"Name": "Hair Move Side"
 		},
 		{
-			"Id": "Param3",
-			"GroupId": "",
-			"Name": "Hair Move Long1"
-		},
-		{
-			"Id": "Param4",
-			"GroupId": "",
-			"Name": "Hair Move Long 2"
-		},
-		{
 			"Id": "ParamHairBack",
 			"GroupId": "",
 			"Name": "Hair Move Back"
 		},
 		{
-			"Id": "ParamWave",
-			"GroupId": "",
-			"Name": "Wavehand"
+			"Id": "Param11",
+			"GroupId": "ParamGroup9",
+			"Name": "[0] Skirt Physics"
+		},
+		{
+			"Id": "Param12",
+			"GroupId": "ParamGroup9",
+			"Name": "[1] Skirt Physics"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "ParamGroup7",
+			"Name": "[0] Hair Back Long Physics"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "ParamGroup7",
+			"Name": "[1] Hair Back Long Physics"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "ParamGroup7",
+			"Name": "[2] Hair Back Long Physics"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "ParamGroup7",
+			"Name": "[3] Hair Back Long Physics"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "ParamGroup6",
+			"Name": "Hair Back Short Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation8",
+			"GroupId": "ParamGroup3",
+			"Name": "[0]Yukiko Ponytail Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation9",
+			"GroupId": "ParamGroup3",
+			"Name": "[1]Yukiko Ponytail Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation10",
+			"GroupId": "ParamGroup3",
+			"Name": "[2]Yukiko Ponytail Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation11",
+			"GroupId": "ParamGroup3",
+			"Name": "[3]Yukiko Ponytail Physics"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "ParamGroup4",
+			"Name": "[0] Side Hair Physics"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "ParamGroup4",
+			"Name": "[1] Side Hair Physics"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "ParamGroup8",
+			"Name": "[0] Hair Base Physics"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "ParamGroup8",
+			"Name": "[1] Hair Base Physics"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "ParamGroup5",
+			"Name": "Bangs Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[0]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[1]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[2]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[3]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[4]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[5]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[6]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_8_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[7]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_9_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[8]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_10_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[9]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_11_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[10]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_12_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[11]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation_13_Hair_Back_Hybrid_Braid",
+			"GroupId": "ParamGroup10",
+			"Name": "[12]Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "Param_Angle_Rotation13",
+			"GroupId": "ParamGroup11",
+			"Name": "[0]Ribbon Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation14",
+			"GroupId": "ParamGroup11",
+			"Name": "[1]Ribbon Physics"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[0]Head_Feature_Maichi_Hair_Antennae"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[1]Head_Feature_Maichi_Hair_Antennae"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[2]Head_Feature_Maichi_Hair_Antennae"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[3]Head_Feature_Maichi_Hair_Antennae"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[4]Head_Feature_Maichi_Hair_Antennae"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[5]Head_Feature_Maichi_Hair_Antennae"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_Head_Feature_Maichi_Hair_Antennae",
+			"GroupId": "ParamGroup12",
+			"Name": "[6]Head_Feature_Maichi_Hair_Antennae"
 		}
 	],
 	"ParameterGroups": [
 		{
 			"Id": "ParamGroup",
 			"GroupId": "",
-			"Name": "Physics"
+			"Name": "Face Angle"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "Face Features"
+		},
+		{
+			"Id": "ParamGroup9",
+			"GroupId": "",
+			"Name": "Skirt Physics"
+		},
+		{
+			"Id": "ParamGroup7",
+			"GroupId": "",
+			"Name": "Hair Back Long Physics"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "Hair Back Short Physics"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "Yukiko Ponytail Physics"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "Sidehair Physics"
+		},
+		{
+			"Id": "ParamGroup8",
+			"GroupId": "",
+			"Name": "Hair Base Physics"
+		},
+		{
+			"Id": "ParamGroup5",
+			"GroupId": "",
+			"Name": "Bangs Physics"
+		},
+		{
+			"Id": "ParamGroup10",
+			"GroupId": "",
+			"Name": "Hair_Back_Hybrid_Braid"
+		},
+		{
+			"Id": "ParamGroup11",
+			"GroupId": "",
+			"Name": "Ribbon Physics"
+		},
+		{
+			"Id": "ParamGroup12",
+			"GroupId": "",
+			"Name": "Head_Feature_Maichi_Hair_Antennae"
 		}
 	],
 	"Parts": [
 		{
+			"Id": "Part34",
+			"Name": "Hand fix.psd"
+		},
+		{
 			"Id": "Part",
-			"Name": "Maichi Rasterized"
+			"Name": "Character Features"
+		},
+		{
+			"Id": "Base",
+			"Name": "Base"
+		},
+		{
+			"Id": "Part13",
+			"Name": "Deformers"
+		},
+		{
+			"Id": "Part21",
+			"Name": "Unused"
 		},
 		{
 			"Id": "PartSketch0",
 			"Name": "[ Guide Image]"
 		},
 		{
+			"Id": "Part9",
+			"Name": "Common"
+		},
+		{
+			"Id": "Part8",
+			"Name": "Mimasu"
+		},
+		{
+			"Id": "Part14",
+			"Name": "Soleil"
+		},
+		{
+			"Id": "Part15",
+			"Name": "Maichi"
+		},
+		{
+			"Id": "Part16",
+			"Name": "Ashley"
+		},
+		{
+			"Id": "Part17",
+			"Name": "Ola"
+		},
+		{
+			"Id": "Part18",
+			"Name": "Debaa"
+		},
+		{
+			"Id": "Part19",
+			"Name": "Hybrid"
+		},
+		{
+			"Id": "Part20",
+			"Name": "Yukiko"
+		},
+		{
+			"Id": "Part10",
+			"Name": "Tan Skin"
+		},
+		{
+			"Id": "Part11",
+			"Name": "Light Skin"
+		},
+		{
+			"Id": "Part12",
+			"Name": "Pale Skin"
+		},
+		{
+			"Id": "Head_Feature",
+			"Name": "Head_Feature"
+		},
+		{
 			"Id": "Head",
 			"Name": "Head"
+		},
+		{
+			"Id": "Clothes",
+			"Name": "Clothes"
 		},
 		{
 			"Id": "Body",
 			"Name": "Body"
 		},
 		{
-			"Id": "Legs",
-			"Name": "Legs"
+			"Id": "Hair_Back",
+			"Name": "Hair_Back"
 		},
 		{
-			"Id": "Hair",
-			"Name": "Hair"
+			"Id": "Skirtshadow",
+			"Name": "Skirtshadow"
 		},
 		{
-			"Id": "Part4",
-			"Name": "Face"
+			"Id": "Feet",
+			"Name": "Feet"
+		},
+		{
+			"Id": "Head_Feature_Common",
+			"Name": "Head_Feature_Common"
+		},
+		{
+			"Id": "Head_Feature_Mimasu",
+			"Name": "Head_Feature_Mimasu"
+		},
+		{
+			"Id": "Clothes_Mimasu",
+			"Name": "Clothes_Mimasu"
+		},
+		{
+			"Id": "Hair_Back_Mimasu",
+			"Name": "Hair_Back_Mimasu"
+		},
+		{
+			"Id": "Head_Feature_Soleil",
+			"Name": "Head_Feature_Soleil"
+		},
+		{
+			"Id": "Clothes_Soleil",
+			"Name": "Clothes_Soleil"
+		},
+		{
+			"Id": "Hair_Back_Soleil",
+			"Name": "Hair_Back_Soleil"
+		},
+		{
+			"Id": "Head_Feature_Maichi",
+			"Name": "Head_Feature_Maichi"
+		},
+		{
+			"Id": "Clothes_Maichi",
+			"Name": "Clothes_Maichi"
+		},
+		{
+			"Id": "Hair_Back_Maichi",
+			"Name": "Hair_Back_Maichi"
+		},
+		{
+			"Id": "Head_Feature_Ashley",
+			"Name": "Head_Feature_Ashley"
+		},
+		{
+			"Id": "Clothes_Ashley",
+			"Name": "Clothes_Ashley"
+		},
+		{
+			"Id": "Hair_Back_Ashley",
+			"Name": "Hair_Back_Ashley"
+		},
+		{
+			"Id": "Head_Feature_Ola",
+			"Name": "Head_Feature_Ola"
+		},
+		{
+			"Id": "Clothes_Ola",
+			"Name": "Clothes_Ola"
+		},
+		{
+			"Id": "Hair_Back_Ola",
+			"Name": "Hair_Back_Ola"
+		},
+		{
+			"Id": "Head_Feature_Debaa",
+			"Name": "Head_Feature_Debaa"
+		},
+		{
+			"Id": "Clothes_Debaa",
+			"Name": "Clothes_Debaa"
+		},
+		{
+			"Id": "Hair_Back_Debaa",
+			"Name": "Hair_Back_Debaa"
+		},
+		{
+			"Id": "Head_Feature_Hybrid",
+			"Name": "Head_Feature_Hybrid"
+		},
+		{
+			"Id": "Clothes_Hybrid",
+			"Name": "Clothes_Hybrid"
+		},
+		{
+			"Id": "Hair_Back_Hybrid",
+			"Name": "Hair_Back_Hybrid"
+		},
+		{
+			"Id": "Head_Feature_Yukiko",
+			"Name": "Head_Feature_Yukiko"
+		},
+		{
+			"Id": "Clothes_Yukiko",
+			"Name": "Clothes_Yukiko"
+		},
+		{
+			"Id": "Hair_Back_Yukiko",
+			"Name": "Hair_Back_Yukiko"
+		},
+		{
+			"Id": "Part22",
+			"Name": "Ears Tan Pointy"
+		},
+		{
+			"Id": "Part23",
+			"Name": "Ears Tan Normal"
+		},
+		{
+			"Id": "Part24",
+			"Name": "Tan Thick"
+		},
+		{
+			"Id": "Part25",
+			"Name": "Tan Normal"
+		},
+		{
+			"Id": "Part28",
+			"Name": "Ears Light Pointy"
+		},
+		{
+			"Id": "Part29",
+			"Name": "Ears Light Normal"
+		},
+		{
+			"Id": "Part26",
+			"Name": "Light Thick"
+		},
+		{
+			"Id": "Part27",
+			"Name": "Light Normal"
+		},
+		{
+			"Id": "Part32",
+			"Name": "Ears Pale Pointy"
+		},
+		{
+			"Id": "Part33",
+			"Name": "Ears Pale Normal"
+		},
+		{
+			"Id": "Part30",
+			"Name": "Pale Thick"
+		},
+		{
+			"Id": "Part31",
+			"Name": "Pale Normal"
+		},
+		{
+			"Id": "Head_Face",
+			"Name": "Head_Face"
+		},
+		{
+			"Id": "Head_Ears_Right",
+			"Name": "Head_Ears_Right"
+		},
+		{
+			"Id": "Head_Ears_Left",
+			"Name": "Head_Ears_Left"
+		},
+		{
+			"Id": "Neck",
+			"Name": "Neck"
+		},
+		{
+			"Id": "Cup_Size",
+			"Name": "Cup_Size"
+		},
+		{
+			"Id": "Torso",
+			"Name": "Torso"
+		},
+		{
+			"Id": "Limb",
+			"Name": "Limb"
+		},
+		{
+			"Id": "Feet_Right",
+			"Name": "Feet_Right"
+		},
+		{
+			"Id": "Feet_Left",
+			"Name": "Feet_Left"
+		},
+		{
+			"Id": "Head_Feature_Common_Face",
+			"Name": "Head_Feature_Common_Face"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Face",
+			"Name": "Head_Feature_Mimasu_Face"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Hair",
+			"Name": "Head_Feature_Mimasu_Hair"
+		},
+		{
+			"Id": "Head_Feature_Soleil_Face",
+			"Name": "Head_Feature_Soleil_Face"
+		},
+		{
+			"Id": "Head_Feature_Soleil_Hair",
+			"Name": "Head_Feature_Soleil_Hair"
+		},
+		{
+			"Id": "Clothes_Soleil_Apron",
+			"Name": "Clothes_Soleil_Apron"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Face",
+			"Name": "Head_Feature_Maichi_Face"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Hair",
+			"Name": "Head_Feature_Maichi_Hair"
+		},
+		{
+			"Id": "Clothes_Maichi_Limb",
+			"Name": "Clothes_Maichi_Limb"
+		},
+		{
+			"Id": "Clothes_Maichi_Shoes",
+			"Name": "Clothes_Maichi_Shoes"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Face",
+			"Name": "Head_Feature_Ashley_Face"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Hair",
+			"Name": "Head_Feature_Ashley_Hair"
+		},
+		{
+			"Id": "Head_Feature_Ola_Face",
+			"Name": "Head_Feature_Ola_Face"
+		},
+		{
+			"Id": "Head_Feature_Ola_Hair",
+			"Name": "Head_Feature_Ola_Hair"
+		},
+		{
+			"Id": "Clothes_Ola_Choker",
+			"Name": "Clothes_Ola_Choker"
+		},
+		{
+			"Id": "Clothes_Ola_Bowtie",
+			"Name": "Clothes_Ola_Bowtie"
+		},
+		{
+			"Id": "Head_Feature_Debaa_Face",
+			"Name": "Head_Feature_Debaa_Face"
+		},
+		{
+			"Id": "Head_Feature_Debaa_Hair",
+			"Name": "Head_Feature_Debaa_Hair"
+		},
+		{
+			"Id": "Clothes_Debaa_Apron",
+			"Name": "Clothes_Debaa_Apron"
+		},
+		{
+			"Id": "Clothes_Debaa_Tie",
+			"Name": "Clothes_Debaa_Tie"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Halo",
+			"Name": "Head_Feature_Hybrid_Halo"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face",
+			"Name": "Head_Feature_Hybrid_Face"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Hair",
+			"Name": "Head_Feature_Hybrid_Hair"
+		},
+		{
+			"Id": "Clothes_Hybrid_Bowtie",
+			"Name": "Clothes_Hybrid_Bowtie"
+		},
+		{
+			"Id": "Clothes_Hybrid_Torso",
+			"Name": "Clothes_Hybrid_Torso"
+		},
+		{
+			"Id": "Clothes_Hybrid_Pants",
+			"Name": "Clothes_Hybrid_Pants"
+		},
+		{
+			"Id": "Hair_Back_Hybrid_Braid_Skinning",
+			"Name": "Hair_Back_Hybrid_Braid(Skinning)"
+		},
+		{
+			"Id": "Part35",
+			"Name": "Hair_Back_Hybrid_Braid(Rotation)"
+		},
+		{
+			"Id": "Head_Feature_Yukiko_Face",
+			"Name": "Head_Feature_Yukiko_Face"
+		},
+		{
+			"Id": "Head_Feature_Yukiko_Hair",
+			"Name": "Head_Feature_Yukiko_Hair"
+		},
+		{
+			"Id": "Clothes_Yukiko_Apron",
+			"Name": "Clothes_Yukiko_Apron"
+		},
+		{
+			"Id": "Clothes_Yukiko_Tie",
+			"Name": "Clothes_Yukiko_Tie"
+		},
+		{
+			"Id": "Hair_Back_Yukiko_Ponytail_Skinning",
+			"Name": "Hair_Back_Yukiko_Ponytail(Skinning)"
+		},
+		{
+			"Id": "Head_Ears_Pointy",
+			"Name": "Head_Ears_Pointy"
+		},
+		{
+			"Id": "Part7",
+			"Name": "Head_Ears_Right_Normal"
+		},
+		{
+			"Id": "Head_Ears_Left_Pointy",
+			"Name": "Head_Ears_Left_Pointy"
+		},
+		{
+			"Id": "Head_Ears_Left_Normal",
+			"Name": "Head_Ears_Left_Normal"
+		},
+		{
+			"Id": "Cup_Size_D",
+			"Name": "Cup_Size_D"
+		},
+		{
+			"Id": "Cup_Size_C",
+			"Name": "Cup_Size_C"
+		},
+		{
+			"Id": "Cup_Size_B",
+			"Name": "Cup_Size_B"
+		},
+		{
+			"Id": "Torso_Thick",
+			"Name": "Torso_Thick"
+		},
+		{
+			"Id": "Torso_Slim",
+			"Name": "Torso_Slim"
+		},
+		{
+			"Id": "Limb_Right",
+			"Name": "Limb_Right"
+		},
+		{
+			"Id": "Limb_Left",
+			"Name": "Limb_Left"
+		},
+		{
+			"Id": "Feet_Right_Thick",
+			"Name": "Feet_Right_Thick"
+		},
+		{
+			"Id": "Feet_Right_Normal",
+			"Name": "Feet_Right_Normal"
+		},
+		{
+			"Id": "Feet_Left_Thick",
+			"Name": "Feet_Left_Thick"
+		},
+		{
+			"Id": "Feet_Left_Normal",
+			"Name": "Feet_Left_Normal"
+		},
+		{
+			"Id": "Head_Feature_Common_Face_Mouth2",
+			"Name": "Head_Feature_Common_Face_Mouth"
+		},
+		{
+			"Id": "Head_Feature_Common_Face_Mouth",
+			"Name": "Head_Feature_Common_Face_Mouth"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Face_Eye",
+			"Name": "Head_Feature_Mimasu_Face_Eye"
+		},
+		{
+			"Id": "Head_Feature_Soleil_Face_Eye_Right",
+			"Name": "Head_Feature_Soleil_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Soleil_Face_Eye_Left",
+			"Name": "Head_Feature_Soleil_Face_Eye_Left"
+		},
+		{
+			"Id": "Clothes_Soleil_Apron_Ribbon",
+			"Name": "Clothes_Soleil_Apron_Ribbon"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Face_Eye_Right",
+			"Name": "Head_Feature_Maichi_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Face_Eye_Left",
+			"Name": "Head_Feature_Maichi_Face_Eye_Left"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Hair_Antennae_Skinning",
+			"Name": "Head_Feature_Maichi_Hair_Antennae(Skinning)"
+		},
+		{
+			"Id": "Part36",
+			"Name": "Head_Feature_Maichi_Hair_Antennae(Rotation)"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Hair_Antennae2_Skinning",
+			"Name": "Head_Feature_Maichi_Hair_Antennae(Skinning)"
+		},
+		{
+			"Id": "Part37",
+			"Name": "Head_Feature_Maichi_Hair_Antennae(Rotation)"
+		},
+		{
+			"Id": "Clothes_Maichi_Limb_Left",
+			"Name": "Clothes_Maichi_Limb_Left"
+		},
+		{
+			"Id": "Clothes_Maichi_Limb_Right",
+			"Name": "Clothes_Maichi_Limb_Right"
+		},
+		{
+			"Id": "Clothes_Maichi_Shoes_Left",
+			"Name": "Clothes_Maichi_Shoes_Left"
+		},
+		{
+			"Id": "Clothes_Maichi_Shoes_Right",
+			"Name": "Clothes_Maichi_Shoes_Right"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Face_Eye_Right",
+			"Name": "Head_Feature_Ashley_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Face_Eye_Left",
+			"Name": "Head_Feature_Ashley_Face_Eye_Left"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Hair_Ears_Right",
+			"Name": "Head_Feature_Ashley_Hair_Ears_Right"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Hair_Ears_Left",
+			"Name": "Head_Feature_Ashley_Hair_Ears_Left"
 		},
 		{
 			"Id": "Part5",
-			"Name": "Eyes"
+			"Name": "Head_Feature_Ola_Face_Eye_Right"
 		},
 		{
-			"Id": "Mouth",
-			"Name": "Mouth"
+			"Id": "Head_Feature_Ola_Face_Eye_Left",
+			"Name": "Head_Feature_Ola_Face_Eye_Left"
+		},
+		{
+			"Id": "Head_Feature_Ola_Hair_Ears_Right",
+			"Name": "Head_Feature_Ola_Hair_Ears_Right"
+		},
+		{
+			"Id": "Head_Feature_Ola_Hair_Ears_Left",
+			"Name": "Head_Feature_Ola_Hair_Ears_Left"
+		},
+		{
+			"Id": "Head_Feature_Debaa_Face_Eye_Right",
+			"Name": "Head_Feature_Debaa_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Debaa_Face_Eye_Left",
+			"Name": "Head_Feature_Debaa_Face_Eye_Left"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face_Eye_Right",
+			"Name": "Head_Feature_Hybrid_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face_Eye_Left",
+			"Name": "Head_Feature_Hybrid_Face_Eye_Left"
+		},
+		{
+			"Id": "Clothes_Hybrid_Pants_Right",
+			"Name": "Clothes_Hybrid_Pants_Right"
+		},
+		{
+			"Id": "Clothes_Hybrid_Pants_Left",
+			"Name": "Clothes_Hybrid_Pants_Left"
+		},
+		{
+			"Id": "Head_Feature_Yukiko_Face_Eye_Right",
+			"Name": "Head_Feature_Yukiko_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Yukiko_Face_Eye_Left",
+			"Name": "Head_Feature_Yukiko_Face_Eye_Left"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Face_Eye_Right",
+			"Name": "Head_Feature_Mimasu_Face_Eye_Right"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Face_Eye_Left",
+			"Name": "Head_Feature_Mimasu_Face_Eye_Left"
 		},
 		{
 			"Id": "Part2",
-			"Name": "Eyes L"
+			"Name": "Head_Feature_Soleil_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Soleil_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Soleil_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Clothes_Soleil_Ribbon_Tails_Skinning",
+			"Name": "Clothes_Soleil_Ribbon_Tails(Skinning)"
 		},
 		{
 			"Id": "Part3",
-			"Name": "Eyes R"
+			"Name": "Head_Feature_Maichi_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Maichi_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Maichi_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Part4",
+			"Name": "Head_Feature_Ashley_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Ashley_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Ashley_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Ola_Face_Eye_Right_Pupil",
+			"Name": "Head_Feature_Ola_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Ola_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Ola_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Debaa_Face_Eye_Right_Pupil",
+			"Name": "Head_Feature_Debaa_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Debaa_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Debaa_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face_Eye_Right_Pupil",
+			"Name": "Head_Feature_Hybrid_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Hybrid_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Part6",
+			"Name": "Head_Feature_Yukiko_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Yukiko_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Yukiko_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Face_Eye_Right_Pupil",
+			"Name": "Head_Feature_Mimasu_Face_Eye_Right_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Mimasu_Face_Eye_Left_Pupil",
+			"Name": "Head_Feature_Mimasu_Face_Eye_Left_Pupil"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face_Eye_Right_Pupil_Lens",
+			"Name": "Head_Feature_Hybrid_Face_Eye_Right_Pupil_Lens"
+		},
+		{
+			"Id": "Head_Feature_Hybrid_Face_Eye_Left_Pupil_Lens",
+			"Name": "Head_Feature_Hybrid_Face_Eye_Left_Pupil_Lens"
 		}
 	],
 	"CombinedParameters": [
 		[
-			"ParamAngleX",
-			"ParamAngleY"
+			"ParamEyeROpen",
+			"ParamEyeRSmile"
+		],
+		[
+			"ParamEyeLOpen",
+			"ParamEyeLSmile"
 		],
 		[
 			"ParamEyeBallX",
 			"ParamEyeBallY"
-		],
-		[
-			"ParamBrowLForm",
-			"ParamBrowRForm"
-		],
-		[
-			"ParamBodyAngleY",
-			"ParamBodyAngleZ"
 		]
 	]
 }
