@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Working with elements</title>
+  </head>
+  <body>
+    <style>
+      .pngcontainer{
+        overflow-x:scroll;
+        white-space: nowrap;
+        height: 500px;
+      }
+      img.png{
+          position: relative;
+          width: calc(680px/2)!important;
+          height: calc(902px/2)!important;
+          animation: mover 4s infinite  alternate;
+      }
+      img.png:hover{
+        -webkit-animation: speak-now 1s  alternate !important;
+        animation: speak-now 1s  alternate !important;
+      }
+      a.png{
+        display: inline-block;
+        width: 190px; 
+        height: 200px; 
+      }
+
+      @keyframes mover {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(10px); }
+      }
+
+      @keyframes
+        speak-now {
+        0% { bottom:0px;  }
+        15% { bottom:10px;  }
+        30% { bottom:0px;  }
+      }
+    </style>
+    <div class="pngcontainer" id="conta">
+      <div id="div1">The text above has been created dynamically.</div>
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById("conta");
+    // where "container" is the id of the container
+    container.addEventListener("wheel", function (e) {
+      if (e.deltaY > 0) {
+        container.scrollLeft += 100;
+        e.preventDefault();
+        // prevenDefault() will help avoid worrisome 
+        // inclusion of vertical scroll 
+      }
+      else {
+        container.scrollLeft -= 100;
+        e.preventDefault();
+      }
+    });
+    // That will work perfectly
+
+    fetch('https://trello.com/b/COh3AaHn/png-database.json')
+    .then((response) => response.json())
+    .then((data) => {
+            var delayer =0;
+            for (let i = 0; data.cards[i].cover.idAttachment != "null"; i++) {
+            console.log("i was called " + i + " times");
+            var channelname = data.cards[i].desc;
+            console.log("ID " + i + " Channel name is " + channelname);
+            var imagelink = data.cards[i].cover.scaled[5].url;
+            console.log("ID " + i + " .png url is " + imagelink); 
+            // create a new div element
+            const newDiv = document.createElement("a");
+            newDiv.href = "http://twitch.com/" + channelname;
+            newDiv.classList.add("png"); 
+            console.log("i was called");
+
+            // and give it some content
+            const newContent = new Image(680,902);
+            newContent.src = imagelink;
+            newContent.classList.add("png")
+            newContent.style = "animation-delay:" + delayer + "." + i + "s";
+            delayer++;
+            if(delayer === 4){
+              delayer = 0;
+            }
+            console.log("i was called");
+
+            // add the text node to the newly created div
+            newDiv.appendChild(newContent);
+            console.log("i was called");
+
+            // add the newly created element and its content into the DOM
+            const currentDiv = document.getElementById("div1");
+            console.log("i was called"); 
+            document.getElementById("conta").insertBefore(newDiv, currentDiv);
+            }
+        })
+  </script>
+</html>
