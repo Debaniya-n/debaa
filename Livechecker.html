@@ -12,29 +12,64 @@
   required
   size="10" />
 <script>
-async function checkIfLive() 
-{
-    let username = document.getElementById('name').value; 
-    try 
-    {
-        const response = await fetch(`https://twitch.tv/${username}`);
-        const sourceCode = await response.text();
+    
+async function checkIfLive() {
+    let file = document.getElementById("name").value
+    let myObject = await fetch("https://decapi.me/twitch/uptime/" + file);
+    console.log("myObject is " + myObject);
+    let myText = await myObject.text();
+    console.log("myText is " + myText);
+    switch(myText.startsWith(file)){
+        case true:{
+            console.log("true btw");
+            break
+        }
+        case false:{
+            myText = myText.replace(" hours, ", ":");
+            myText = myText.replace(" hour, ", ":");
+            myText = myText.replace(" minutes, ", ":");
+            myText = myText.replace(" minute, ", ":");
+            myText = myText.replace(" seconds", ""); 
+            myText = myText.replace(" second", ""); 
+            const timeArray = myText.split(":")
+            const howmanysecs = parseInt(timeArray[0] * 3600) + parseInt(timeArray[1] * 60) + parseInt(timeArray[2]); 
+            console.log(howmanysecs); 
+            console.log(timeArray[0] + ":" + timeArray[1] + ":" + timeArray[2]); 
+            var hoursLabel = document.getElementById("hours");
+            var minutesLabel = document.getElementById("minutes");
+            var secondsLabel = document.getElementById("seconds");
+            var totalSeconds = howmanysecs;
+            setInterval(setTime, 1000); 
 
-        if (sourceCode.includes("isLiveBroadcast")) 
-        {
-            console.log(`${username} is live`);
-        }
-        else 
-        {
-            console.log(`${username} is not live`);
+            function setTime(){
+                ++totalSeconds;
+                secondsLabel.innerHTML = pad(totalSeconds%60);
+                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60, 10) % 60);
+                hoursLabel.innerHTML = pad(parseInt(totalSeconds / 3600, 10));
+            }
+
+            function pad(val){
+                var valString = val + "";
+                if(valString.length < 2){
+                    return "0" + valString;
+                }
+                else{
+                    return valString;
+                }
+            }
         }
     }
-    catch (error) 
-    {
-        console.log("Error occurred:", error);
-    }
-  
-}
+    document.getElementById("demo").innerHTML = myText; 
+} 
+
 </script>
 <button onclick="checkIfLive()">Click me</button> 
+<p id="demo">Fetch a file to change this text.</p>
+<label >Live (</label>
+<label id="hours">00</label>
+<label >:</label>
+<label id="minutes">00</label>
+<label id="colon">:</label>
+<label id="seconds">00</label>
+<label >)</label>
 </body>

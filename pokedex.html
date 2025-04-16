@@ -42,6 +42,17 @@
       img.png:hover ~ .warnlabel{
         opacity: 100;
       }
+
+      [id^='timerno']{
+        width: calc(680px / 3 - 75px)!important;
+        top:-70px;
+        opacity:100;
+      }
+
+      img.png:hover ~ [id^='timerno']{
+        opacity: 0;
+      }
+
       .pngcontainer{
         overflow-x:scroll;
         white-space: nowrap;
@@ -83,6 +94,92 @@
     </div>
   </body>
   <script>
+
+    async function checkIfLive(numid,channelcheck) {
+      let myObject = await fetch("https://decapi.me/twitch/uptime/" + channelcheck);
+      console.log("myObject is " + myObject);
+      let myText = await myObject.text();
+      console.log("myText is " + myText);
+      switch(myText.startsWith(channelcheck)){
+        case true:{
+            console.log("true btw");
+            break
+        }
+        case false:{
+            const timeDiv = document.createElement("div");
+            timeDiv.classList.add("warnlabel");
+            timeDiv.style = "background-color:Red;";
+            const livebracket = document.createElement("label");
+            const livebrackettext = document.createTextNode("LIVE (");
+            livebracket.appendChild(livebrackettext);
+            const livehours = document.createElement("label");
+            const livehourstext = document.createTextNode("--")
+            livehours.appendChild(livehourstext)
+            livehours.setAttribute("id", "hours"+numid);
+            const hourcolon = document.createElement("label");
+            const hourcolontext = document.createTextNode(":");
+            hourcolon.appendChild(hourcolontext);
+            const liveminutes = document.createElement("label");
+            const liveminutestext = document.createTextNode("--")
+            liveminutes.appendChild(liveminutestext)
+            liveminutes.setAttribute("id", "minutes"+numid);
+            const minutecolon = document.createElement("label");
+            const minutecolontext = document.createTextNode(":");
+            minutecolon.appendChild(minutecolontext);
+            const liveseconds = document.createElement("label");
+            const livesecondstext = document.createTextNode("--")
+            liveseconds.appendChild(livesecondstext)
+            liveseconds.setAttribute("id", "seconds"+numid);
+            const endbracket = document.createElement("label");
+            const endbrackettext = document.createTextNode(")");
+            endbracket.appendChild(endbrackettext);
+            timeDiv.appendChild(livebracket);
+            timeDiv.appendChild(livehours);
+            timeDiv.appendChild(hourcolon);
+            timeDiv.appendChild(liveminutes);
+            timeDiv.appendChild(minutecolon);
+            timeDiv.appendChild(liveseconds);
+            timeDiv.appendChild(endbracket);
+            timeDiv.setAttribute("id", "timerno"+numid);
+            const timecont = document.getElementById("png"+numid);
+            timecont.appendChild(timeDiv);
+            myText = myText.replace(" hours, ", ":");
+            myText = myText.replace(" hour, ", ":");
+            myText = myText.replace(" minutes, ", ":");
+            myText = myText.replace(" minute, ", ":");
+            myText = myText.replace(" seconds", ""); 
+            myText = myText.replace(" second", ""); 
+            const timeArray = myText.split(":")
+            const howmanysecs = parseInt(timeArray[0] * 3600) + parseInt(timeArray[1] * 60) + parseInt(timeArray[2]); 
+            console.log(howmanysecs); 
+            console.log(timeArray[0] + ":" + timeArray[1] + ":" + timeArray[2]); 
+            var hoursLabel = document.getElementById("hours"+numid);
+            var minutesLabel = document.getElementById("minutes"+numid);
+            var secondsLabel = document.getElementById("seconds"+numid);
+            var totalSeconds = howmanysecs;
+            setInterval(setTime, 1000); 
+
+            function setTime(){
+                ++totalSeconds;
+                secondsLabel.innerHTML = pad(totalSeconds%60);
+                minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60, 10) % 60);
+                hoursLabel.innerHTML = pad(parseInt(totalSeconds / 3600, 10));
+            }
+
+            function pad(val){
+                var valString = val + "";
+                if(valString.length < 2){
+                    return "0" + valString;
+                }
+                else{
+                    return valString;
+                }
+            }
+        }
+      }
+      document.getElementById("demo").innerHTML = myText; 
+    }  
+
     const container = document.getElementById("conta");
     // where "container" is the id of the container
     container.addEventListener("wheel", function (e) {
@@ -111,8 +208,9 @@
             console.log("ID " + i + " .png url is " + imagelink); 
             // create a new div element
             const newDiv = document.createElement("a");
-            newDiv.href = "http://twitch.com/" + channelname;
+            newDiv.href = "https://www.twitch.tv/" + channelname;
             newDiv.classList.add("png"); 
+            newDiv.setAttribute("id", "png"+i)
             console.log("i was called");
 
             // and give it some content
@@ -145,10 +243,14 @@
                   const warnText = document.createTextNode(data.cards[i].labels[0].name);
                   warnDiv.appendChild(warnText);
                   newDiv.appendChild(warnDiv); 
+                  break; 
                 }
-              default:{
+                default:{
                 } 
               }
+            }
+            else{
+              checkIfLive(i,channelname)
             }
             console.log("i was called");
 
