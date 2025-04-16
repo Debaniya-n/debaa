@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Working with elements</title>
+  </head>
+  <body>
+    <input
+  type="text"
+  id="name"
+  name="name"
+  required
+  size="10" />
+<script>
+async function checkIfLive() 
+{
+    let username = document.getElementById('name').value; 
+    try 
+    {
+        const response = await fetch(`https://twitch.tv/${username}`);
+        const sourceCode = await response.text();
+
+        if (sourceCode.includes("isLiveBroadcast")) 
+        {
+            console.log(`${username} is live`);
+        }
+        else 
+        {
+            console.log(`${username} is not live`);
+        }
+    }
+    catch (error) 
+    {
+        console.log("Error occurred:", error);
+    }
+  
+}
+</script>
+<button onclick="checkIfLive()">Click me</button> 
+</body>
