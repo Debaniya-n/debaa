@@ -25,13 +25,28 @@ async function checkIfLive() {
             break
         }
         case false:{
-            myText = myText.replace(" hours, ", ":");
-            myText = myText.replace(" hour, ", ":");
-            myText = myText.replace(" minutes, ", ":");
-            myText = myText.replace(" minute, ", ":");
-            myText = myText.replace(" seconds", ""); 
-            myText = myText.replace(" second", ""); 
-            const timeArray = myText.split(":")
+            const rawtimeArray = myText.split(",")
+            const timeArray = [0,0,0];
+            for(let o = 0; rawtimeArray != ""; o++){
+                if(rawtiimeArray[o].includes("hour")==true){
+                    rawtimeArray[o] = rawtimeArray[o].replace("hour","");
+                    rawtimeArray[o] = rawtimeArray[o].replace("s","");
+                    rawtimeArray[o] = rawtimeArray[o].replace(" ","");
+                    timeArray[0] = rawtimeArray[o];
+                }
+                else if(rawtiimeArray[o].includes("minute")==true){
+                    rawtimeArray[o] = rawtimeArray[o].replace("minute","");
+                    rawtimeArray[o] = rawtimeArray[o].replace("s","");
+                    rawtimeArray[o] = rawtimeArray[o].replace(" ","");
+                    timeArray[1] = rawtimeArray[o];
+                }
+                else if(rawtiimeArray[o].includes("second")==true){
+                    rawtimeArray[o] = rawtimeArray[o].replace("second","");
+                    rawtimeArray[o] = rawtimeArray[o].replace("s","");
+                    rawtimeArray[o] = rawtimeArray[o].replace(" ","");
+                    timeArray[2] = rawtimeArray[o];
+                }
+            }
             const howmanysecs = parseInt(timeArray[0] * 3600) + parseInt(timeArray[1] * 60) + parseInt(timeArray[2]); 
             console.log(howmanysecs); 
             console.log(timeArray[0] + ":" + timeArray[1] + ":" + timeArray[2]); 
