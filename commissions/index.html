@@ -508,17 +508,28 @@
           <br>
           <div id="bannerbutton" style="opacity: 0; ">
             <div class="butt" 
-              style="background-color: #375929;height: 50px;width: 145px; border-radius: 5px;box-shadow: 0px 0px 5px #000;position: relative;cursor: pointer;" onclick="NewTab()">
+              style="background-color: #375929;height: 50px;width: 145px; border-radius: 5px;box-shadow: 0px 0px 5px #000;position: relative;cursor: pointer;display:inline-block" onclick="NewTab()">
               <div style="position: absolute;top: 36%;left: 13%;font-size: 11pt;cursor: pointer;">Check Queues</div>
+            </div>
+            <div class="butt" 
+              style="background-color: #375929;height: 50px;width: 145px; border-radius: 5px;box-shadow: 0px 0px 5px #000;position: relative;cursor: pointer;display:inline-block" onclick="NewTabs()" >
+              <div style="position: absolute;top: 36%;left: 13%;font-size: 11pt;cursor: pointer;">Inquire Debaa</div>
             </div>
           </div>
         </div>
 
         <script>
           function NewTab() {
+              console.log("newtab is called i think");
               window.open(
                 "https://trello.com/b/pHtqWzR2/commissions", "_blank");
           }
+          function NewTabs() {
+              window.open(
+                "htttps://discord.com/users/428082145899315202");
+                };
+              
+              
           function Bannertextcenterer(){
             var thatheight = 553 - document.getElementById("bannersubtitle").offsetHeight - 24-18-50-28  ;   
             console.log(thatheight + "is the height") 
