@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      @keyframes vanisher {
+      0%{opacity: 0.7;}
+      60%{opacity: 0;}
+    }
+    body{
+      background-image: linear-gradient(to bottom, rgb(220,154,212), rgb(74, 184, 255));
+      overflow: hidden;
+      height:110vh;
+      }
+
+    .Trianglesvg{
+      opacity: 0;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0);
+      width: 80px;
+      overflow: visible;
+      height: 127px;
+      animation-name: vanisher;
+      animation-iteration-count: infinite;
+    }
+
+    .trianglebgcont{
+      position: absolute;
+      width: calc(1920px + 240px);
+      margin-left: -80px;
+      margin-top: -50px;
+      overflow: visible;
+    }
+
+    @keyframes gridnearmove{
+      0%{margin-left:-100px;margin-top: -100px;}
+      100%{margin-left:-1300px;margin-top: -300px;}
+    }
+
+    @keyframes gridfarmove{
+      0%{margin-left:-100px;margin-top: -100px;}
+      100%{margin-left:-310px;margin-top: -170px;}
+    }
+
+    .gridnearcont{
+      opacity:0.5;
+      position: absolute;
+      margin-left: -100px;
+      margin-top: -100px;
+      width: 3920px;
+      height: 1800px;
+      background-image:url(grid.png);
+      background-size: 100px;
+      animation: gridnearmove 80s linear infinite;
+    }
+
+    .gridfarcont{
+      opacity:0.25;
+      position: absolute;
+      margin-left: -100px;
+      margin-top: -100px;
+      width: 3920px;
+      height: 1800px;
+      background-image:url(grid.png);
+      background-size: 70px;
+      animation: gridfarmove 80s linear infinite;
+    }
+
+    @keyframes gridfade{
+      0% {opacity: 1;}
+      50% {opacity: 0.3;}
+      100%{opacity:1;}
+    }
+
+    .gridfader{
+      animation: gridfade 5s infinite;
+    }
+
+  </style>
+</head>
+
+
+
+<body>
+<div class="trianglebgcont" id="tgbgcont"></div>
+<div class="gridfader"><div class="gridnearcont" id="gridncont"></div></div>
+<div class="gridfarcont" id="gridfcont"></div>
+<img src="archive.png" style="position: absolute;margin-left: 350px;">
+</body>
+
+<script>
+  for(let i = 0; i < 242; i++){
+    var delayer =0;
+    const newDiv = document.createElement("div"); 
+    console.log("1")
+    newDiv.classList.add("Trianglesvg"); 
+    newDiv.style = "animation-duration:" + (Math.floor(Math.random() * (30 - 9)) + 9 ) + "." + (Math.floor(Math.random() * (9)) + 1 ) + "s;";
+    console.log("1")
+    if(i % 2 === 0){
+      newDiv.innerHTML += '<svg width="140px" height="120px"><polygon points="0,0 140,0 70,120" style="fill:white;stroke-width:0;fill-rule:evennod;"></svg>'
+    }
+    else{
+      newDiv.innerHTML += '<svg width="140px" height="120px"><polygon points="70,0 140,120 0,120" style="fill:white;stroke-width:0;fill-rule:evennod;"></svg>'
+    }
+    console.log("1")
+    if ((Math.floor(Math.random() * (30 - 20)) + 20 ) < 28){
+      newDiv.style = "opacity: 0; animation-delay:" + (Math.floor(Math.random() * (15))) + "." + (Math.floor(Math.random() * (9)) + 1) + "s;" + "animation-duration:" + (Math.floor(Math.random() * (30 - 9)) + 9 ) + "." + (Math.floor(Math.random() * (9)) + 1 ) + "s;";
+    }    
+    document.getElementById("tgbgcont").appendChild(newDiv);
+    console.log("1")
+  }
+</script>
+
+</html>
